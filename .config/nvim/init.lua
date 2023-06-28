@@ -4,29 +4,27 @@
 
 -- vim.cmd("runtime vimrc")
 
-local set = vim.opt
-local fn = vim.fn
-local file_path = fn.expand("%")
+local file_path = vim.fn.expand("%")
 -- vim.opt = {
 -- 	tabstop = 8
 -- 	shiftwidth = 8
 -- }
 
-set.tabstop = 8
-set.shiftwidth = 8
-set.number = true
-set.clipboard = "unnamedplus"
-set.ignorecase = true
-set.smartcase = true
-set.showmatch = true
-set.textwidth = 80
-set.tabpagemax = 255
-set.shortmess = "a"
-set.mouse = "a"
-set.report = 0
-set.showbreak = "=>"
-set.list = true
-set.listchars = {
+vim.opt.tabstop = 8
+vim.opt.shiftwidth = 8
+vim.opt.number = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.showmatch = true
+vim.opt.textwidth = 80
+vim.opt.tabpagemax = 255
+vim.opt.shortmess = "a"
+vim.opt.mouse = "a"
+vim.opt.report = 0
+vim.opt.showbreak = "=>"
+vim.opt.list = true
+vim.opt.listchars = {
 	multispace = "+-",
 	tab = "< >",
 	trail = "$"
@@ -66,7 +64,7 @@ local function status_line()
 	end
 
 	local file_perm_octal = function()
-			local file_perm_string = fn.getfperm(file_path)
+			local file_perm_string = vim.fn.getfperm(file_path)
 			return get_octal(file_perm_string:byte(1),
 			file_perm_string:byte(2),
 			file_perm_string:byte(3)) ..
@@ -79,11 +77,11 @@ local function status_line()
 	end
 
 	function get_buf_count()
-		return #fn.getbufinfo({buflisted = 1})
+		return #vim.fn.getbufinfo({buflisted = 1})
 	end
 
 	function get_file_size()
-		local bytes_number = fn.getfsize(file_path)
+		local bytes_number = vim.fn.getfsize(file_path)
 		local unit
 		if bytes_number > 1073741824 then
 			return string.format("%.2f GiB",

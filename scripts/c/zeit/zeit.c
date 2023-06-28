@@ -58,10 +58,10 @@ main(int argc, char **argv)
 	assert(retval != -1);
 	if (end.tv_nsec < begin.tv_nsec) {
 		printf("Total elapsed time %ld.%09ld\n",
-		 end.tv_sec - begin.tv_sec - 1,
-		 BILLION + end.tv_nsec - begin.tv_nsec);
+		    end.tv_sec - begin.tv_sec - 1,
+		    BILLION + end.tv_nsec - begin.tv_nsec);
 	} else {
 		printf("Total elapsed time %ld.%09ld\n",
-		 end.tv_sec - begin.tv_sec, end.tv_nsec - begin.tv_nsec);
+		    end.tv_sec - begin.tv_sec, end.tv_nsec - begin.tv_nsec);
 	}
 }
