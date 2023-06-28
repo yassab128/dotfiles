@@ -10,7 +10,7 @@ PATH=/usr/bin/
 
 dotgit() {
 	# git --git-dir=$HOME/.local/share/dotgit/ --work-tree=$HOME "$@"
-	./dotgit.sh $@
+	$HOME/scripts/sh/dotgit.sh $@
 }
 
 # "$HOME/Programme/usw/shell/backup_root_files.sh"
