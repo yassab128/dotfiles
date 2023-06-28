@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -efu
+
+/usr/bin/sed '
+s@^@PATH=\$PATH:@
+s@/cat$@ exec /usr/bin/brave \&@
+e
+'<<EOF
+$(/usr/bin/readlink /usr/bin/cat)
+EOF

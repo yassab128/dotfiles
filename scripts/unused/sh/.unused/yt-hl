@@ -1,0 +1,151 @@
+#!/usr/bin/env -S awk -PE
+
+# The people at Youtube constantly make it harder to scrape the download links.
+# Trying to keep up with their tricks is impossible. Better leave this for the
+# folks of youtube-dl. Do NOT ever try to making a youtube-dl clone, that way
+# lies madness.
+
+# A function to sort video formats based on qualityLabel. I figured out I do not
+# need it since there are usally only two video formats (that have audio) anyway
+# so there is no point in comparing them. function sort_based_on_video_quality()
+
+# {
+# 	x = 0
+# 	for (i in qualityLabel) {
+# 		print qualityLabel[i]
+# 		if (!(qualityLabel[i])) continue
+#
+# 		for (j in qualityLabel) {
+# 			if (qualityLabel[i] < qualityLabel[j]) i = j
+# 		}
+# 		sorted[++x] = qualityLabel[i]
+# 		itag[x] = i
+# 		qualityLabel[i] = ""
+# 	}
+#
+# 	for (i = 1; i <= x; ++i) {
+# 		j = itag[i]
+# 		printf "%-3s %-10s %s\n", j, mimeType[j], sorted[i]
+# 	}
+# }
+
+function stream(link, mime_type)
+{
+	print link
+
+	playback = mime_type ~ /^audio/ ? "-nodisp" : ""
+	streaming_command = "curl --output /dev/stdout '" link "' | "\
+					  "ffplay /dev/stdin -autoexit -loglevel quiet " playback
+	system(streaming_command)
+	printf "\n"
+}
+
+function download(link, mime_type)
+{
+	download_dir = mime_type ~ /^video/ ? "XDG_VIDEOS_DIR" : "XDG_MUSIC_DIR"
+	download_dir = "${" download_dir "-" ENVIRON["PWD"] "}"
+
+	extension = mime_type
+	sub(/[^/]+\//, "", extension)
+
+	filename = "\"" download_dir "/" filename "." extension "\""
+
+	download_command = "curl --continue-at - --output " filename " '" link "'"
+
+	print download_command
+	system(download_command)
+}
+
+function usage()
+{
+	print "Use the Source, Luke!"
+	exit
+}
+
+BEGIN {
+	if (ARGC != 3) {
+		usage()
+	}
+
+	if (ARGV[1] == "s") {
+		stream_only = 1
+	} else if (ARGV[1] == "d") {
+		stream_only = 0
+	} else {
+		usage()
+	}
+
+	LINT = "fatal"
+	curl_command = "curl -s '" ARGV[2] "'"
+	output = ""
+	while ((curl_command | getline) > 0) {
+		split($0, F, "\\{\"itag\":")
+		for (i in F) {
+
+			# I am not interested in videos without audio.
+			if (F[i] !~ /"audioQuality"/) {
+				continue
+			}
+
+			# Get the title of the video before removing the clutter
+			if (sub(/","lengthSeconds".*/, "", F[i])) {
+				filename = F[i]
+				sub(/.*","title":"/, "", filename)
+			}
+
+			# Remove some clutter
+			sub(/\].*/, "", F[i])
+
+			video_tag = F[i]
+			sub(/,.*/, "", video_tag)
+
+			video_url = F[i]
+			sub(/.*https/, "https", video_url)
+			sub(/".*/, "", video_url)
+
+			video_qualityLabel = F[i]
+			if (sub(/.*"qualityLabel":"/, "", video_qualityLabel)) {
+				sub(/".*/, "", video_qualityLabel)
+				qualityLabel[video_tag] = video_qualityLabel
+			} else {
+				qualityLabel[video_tag] = ""
+			}
+
+			video_mimeType = F[i]
+			sub(/.*"mimeType":"/, "", video_mimeType)
+			sub(/;.*/, "", video_mimeType)
+
+			# Bring it together
+			url[video_tag] = video_url
+			mimeType[video_tag] = video_mimeType
+		}
+	}
+	close(curl_command)
+
+	for (i in mimeType) {
+		printf "%-3s %-10s %s\n", i, mimeType[i], qualityLabel[i]
+	}
+
+	printf "\n"
+	do {
+		printf "Choose an available tag code: "
+		getline tag_chosen < "/dev/stdin"
+		close("/dev/stdin")
+	} while(!(tag_chosen in mimeType))
+	fflush()
+	url_chosen = url[tag_chosen]
+
+	# The links will not work out-of-the-box, to remedy that, all the
+	# instances of "\u0026" must be replaced with "&"
+	# https://computing.dcu.ie/~humphrys/Notes/UNIX/lab.youtube.html
+	gsub(/\\u0026/, "\\&", url_chosen)
+
+
+	mimeType_chosen = mimeType[tag_chosen]
+
+	stream_only ? stream(url_chosen, mimeType_chosen) : \
+				download(url_chosen, mimeType_chosen)
+
+}
+
+# vi:filetype=awk noet

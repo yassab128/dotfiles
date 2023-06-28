@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -efu
+
+fusermount -u /home/pactrag/.mount/fajita/sshfs/0
+fusermount -u /home/pactrag/.mount/fajita/sshfs/home
+
+sshfs user@"$TERMUX":/storage/emulated/0/ \
+    /home/pactrag/.mount/fajita/sshfs/0 -p 8022 \
+    -o cache=yes \
+    -o kernel_cache \
+    -o compression=no \
+    -o Ciphers=aes128-ctr
+
+sshfs user@"$TERMUX":/data/data/com.termux/files/home/ \
+    /home/pactrag/.mount/fajita/sshfs/home -p 8022 \
+    -o cache=yes \
+    -o kernel_cache \
+    -o compression=no \
+    -o Ciphers=aes128-ctr

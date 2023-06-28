@@ -1,0 +1,6 @@
+[Service]
+ExecStart = /home/pactrag/Programme/usw/c_language/discharge_notification.eil
+# Do NOT omit this, it is important.
+# EDIT: it can omitted now since I have taken care of environmental variables
+# in the C program itself.
+# Environment = DISPLAY = :0

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -efu
+
+mount_point=/home/pactrag/.mount/fajita/mtp
+jmtpfs "$mount_point" ||
+    { fusermount -u "$mount_point" && jmtpfs "$mount_point"; }

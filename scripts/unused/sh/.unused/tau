@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -efu
+
+while true; do
+	stty -echo -icanon
+	key_press="$(head -c 1)"
+	stty echo
+	if [ "${key_press}" = 'n' ]; then
+		echo 'next'
+	elif [ "${key_press}" = 'p' ]; then
+		echo 'previous'
+	elif [ "${key_press}" = ' ' ]; then
+		echo 'space'
+	elif [ "${key_press}" = 'l' ]; then
+		echo 'loop'
+	fi
+done

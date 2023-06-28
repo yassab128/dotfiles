@@ -1,0 +1,8 @@
+[cache]
+TrashCollection=13
+TrashCollectionMigrated=true
+
+[network]
+Authentication=9
+ImapServer=imap.gmail.com
+UserName=yassinesabraoui128@gmail.com

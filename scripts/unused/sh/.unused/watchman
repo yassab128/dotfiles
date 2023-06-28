@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -efu
+
+while true; do
+	tail --quiet --lines=0 --follow=name "$1" |
+		head --lines=1
+	clear
+	cat "$1"
+done

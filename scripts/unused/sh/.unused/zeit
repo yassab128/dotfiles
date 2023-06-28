@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -efu
+
+exec /usr/bin/time \
+	-f '\n\n\t\t\t Zusammenfassung
+	\t\t\t executionTime %Us
+	\t\t\t elapsedTime: %es
+	\t\t\t cpuUsage: %P
+	\t\t\t maxRamUsage: %M
+	\t\t\t exitCode: %x\n' "$@"

@@ -1,0 +1,4 @@
+[Service]
+ExecStart=/home/pactrag/Programme/usw/suckless/clear_status_bar/clear_status_bar
+# Do NOT omit this, it is important.
+# Environment = DISPLAY = :0

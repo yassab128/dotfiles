@@ -1,0 +1,8 @@
+[Service]
+ExecStart=/home/pactrag/Programme/usw/shell/termux_battery_level.pl
+# Environment = DISPLAY = :0
+
+; not required since the timer is enabled now
+; [Install]
+; WantedBy = default.target
+; WantedBy = multi-user.target

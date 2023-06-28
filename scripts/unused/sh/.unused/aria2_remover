@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -efu
+
+# kill aria2
+# sigkills are bad; data loses might happen
+# pkill -9 -x aria2c && printf 'started\n'
+pkill -x aria2c && printf 'started\n'
+
+eval "$(
+	find "${HOME}/Downloads" -maxdepth 1 -name '*.aria2' | awk '
+	BEGIN {
+		ORS = " "
+		print "rm -ir"
+	}
+
+	{
+		# rm will mess up without the quotes
+		print "\47" $0 "\47"
+		sub(/\.aria2/, "", $0)
+		print "\47" $0 "\47"
+	}
+
+	END {
+		print "\n"
+	}
+	'
+)"
+
+# get rid of any download progress, basically emptying aria2_session.txt
+truncate -s 0 \
+	"${HOME}/Programme/usw/bakup/user/dumpster/aria2_sessions.txt"
+
+# get rid of empty directories, why?
+# find . -maxdepth 1 -type d -empty -delete
+
+# start aria2c
+aria2c >/tmp/ariaParser.txt 2>&1 &

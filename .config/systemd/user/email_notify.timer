@@ -1,0 +1,9 @@
+[Unit]
+After = graphical.target network.target
+
+[Timer]
+# Every 15 minutes
+OnCalendar = *:0/15
+
+[Install]
+WantedBy = timers.target

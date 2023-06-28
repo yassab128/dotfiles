@@ -1,0 +1,63 @@
+#!/usr/bin/gawk -f
+
+# I have no desire to finish this script. I have to wait until iwd maintainers
+# fix a bug where some devices keep showing in `iwctl station wlan0
+# get-networks` even after running `iwctl station wlan0 scan` multiple times.
+# Why is it frustring? Well, following this script, iwd may connect to a network
+# that no longer exist, therefore cutting the current connection in order to
+# connect to a network that does not even exist. Worse, iwctl does not provide
+# any command line argument to check whether a specific network is available or
+# not i.e. something like this: `iwctl station wlan0 check SSID`. iwd is not
+# automation-friendly for the time being, I wish the situation will change
+# somewhere in the future. The best way right now to deal with iwd
+# inconsistencies right now would be to fire up the terminal and typing commands
+# manually.
+
+BEGIN {
+
+	LINT = "fatal"
+	iwctl_cmd = "/usr/bin/iwctl known-networks list;"\
+				 "/usr/bin/iwctl station wlan0 scan;"\
+				 "exec /usr/bin/iwctl station wlan0 get-networks"
+
+	connect_to = ""
+	hyphenated_line = 0
+	while ((iwctl_cmd | getline) > 0) {
+		if (/-----------------------------------/) {
+			++hyphenated_line
+		} else if (/^$/) {
+			--hyphenated_line
+		} else if (hyphenated_line == 2) {
+			sub(/^[[:space:]]+/, "")
+			sub(/[[:space:]].*/, "")
+			known_networks[$0] = ""
+		} else if (hyphenated_line == 3) {
+			sub(/^[[:space:]]{4}/, "")
+			sub(/[[:space:]].*/, "")
+			if ($0 in known_networks) {
+				connect_to = $0
+				break
+			}
+		}
+	}
+	close(iwctl_cmd)
+
+	if (!(connect_to)) {
+		print "Nothing to connect to."
+		exit
+	}
+
+	iwctl_cmd = "/usr/bin/iwctl station wlan0 connect " connect_to
+
+	system(iwctl_cmd)
+
+	iwctl_cmd = "/usr/bin/iwctl station wlan0 show"
+	while ((iwctl_cmd | getline) > 0) {
+		if (sub(/[[:space:]]+Connected network[[:space:]]+/, "")) {
+			current_network = $0
+			break
+		}
+	}
+	print "Currently connected to: " current_network
+
+}

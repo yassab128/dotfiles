@@ -1,0 +1,92 @@
+#!/bin/sh
+
+order_option='@val_num_desc'
+sort_option='size'
+while getopts 'Iclmps' option; do
+	case "${option}" in
+	c)
+		sort_option='contents'
+		;;
+	l)
+		sort_option='last_modification'
+		;;
+	m)
+		sort_option='mime_type'
+		;;
+	I)
+		order_option='@ind_str_asc'
+		;;
+	p)
+		sort_option='permission'
+		;;
+	*)
+		printf 'Illegal option!\n'
+		exit
+		;;
+	esac
+done
+
+/usr/bin/gawk '
+BEGIN {
+	LINT = "fatal"
+	FS = "\t"
+	i_length = 0
+	mime_type_length = 0
+}
+
+function human_readable_size(file_size)
+{
+	return file_size < 1024 ? file_size "K" :
+	file_size < 1048576 ? sprintf("%.2fM", file_size / 1024) :
+	sprintf("%.2fG", file_size / 1048576)
+}
+
+{
+	if (/^\t1/) {
+		permission[$3] = $5
+		# Round the fractional part of seconds.
+		$7 = sprintf("%02d", $7)
+		last_modification[$3] = $6 $7
+		contents[$3] = /\t1d/ ? 0 : ""
+
+		string_length = length($3)
+		if (string_length > i_length) {
+			i_length = string_length
+		}
+	} else if (/^\t\t/) {
+		++contents[$3]
+	} else if (/^[0-9.]+[KMGTPEZY]?\t/) {
+		size[$2] = $1
+	} else if (sub(/^ +/, "", $2)) {
+		string_length = length($2)
+		if (string_length > mime_type_length) {
+			mime_type_length = string_length
+		}
+		mime_type[$1] = $2
+	}
+}
+
+END {
+	PROCINFO["sorted_in"] = "'"${order_option}"'"
+	for (i in '"${sort_option}"') {
+		file = i
+		human_size = human_readable_size(size[i])
+		sub(/^\.\//, "", file)
+
+		printf "%-*s %-7s %-6s %-15s %-*s %s\n", i_length, file,
+		human_size,
+		permission[i],
+		last_modification[i],
+		mime_type_length, mime_type[i],
+		contents[i]
+	}
+}
+' <<EOF
+$(
+/usr/bin/find . -mindepth 1 -maxdepth 2 \
+\( -path '\.\/*\/*' -printf '\t\t%h\n' \) -o \
+\( -printf '\t%d%y\t%p\t%h\t%m\t%TY%Tm%TdT%TH%TM\t%TS\n'\
+	-exec /usr/bin/du --apparent-size --summarize '{}' \+\
+	-exec /usr/bin/file --separator='	' --mime-type '{}' \+ \)
+)
+EOF

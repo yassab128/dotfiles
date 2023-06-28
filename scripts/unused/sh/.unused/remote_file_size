@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -efu
+
+exec curl --silent --head "$1" |
+	awk '
+	/content-length/ {
+		print $2 / 1048576 "M"
+	}
+'

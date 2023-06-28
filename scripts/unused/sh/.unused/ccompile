@@ -1,0 +1,56 @@
+#!/bin/sh
+
+set -efu
+
+clear; tmux clear-history
+printf '\n'
+
+file="$1"
+DIR="${DIR-}"
+if [ -n "${DIR}" ]; then
+	DIR="${DIR%/}"
+	DIR="${DIR}/"
+fi
+shift
+
+file_without_extension="${DIR}${file%%.c}"
+
+is_processing_linkers=true
+binary_args=''
+linkers=''
+
+for arg in "$@"; do
+	if [ "${arg}" = "--" ]; then
+		is_processing_linkers=false
+	elif "${is_processing_linkers}"; then
+		linkers="${linkers} ${arg}"
+	else
+		binary_args="${binary_args} ${arg}"
+	fi
+done
+
+binary_args="${binary_args## }"
+
+# mem_check_args='-fsanitize=memory,undefined -fsanitize-memory-track-origins'
+mem_check_args='-fsanitize=leak,address,undefined'
+# mem_check_args='-fsanitize=memory'
+
+clang -std=c11 -Weverything -Wno-unsequenced -Wno-disabled-macro-expansion \
+	-Wno-format-non-iso -Wno-gnu-case-range -g ${mem_check_args} \
+	-Wno-implicit-fallthrough -D_POSIX_C_SOURCE=200809L \
+	-fno-omit-frame-pointer -o"${file_without_extension}" \
+	"${file}" ${linkers}
+
+printf '||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||'\
+'|||||||||||||||\n'
+clang-tidy --checks='
+*, -llvmlibc-restrict-system-libc-headers,
+-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,
+-cppcoreguidelines-avoid-non-const-global-variables,
+-cert-err34-c,
+-clang-diagnostic-unsequenced,
+-readability-function-cognitive-complexity,
+-misc-no-recursion
+' "${file}" -- ${linkers} 2>/dev/null
+
+command "${file_without_extension}" ${binary_args}

@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -efu
+
+# `awk` will ouput a warning unless both the arrays: files and directories
+# have an integer as index.
+awk '
+BEGIN {
+	a = 0
+	b = 0
+}
+
+{
+	if ($0 ~ /\/$/) {
+		directories[++a] = $0
+	} else {
+		files[++b] = $0
+	}
+}
+
+END {
+	print "\033[1;33mdirectories\033[0m"
+	for (i = 1; i <= a; ++i) {
+		print directories[i]
+	}
+	print "\033[1;33mfiles\033[0m"
+	for (i = 1; i <= b; ++i) {
+		print files[i]
+	}
+}
+
+' <<-EOF
+	$(
+		find "${PWD}" -iname "*$1*" \
+			-exec ls -1 --color --directory \
+			--indicator-style=slash '{}' \+ 2>/dev/null
+	)
+EOF

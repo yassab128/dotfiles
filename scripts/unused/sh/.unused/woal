@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# taken from https://github.com/dmi3/bin/blob/master/wa
+id=AKL23E-U2WY9RH587
+curl --silent --write-out '\n' \
+	"https://api.wolframalpha.com/v1/result?appid=${id}&units=metric&" \
+	--data-urlencode "i=$*"

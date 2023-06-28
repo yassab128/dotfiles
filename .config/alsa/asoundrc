@@ -1,0 +1,13 @@
+# 1 is the right one and not the default 0 (check `cat /proc/asound/cards`)
+# both the next lines are needed
+
+# Required by dwm
+# defaults.ctl.card 1
+
+# Required by ffplay
+# defaults.pcm.card 1
+
+defaults {
+	pcm.card 1
+	ctl.card 1
+}

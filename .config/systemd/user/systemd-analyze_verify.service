@@ -1,0 +1,2 @@
+[Service]
+ExecStart=%h/Programme/usw/shell/systemd-analyze_verify.sh

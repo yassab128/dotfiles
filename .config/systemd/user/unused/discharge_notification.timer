@@ -1,0 +1,9 @@
+[Unit]
+After = graphical.target
+
+[Timer]
+# Refresh the wallpaper every minute.
+OnCalendar = *:0/01
+
+[Install]
+WantedBy = timers.target

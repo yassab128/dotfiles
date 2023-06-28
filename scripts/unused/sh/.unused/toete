@@ -1,0 +1,112 @@
+#!/bin/sh
+
+set -efu
+
+if [ "$(uname -m)" = 'x86_64' ]; then
+	export PATH=/usr/bin/
+else
+	export PATH=/data/data/com.termux/files/usr/bin/
+fi
+
+sortBy='rss'
+use_pager=0
+while getopts 'Pckmpr' option; do
+	case "${option}" in
+	P)
+		use_pager=1
+		;;
+	k)
+		sortBy='comm'
+		;;
+	p)
+		sortBy='pcpu'
+		;;
+	r)
+		sortBy='rss'
+		;;
+	m)
+		sortBy='pmem'
+		;;
+	*) ;;
+
+	esac
+done
+
+# separated from awk since su gets messed up inside eval
+psCommand="$(ps -eo pcpu=,rss=,pmem=,comm= --sort=rss)"
+# the sole purpose of the next awk command is to split the arguments using
+# a comma while taking care of the commands that have spaces in them
+
+output="$(
+	gawk '
+BEGIN {
+	PROCINFO["sorted_in"] = "@val_num_desc"
+}
+
+{
+	command = $0
+	sub(/^\s*\S+\s+\S+\s+\S+\s+/, "", command)
+	if (command in comm){
+		++comm[command]
+	} else {
+		comm[command] = 1
+	}
+
+	if (command in rss) {
+		rss[command] += $2
+	} else {
+		rss[command] = $2
+	}
+
+	if (command in pcpu) {
+		pcpu[command] += $1
+	} else {
+		pcpu[command] = $1
+	}
+
+	if (command in pmem) {
+		pmem[command] += $3
+	} else {
+		pmem[command] = $3
+	}
+}
+
+END {
+	# cpuPercentageUsed = 0
+	# memoryPercentageUsed = 0
+	for (i in '"${sortBy}"') {
+		printf "%.30s | %2s | %3d%% | %3d%% | %.2fM\n",
+		i " ...........................",
+		comm[i], pcpu[i], pmem[i], rss[i] / 1024
+		# cpuPercentageUsed += pcpu[i]
+		# memoryPercentageUsed += pmem[i]
+	}
+	# printf "ESTIMATED TOTAL CPU USAGE: %s%%\n", cpuPercentageUsed
+	# printf "ESTIMATED TOTAL MEMORY USAGE: %s%%\n", memoryPercentageUsed
+}
+' <<-EOF
+		${psCommand}
+	EOF
+)"
+
+if [ "${use_pager}" -eq 1 ]; then
+	less <<-EOF
+		${output}
+	EOF
+	exit
+fi
+
+fzf_output="$(
+	fzf --reverse --header="PRESS ENTER TO KILL" --nth="..-6" <<-EOF
+		${output}
+	EOF
+)"
+
+eval "$(
+	sed '
+s/^[[:space:]]/pkill --exact \o47/
+s/[[:space:]]\..*/\o47/
+' <<-EOF
+		${fzf_output}
+	EOF
+)"

@@ -1,0 +1,16 @@
+# [Unit]
+# ConditionPathExists = /sys/class/power_supply/AC/online
+#
+[Path]
+# PathChanged = /sys/class/power_supply/BAT0/capacity
+PathModified = /sys/class/power_supply/AC/uevent
+PathChanged = /sys/class/power_supply/AC/uevent
+
+PathModified = /sys/class/power_supply/AC
+PathChanged = /sys/class/power_supply/AC
+
+PathChanged = %h/blyat
+
+[Install]
+WantedBy=default.target
+# PathModified = %h/cyka

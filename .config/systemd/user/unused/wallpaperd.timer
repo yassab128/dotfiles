@@ -1,0 +1,13 @@
+[Unit]
+After=graphical.target network.target
+# BindsTo = graphical.target
+# PartOf = graphical.target
+
+[Timer]
+# Start the script right after the GUI shows up.
+OnBootSec=0
+# Refresh the wallpaper every 6 hours.
+OnCalendar=00/6:00:00
+
+[Install]
+WantedBy=timers.target

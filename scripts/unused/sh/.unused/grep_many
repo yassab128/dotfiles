@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -efu
+
+# never use double quotes unless you want to expand the variables inside them
+# filenames with '!' inside them for example will create troubles if they 
+# were to be delmited with anything other than single quotes
+eval "$(
+	awk "
+{
+	printf \"grep -rl '%s' .\", \$1
+	for (i = 2; i <= NF; ++i) {
+		printf \" | xargs grep -l '%s'\", \$i
+	}
+	printf \"\n\"
+}
+" <<-EOF
+		$@
+	EOF
+)"

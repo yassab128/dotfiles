@@ -1,0 +1,18 @@
+#!/bin/sh
+
+processes="$(ps -eo pid=,comm= --sort=comm)"
+
+/usr/bin/awk --posix '
+{
+	file = "/proc/"$1"/net/dev"
+
+	while ((getline < file) > 0) {
+		if ($0 ~ /^wlp/) {
+			print $2, $10
+		}
+	}
+	close(file)
+}
+' <<EOF
+	$processes
+EOF

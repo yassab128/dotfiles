@@ -1,0 +1,95 @@
+#!/bin/sh
+
+export POSIXLY_CORRECT=1
+
+set -efu
+
+url="$1"
+
+# get the name of the album from the url if it is a valid url
+albumName="$(
+	awk '
+BEGIN {
+	FS = "/album/"
+}
+
+{
+	if ($1 != "https://downloads.khinsider.com/game-soundtracks") {
+		exit 1
+	}
+	print $2
+}
+
+' <<-EOF || printf "Invalid URL\n" && exit
+		${url}
+	EOF
+)"
+
+# the downloaded stuff will be stored in a directory carrying
+# the album name in the working current directory
+! [ -d "${albumName}" ] && mkdir "${albumName}"
+cd "${albumName}" || exit
+
+# the next operation goes like this: curl > awk > curl > awk > curl
+# awk can replaced with a combination of `grep`, `sed` and `xargs` but
+# it is more elegant this way
+eval "$(
+	# `eval` is better than piping to `sh` because `eval` is a shell builtin
+	# and it does not invoke a new shell
+	eval "$(
+
+		# the first awk will extract each track`s url
+		curl --silent "${url}" | awk '
+		BEGIN {
+			FS = "[<\">]"
+			ORS = " "
+
+			# without parallel, the operation will be much, much slower
+			print "curl --silent --parallel"
+		}
+
+		/^\t \t/ {
+			print "\47https://downloads.khinsider.com" $7 "\47"
+		}
+
+		END {
+			printf "\n"
+		}
+		'
+	)" |
+
+		# the second awk will extract the direct link of each track
+		# in order to pass them to curl
+		awk '
+		BEGIN {
+			FS = "\""
+			ORS = " "
+			# `--continue-at -` makes `curl` resume incomplete downloads
+			# if run a second time
+			print "curl --parallel --continue-at -"
+		}
+
+		/^\t<p><a/ {
+			n = split($4, url, "/")
+			# url[n] corresponds to the last item in the array: url
+			filename = url[n]
+
+			# use awk as poor man`s urldecode
+			# see: https://man.archlinux.org/man/ascii.7
+			for (i = 32; i < 48; ++i) {
+				 gsub(sprintf("%%%x", i), sprintf("%c", i), filename);
+			} for (i = 58; i < 65; ++i) {
+				 gsub(sprintf("%%%x", i), sprintf("%c", i), filename);
+			} for (i = 91; i < 97; ++i) {
+				 gsub(sprintf("%%%x", i), sprintf("%c", i), filename);
+			} for (i = 123; i < 127; ++i) {
+				 gsub(sprintf("%%%x", i), sprintf("%c", i), filename);
+			}
+			print "--output \"" filename "\"", "\47" $4 "\47"
+		}
+
+		END {
+			printf "\n"
+		}
+		'
+)"

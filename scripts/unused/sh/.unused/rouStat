@@ -1,0 +1,112 @@
+#!/bin/sh
+
+set -efu
+
+# although I do not seem to need it , a token can be taked from \
+# http://192.168.1.1/api/webserver/token
+
+# USEFUL
+curl --silent http://192.168.1.1/api/monitoring/month_statistics
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/monitoring/traffic-statistics
+printf '\n##################################################################\n'
+
+# mildly useful
+curl --silent http://192.168.1.1/api/cradle/status-info
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/device/basic_information
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/device/device-feature-switch
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/dialup/connection
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/dialup/mobile-dataswitch
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/global/module-switch
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/language/current-language
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/monitoring/check-notifications
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/monitoring/converged-status
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/monitoring/start_date
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/net/current-plmn
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/pin/simlock
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/pin/status
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/redirection/homepage
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/user/remind
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/user/state-login
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/api/wlan/wifi-feature-switch
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/deviceinformation/config.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/dialup/connectmode.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/global/config.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/global/languagelist.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/global/net-type.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/pcassistant/config.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/sms/config.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/webuicfg/config.xml
+printf '\n##################################################################\n'
+curl --silent http://192.168.1.1/config/wifi/countryChannel.xml
+printf '\n##################################################################\n'
+# this one works, but have no idea what it does
+curl --silent http://192.168.1.1/api/device/usb-tethering-switch
+
+# Either not work or needs POST request
+#curl --silent -X GET http://192.168.1.1/api/device/autorun-version
+#curl --silent -X GET http://192.168.1.1/api/device/control
+#curl --silent -X GET http://192.168.1.1/api/device/information
+#curl --silent -X GET http://192.168.1.1/api/device/signal
+#curl --silent -X GET http://192.168.1.1/api/dhcp/settings
+#curl --silent -X GET http://192.168.1.1/api/dhcp/static-addr-info
+#curl --silent -X GET http://192.168.1.1/api/dialup/dial
+#curl --silent -X GET http://192.168.1.1/api/dialup/profiles
+#curl --silent -X GET http://192.168.1.1/api/host/info
+#curl --silent -X GET http://192.168.1.1/api/lan/HostInfo
+#curl --silent -X GET http://192.168.1.1/api/monitoring/status
+#curl --silent -X GET http://192.168.1.1/api/net/net-mode
+#curl --silent -X GET http://192.168.1.1/api/net/network
+#curl --silent -X GET http://192.168.1.1/api/net/register
+#curl --silent -X GET http://192.168.1.1/api/online-update/upgrade-messagebox
+#curl --silent -X GET http://192.168.1.1/api/security/bridgemode
+#curl --silent -X GET http://192.168.1.1/api/security/dmz
+#curl --silent -X GET http://192.168.1.1/api/security/firewall-switch
+#curl --silent -X GET http://192.168.1.1/api/security/lan-ip-filter
+#curl --silent -X GET http://192.168.1.1/api/security/nat
+#curl --silent -X GET http://192.168.1.1/api/security/sip
+#curl --silent -X GET http://192.168.1.1/api/security/upnp
+#curl --silent -X GET http://192.168.1.1/api/sms/config
+#curl --silent -X GET http://192.168.1.1/api/sms/get-cbsnewslist
+#curl --silent -X GET http://192.168.1.1/api/sms/sms-list
+#curl --silent -X GET http://192.168.1.1/api/user/login
+#curl --silent -X GET http://192.168.1.1/api/user/logout
+#curl --silent -X GET http://192.168.1.1/api/user/session
+#curl --silent -X GET http://192.168.1.1/api/ussd/get
+#curl --silent -X GET http://192.168.1.1/api/webserver/token
+#curl --silent -X GET http://192.168.1.1/api/wlan/basic-settings
+#curl --silent -X GET http://192.168.1.1/api/wlan/handover-setting
+#curl --silent -X GET http://192.168.1.1/api/wlan/host-list
+#curl --silent -X GET http://192.168.1.1/api/wlan/mac-filter
+#curl --silent -X GET http://192.168.1.1/api/wlan/multi-security-settings
+#curl --silent -X GET http://192.168.1.1/api/wlan/multi-switch-settings
+#curl --silent -X GET http://192.168.1.1/api/wlan/security-settings
+#curl --silent -X GET http://192.168.1.1/api/wlan/station-information
+#curl --silent -X GET http://192.168.1.1/api/wlan/wps
+
+#/api/device/control reboots the device
+#/api/host/info  	Web-admin client information for the router

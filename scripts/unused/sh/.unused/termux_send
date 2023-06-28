@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -efu
+
+# choice="$(
+#	printf "/data/data/com.termux/files/home/
+# /storage/emulated/0/Download/\n" | fzf
+# )"
+choice='/data/data/com.termux/files/home/'
+
+
+
+XZ_OPT=-9 tar cJf /dev/stdout "$@" | ssh -C -c aes128-ctr \
+	-p 8022 user@"${TERMUX-}" "tar xJvf /dev/stdin -C ${choice}"

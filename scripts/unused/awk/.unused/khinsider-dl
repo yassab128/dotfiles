@@ -1,0 +1,65 @@
+#!/usr/bin/env -S awk -E
+
+function usage()
+{
+	print "Usage: khinsider-dl [ALBUM NAME] [DIRECTORY]"
+	exit
+}
+
+function decode(string)
+{
+	for (i = 32; i < 48; ++i) {
+		 gsub(sprintf("%%%x", i), sprintf("%c", i), string);
+	} for (i = 58; i < 65; ++i) {
+		 gsub(sprintf("%%%x", i), sprintf("%c", i), string);
+	} for (i = 91; i < 97; ++i) {
+		 gsub(sprintf("%%%x", i), sprintf("%c", i), string);
+	} for (i = 123; i < 127; ++i) {
+		 gsub(sprintf("%%%x", i), sprintf("%c", i), string);
+	}
+	return string
+}
+
+BEGIN {
+	LINT = "fatal"
+	if (ARGC != 3) {
+		usage()
+	}
+	url = "https://downloads.khinsider.com/game-soundtracks/album/" ARGV[1];
+	download_directory = ARGV[2]
+	if (download_directory !~ /\/$/) {
+		sub(/$/, "/", download_directory)
+	}
+
+	curl_command = "curl --silent " url
+	while ((curl_command | getline) > 0) {
+		if (sub(/^\t \t<td class="clickable-row"><a href="/,
+				"https://downloads.khinsider.com")) {
+
+			sub(/".*/, "")
+			songs_urls[$0] = ""
+		}
+	}
+	close(curl_command)
+
+	curl_command = "curl --silent --parallel"
+	for (i in songs_urls) {
+		curl_command = curl_command " '" i "'"
+	}
+
+	download_command = "curl --parallel --continue-at -"
+	while ((curl_command | getline) > 0) {
+		if (sub(/	<p><a style="color: #21363f;" href="/, "")) {
+			sub(/".*/, "")
+			filename_encoded = $0
+			sub(/.*\//, "", filename_encoded)
+			filename = download_directory decode(filename_encoded)
+			download_command = download_command " --output \"" \
+				filename "\" '" $0 "'"
+		}
+	}
+	close(curl_command)
+
+	system(download_command)
+}
+# vi:ft=awk noet

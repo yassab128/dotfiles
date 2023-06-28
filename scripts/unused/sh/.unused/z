@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -efu
+
+# run commands on TERMUX
+exec ssh -q -c aes128-ctr user@"${TERMUX-}" -p 8022 "$@"

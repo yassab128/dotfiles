@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -efu
+
+# this script shows files modification time
+
+# the time is in minutes
+    find . -mmin -"$1" -type f -exec ls -halt {} + | ${PAGER-less}

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+set -efu
+
+eval "$(
+	find . -maxdepth "$1" -type f -exec sha1sum {} \+ |
+		awk '
+BEGIN {
+	ORS = " "
+}
+
+{
+	if ($1 in hash) {
+		hash[$1] = hash[$1] " " $2
+	} else {
+		hash[$1] = $2
+	}
+}
+
+END {
+	# rm command first
+	print "rm -i"
+	# check the array with the hashes
+	for (i in hash) {
+		# split the string containing the files to array by FS (space)
+		n = split(hash[i], array, FS)
+		if (n == 1) {
+			# if the length(array) == 1 skip to the next iteration (which means
+			# the file is not a duplicate)
+			continue
+		}
+		# a variable for finding the shortest filename
+		shortestIndex = 1
+		for (j = 1; j <= n; ++j) {
+			# test whether is shortestIndex indeed matches the shortest 
+			# filename
+			if (length(array[j]) < length(array[shortestIndex])) {
+				shortestIndex = j
+			}
+		}
+		# when found, delete it
+		delete array[shortestIndex]
+		# and print the rest, so that they can be removed
+		for (j in array){
+			print array[j]
+		}
+	}
+	# add a newline (ORS is set to space)
+	print "\n"
+}
+'
+)"

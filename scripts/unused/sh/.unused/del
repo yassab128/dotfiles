@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -efu
+
+plug()
+{
+	printf "\033[32m"
+	file "$@"
+	printf "\033[35m"
+	du -ah "$@"
+	printf "\033[31m"
+	mv --interactive --verbose -b -- "$@" tmp/recycle_bin
+	printf "\033[0m"
+}
+
+plug "$@"
+
+#du -sh "$@"
+#mkdir -p "${TMPDIR:-/tmp}/recycle_bin" &&
+#mv -i -v -b -- "$@" "${TMPDIR:-/tmp}/recycle_bin"

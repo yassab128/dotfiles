@@ -1,0 +1,65 @@
+#!/usr/bin/gawk -E
+
+function usage()
+{
+	script_path = ENVIRON["_"]
+	print "Usage: " script_path " [123]\n"\
+		"\to\tsort by occurances count.\n"\
+		"\tc\tsort by CPU usage.\n"\
+		"\tr\tsort by RSS usage.\n"\
+		"Example: `" script_path " c'"
+	exit
+}
+
+function add_to_array(arr, value)
+{
+	if ($0 in arr) {
+		arr[$0] += value
+	} else {
+		arr[$0] = value
+	}
+}
+
+function check_line_length(line_length)
+{
+	if (line_length > max_comm_length) {
+		max_comm_length = line_length
+	}
+}
+
+BEGIN {
+	LINT = "fatal"
+	cmd = "ps -eo pcpu=,rss=,comm="
+	max_comm_length = 0
+	while ((cmd | getline) > 0) {
+		pcpu = $1
+		rss = $2
+		$1 = ""
+		$2 = ""
+		sub(/^ +/, "", $0)
+		check_line_length(length($0))
+		add_to_array(occurances, 1)
+		add_to_array(pcpus, pcpu)
+		add_to_array(rsss, rss)
+	}
+	close(cmd)
+
+	if (ARGC != 2) {
+		usage()
+	} else if (ARGV[1] == "o") {
+		n = asorti(occurances, sorted, "@val_num_asc")
+	} else if (ARGV[1] == "c") {
+		n = asorti(pcpus, sorted, "@val_num_asc")
+	} else if (ARGV[1] == "r") {
+		n = asorti(rsss, sorted, "@val_num_asc")
+	} else {
+		usage()
+	}
+
+	for (i = 1; i <= n; ++i) {
+		j = sorted[i]
+		printf "%s | %-*s\t%s %%\t%.1f MiB\n",
+			occurances[j], max_comm_length, j, pcpus[j],
+			rsss[j] / 1024
+	}
+}

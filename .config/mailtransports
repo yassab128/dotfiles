@@ -1,0 +1,13 @@
+[General]
+default-transport=89551151
+
+[Transport 89551151]
+auth=true
+authtype=XOAUTH2
+encryption=SSL
+host=smtp.gmail.com
+id=89551151
+name=Google Mail (yassinesabraoui128)
+port=465
+storepass=true
+user=yassinesabraoui128@gmail.com

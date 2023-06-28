@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -efu
+PATH=/usr/bin/
+
+# $$ is the current shell's PID
+# /dev/stdin is equivalent to /dev/fd/0
+# /dev/stdout is equivalent to /dev/fd/1
+# /dev/stderr is equivalent to /dev/fd/2
+# output="$(cat /dev/stdin)"
+
+# taken from https://www.youtube.com/watch?v=kw2mnwhptjw
+# It works
+exec xterm -class 'fzfMenu' \
+	-e "fzf $* < /proc/$$/fd/0 > /proc/$$/fd/1"
+
+# This also works and I prefer to the one above since I actually wrote it
+# and understand it
+# output="$(/usr/bin/cat /dev/stdin)"
+# /usr/local/bin/st -c 'fzfMenu' -e /bin/sh -c "
+# fzf<<-EOF > /proc/$$/fd/1
+# 	${output}
+# EOF
+# "

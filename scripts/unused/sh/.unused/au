@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for i in "$@"; do
+	printf "\n%s\n" "${i}"
+	ffplay -autoexit -nodisp -loglevel quiet "${i}"
+done

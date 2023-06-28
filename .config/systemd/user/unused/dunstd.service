@@ -1,0 +1,12 @@
+[Unit]
+PartOf = graphical.target
+
+[Service]
+Environment = DISPLAY = :0
+ExecStart = /usr/bin/dunst
+TimeoutStartSec = 2min
+Restart = always
+RestartSec = 2s
+
+[Install]
+WantedBy = default.target

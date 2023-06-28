@@ -1,0 +1,11 @@
+[Unit]
+After = graphical.target
+# PartOf = graphical.target
+
+[Service]
+ExecStart = /usr/bin/redshift -O 3500 -m randr
+Restart = on-failure
+Environment = DISPLAY = :0
+
+[Install]
+WantedBy = graphical.target

@@ -1,0 +1,71 @@
+#!/bin/sh
+
+set -efu
+
+# set -e Exit immediately if a command exits with a non-zero status
+# set -u Treat unset variables as an error when substituting
+
+outputFile=/tmp/m.txt
+
+isValidPath() {
+	if [ ! -d "$1" ] && [ ! -f "$1" ]; then
+		printf 'not a valid path\n'
+		exit 1
+	fi
+}
+
+add() {
+	shift
+	for var in "$@"; do
+		isValidPath "${var}"
+		printf '%s\n' "$(realpath "${var}")" >>"${outputFile}"
+	done
+}
+
+while getopts 'a:o:cmpy' option; do
+
+	case "${option}" in
+	a)
+		add "$@"
+		sort --unique "${outputFile}"
+		printf 'successfully added\n'
+		exit
+		;;
+	o)
+		truncate --size=0 "${outputFile}"
+		add "$@"
+		printf 'successfully overwritten\n'
+		exit
+		;;
+	c)
+		xargs --arg-file="${outputFile}" --delimiter='\n' \
+			cp --recursive --target-directory=./.
+		printf 'copied successfully\n'
+		exit
+		;;
+	m)
+		xargs --arg-file="${outputFile}" --delimiter='\n' \
+			mv --target-directory=./.
+		truncate --size=0 "${outputFile}"
+		printf '\e[1;31mmoved\e[0m successfully\n'
+		exit
+		;;
+	p)
+		cat "${outputFile}"
+		exit
+		;;
+	y)
+		xsel -ib <<-EOF
+			$(cat "${outputFile}")
+		EOF
+		printf 'path(s) yanked successfully\n'
+		exit
+		;;
+
+	*)
+		printf 'Illegal option!\n'
+		exit 1
+		;;
+
+	esac
+done

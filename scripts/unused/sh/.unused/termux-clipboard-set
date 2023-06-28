@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -efu
+
+exec ssh -c aes128-ctr user@"${TERMUX-}" -p 8022 "termux-clipboard-set $*"

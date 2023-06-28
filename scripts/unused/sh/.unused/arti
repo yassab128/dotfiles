@@ -1,0 +1,45 @@
+#!/bin/sh
+
+set -efu
+
+usage() {
+	printf 'usage: arti -[df]\n'
+	exit
+}
+
+german() {
+	exec fzf --nth="2" --exact \
+		--bind="enter:execute(
+		${HOME}/Programme/usw/shell/wiktionary_de_lookup.sh {-1}
+		)" --preview '
+	curl --silent dict://dict.org/d:{-1}:fd-deu-eng |
+		grep --invert-match "^[0-9]"' \
+		<"${HOME}/Programme/usw/Artikel/deutscheArtikel.txt"
+}
+
+french() {
+	exec fzf --nth="1" --exact --preview '
+	curl --silent dict://dict.org/d:{-1}:fd-fra-eng |
+		grep --invert-match "^[0-9]"' \
+		<"${HOME}/Programme/usw/Artikel/franzoesischeArtikel.txt"
+}
+
+while getopts 'df' option; do
+	case "${option}" in
+	d)
+		language="german"
+		;;
+	f)
+		language="french"
+		;;
+	*)
+		# ext if an unsupported flag is given
+		printf 'Illegal option!\n'
+		exit
+		;;
+	esac
+done
+
+[ $# -eq 0 ] && usage
+
+"${language}"

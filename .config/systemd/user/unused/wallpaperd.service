@@ -1,0 +1,4 @@
+[Service]
+ExecStart=/home/pactrag/Programme/usw/AWK/wallpaper.awk
+# Do NOT omit this, it is important.
+# Environment = DISPLAY = :0

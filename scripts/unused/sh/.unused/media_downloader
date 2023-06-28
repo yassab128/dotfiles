@@ -1,0 +1,48 @@
+#!/bin/sh
+
+set -efu
+
+# shellcheck source=/dev/null
+
+# for termux
+if [ -z "${XDG_MUSIC_DIR}" ] || [ -z "${XDG_VIDEOS_DIR}" ]; then
+	XDG_MUSIC_DIR=/storage/emulated/0/Music
+	XDG_VIDEOS_DIR=/storage/emulated/0/Videos
+fi
+
+choice="$(printf 'music\nvideo\n' | fzf)"
+case ${choice} in
+music)
+	exec youtube-dl --no-warnings --no-continue \
+		-o "${XDG_MUSIC_DIR}/%(title)s.%(ext)s" \
+		-f 'bestaudio[ext=m4a]' \
+		--embed-thumbnail \
+		--add-metadata \
+		--restrict-filenames \
+		"$1"
+	;;
+
+video)
+	formats="$(youtube-dl --no-warnings --list-formats "$1" | awk '
+		BEGIN {
+			FS = "[ x]+"
+			pixelsHeight = 0
+		}
+		NR > 7 {
+			if ($4 > pixelsHeight){
+				print $4
+				pixelsHeight = $4
+			}
+	}
+	' | fzf)"
+
+	exec youtube-dl --no-warnings --no-continue \
+		-o "${XDG_VIDEOS_DIR}/%(title)s.%(ext)s" \
+		-f "bestvideo[ext=mp4][height<=${formats}]+bestaudio[ext=m4a]/best" \
+		--add-metadata \
+		--restrict-filenames \
+		"$1"
+	;;
+*) ;;
+
+esac

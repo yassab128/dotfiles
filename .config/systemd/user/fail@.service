@@ -1,0 +1,2 @@
+[Service]
+ExecStart = %h/.local/bin/notify '%f.service has failed' 0 10000

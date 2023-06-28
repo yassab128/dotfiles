@@ -1,0 +1,8 @@
+#!/bin/sh
+
+output="$(
+	printf '\n'
+	cat /dev/stdin
+)"
+# the default delay is 12ms, that is too slow if $output is big enough
+xdotool type --delay 0 "${output}"

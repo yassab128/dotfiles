@@ -1,0 +1,5 @@
+[Added Associations]
+audio/x-mod=org.kde.kate.desktop;
+
+[Default Applications]
+audio/x-mod=org.kde.kate.desktop;

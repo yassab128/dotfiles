@@ -1,0 +1,12 @@
+[Unit]
+After = graphical.target
+# BindsTo = graphical.target
+PartOf = graphical.target
+
+[Service]
+ExecStart = /home/pactrag/Programme/usw/c_language/clipboard.eil
+Restart = always
+Environment = DISPLAY = :0
+
+[Install]
+WantedBy = graphical.target

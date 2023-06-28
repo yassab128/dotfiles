@@ -1,0 +1,9 @@
+[Install]
+WantedBy = default.target
+
+[Service]
+ExecStart = /bin/sh -c 'cp /etc/nixos/configuration.nix /home/pactrag/Programme/usw/bakup/root'
+# ExecStart = /usr/bin/cp /etc/nixos/configuration.nix /home/pactrag/Programme/usw/bakup/root
+
+[Unit]
+RequiresMountsFor = /

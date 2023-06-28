@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -efu
+
+# systemctl list-units --no-pager --no-legend --user --type=service,timer | fzf
+systemctl list-units --no-pager --no-legend --type=service,timer,target | fzf
+# systemctl list-units --no-pager --no-legend --type=target | fzf
+
+# journalctl --boot --user --unit="$1" (e.g. "$1"=doesItAll)

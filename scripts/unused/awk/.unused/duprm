@@ -1,0 +1,74 @@
+#!/usr/bin/gawk -f
+
+# Only the original file(s) will be kept.
+
+BEGIN {
+	LINT = "fatal"
+
+	if (ARGC > 2) {
+		print "Only 1 argument is supported (optional)."
+		exit
+	} else if (ARGC == 2) {
+		depth = "-maxdepth " ARGV[1] " "
+	} else {
+		depth = ""
+	}
+
+	cmd = "find . " depth "-not -path '*/\\.*' -type f "\
+		"-printf '\\t%T@ %p\\n' -exec sha1sum '{}' \\+"
+	while ((cmd | getline) > 0) {
+		if (/^\t/) {
+			modification_date[$2] = $1
+			continue
+		}
+		if ($1 in hash) {
+			hash[$1] = hash[$1] " " $2
+		} else {
+			hash[$1] = $2
+		}
+	}
+	close(cmd)
+	n = 0
+	for (i in hash) {
+		if (hash[i] !~ / /) {
+			continue
+		}
+		n = split(hash[i], duplicate)
+		short_index = 1
+		for (i = 2; i < n; ++i) {
+			if (modification_date[duplicate[i]] < modification_date[duplicate[short_index]]) {
+				short_index = i
+			}
+		}
+		delete duplicate[short_index]
+		for (i in duplicate) {
+			remove[duplicate[i]] = ""
+		}
+	}
+
+	if (n == 0) {
+		print "No duplicates were found in the current path."
+		exit
+	}
+
+	print "The following file(s) will be removed:"
+	for (i in remove) {
+		print "\t" i
+	}
+
+	printf "Continue (y/n): "
+	getline < "/dev/stdin"
+	answer = $0
+	close("/dev/stdin")
+
+	if (answer != "y") {
+		print "No files were removed."
+		exit
+	}
+
+	cmd = "/usr/bin/rm"
+	for (i in remove) {
+		cmd = cmd " " i
+	}
+	system(cmd)
+}

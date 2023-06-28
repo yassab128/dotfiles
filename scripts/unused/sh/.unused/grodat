@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -efu
+
+find . -mount -type f -ls 2>/dev/null | sort -rnk7 |
+	head -20 | awk '
+	{
+		printf "%20d MB\t%s\n", ($7 / 1024) / 1024, $NF
+	}
+	'

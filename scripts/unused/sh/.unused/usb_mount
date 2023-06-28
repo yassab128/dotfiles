@@ -1,0 +1,44 @@
+#!/usr/bin/gawk -f
+
+# dmesg (too complicated and verbose)
+# lsblk, TRAN,RM,MOUNTPOINT,PATH,REV
+
+# The script is on par with usb_mount, just needs some testing, as I did not
+# have any USB sticks around when I wrote this script.
+
+BEGIN {
+	LINT = "fatal"
+
+	lsblk_cmd = "/usr/bin/lsblk --raw --output TRAN,MOUNTPOINT,PATH,MODEL,SIZE"
+
+	split("", mount_point)
+	flag = 0
+	while((lsblk_cmd | getline) > 0) {
+		if(/^[a-z]/) {
+			if (/^usb/) {
+				usb_name = $(NF - 1)
+				flag = 1
+			} else {
+				flag = 0
+			}
+		} else if (flag) {
+			partition = $1
+			sub(/^\/dev\//, "", partition)
+			partition = "/mnt/" usb_name "-" partition "-" $2
+			where2mount[$1] = partition
+		}
+	}
+	close(lsblk_cmd)
+
+	if (!(length(lsblk_cmd))) {
+		print "no device to mount"
+		exit
+	}
+
+	for (device in where2mount){
+		sh_cmd = "/usr/bin/su -c 'test -d "  where2mount[device]\
+		" || mkdir " where2mount[device] "; mount " device " "\
+		where2mount[device] "'"
+		system(sh_cmd)
+	}
+}

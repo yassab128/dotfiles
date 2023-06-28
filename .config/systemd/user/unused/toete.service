@@ -1,0 +1,17 @@
+; I do not know whether this service is really needed, since brave seem 
+; to start just fine, as long as you do not kill the display service 
+; or restart as root. Just avoid these and you will be fine
+[Unit]
+RequiresMountsFor = /
+After = display-manager.service
+
+[Service]
+Type = oneshot
+RemainAfterExit = true
+ExecStart = /usr/bin/true
+ExecStop = /usr/bin/pkill -x brave
+
+; the next section cannot be uncommented or else the service will not be 
+; able to be enabled
+[Install]
+WantedBy = reboot.target halt.target shutdown.target poweroff.target

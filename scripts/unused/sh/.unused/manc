@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl --silent "https://manpages.debian.org/buster/manpages-dev/$1.3.en.gz" |
+	man -l

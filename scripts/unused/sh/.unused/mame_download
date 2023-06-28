@@ -1,0 +1,78 @@
+#!/usr/bin/gawk -f
+
+function get_installed_roms()
+{
+	cmd = "find /home/pactrag/.mame/bios/ /home/pactrag/.mame/roms/ -type f "\
+		"-name '*" extension "' -printf '%f\n'"
+	while ((cmd | getline ) > 0) {
+		installed[$0] = ""
+	}
+	close(cmd)
+}
+
+function get_non_installed_roms()
+{
+	cmd = "mame -listfull"
+	install_output = ""
+	remove_output = ""
+	cmd | getline
+	while ((cmd | getline ) > 0) {
+		rom_file = $1 extension
+		if (rom_file in installed) {
+			$1 = ""
+			remove_output = remove_output rom_file $0 "\n"
+			continue
+		}
+		sub(/[^"]+"/, "")
+		sub(/"$/, "")
+		install_output = install_output "\n" rom_file "\t" $0
+	}
+	close(cmd)
+}
+
+function remove_package()
+{
+	cmd = "fzf --reverse --preview-window=down"
+	print remove_output |& cmd
+	cmd |& getline package_to_remove
+	if (close(cmd) == 130) {
+		exit
+	}
+	sub(/ .*/, "", package_to_remove)
+	cmd = "rm -i " "/home/pactrag/.mame/roms/" package_to_remove
+	system(cmd)
+}
+
+BEGIN {
+	cmd = "fzf <<EOF\nInstall\nRemove\nEOF"
+	cmd | getline choice
+	close(cmd)
+
+	extension = ".zip"
+	url = "https://archive.org/download/mame0232repo/"
+	roms_list_file = "/home/pactrag/.mame/roms_list"
+	install_output_dir = "/home/pactrag/.mame/roms/"
+	get_installed_roms()
+	get_non_installed_roms()
+
+	if (choice == "Remove") {
+		remove_package()
+		exit
+	}
+
+	cmd = "fzf --reverse --preview-window=down --header-lines=1"
+
+	print install_output |& cmd
+	while ((cmd |& getline) > 0) {
+		to_download[$1] = ""
+	}
+	if (close(cmd) == 130) {
+		exit
+	}
+	cmd = "curl --progress-bar --location --parallel --install_output-dir " install_output_dir
+	for (i in to_download) {
+		cmd = cmd " --remote-name '" url i "'"
+	}
+	print cmd
+	system(cmd)
+}

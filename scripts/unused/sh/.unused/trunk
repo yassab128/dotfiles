@@ -1,0 +1,37 @@
+#!/bin/sh
+
+set -efu
+
+firstLevel() {
+	clear && find . -maxdepth 1 -mindepth 1 -exec ls --group-directories-first \
+		--indicator-style=slash -1 --color '{}' \+ | sed '
+/:$/, /^$/{
+	//!s/^/|——————/
+	/^$/d
+}
+'
+}
+
+fzfPreview() {
+	find . -mindepth 1 -maxdepth 1 -exec ls -1 --all --color --directory {} \+ |
+		fzf --ansi --preview="
+	if [ -d '{}' ]; then
+		ls --color=always '{}'
+	else
+		cat '{}'
+	fi
+"
+}
+
+while getopts '1f' option; do
+	case "${option}" in
+	1)
+		firstLevel
+		;;
+	f)
+		fzfPreview
+		;;
+	*) ;;
+
+	esac
+done

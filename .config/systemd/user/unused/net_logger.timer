@@ -1,0 +1,8 @@
+[Unit]
+After = network.target
+
+[Timer]
+OnCalendar = 00/0:01:00
+
+[Install]
+WantedBy = timers.target

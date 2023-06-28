@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# $@ does not work
+/usr/bin/su -p -c "$*"

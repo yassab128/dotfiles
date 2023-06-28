@@ -1,0 +1,10 @@
+[Unit]
+After = network.target graphical.target
+
+[Service]
+ExecStart = /usr/bin/aria2c
+ExecReload = /usr/bin/kill -HUP $MAINPID
+Restart = on-abort
+
+[Install]
+WantedBy = graphical.target

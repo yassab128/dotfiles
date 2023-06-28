@@ -1,0 +1,85 @@
+#!/bin/sh
+
+set -efu
+
+# get the extension (the last string after '.')
+extension="$(
+	sed 's/.*\.//' <<-EOF
+		$1
+	EOF
+)"
+# get the name (everything except the last string after '.')
+withoutExtension="$(
+	sed 's/\.[^.]\{1,\}$//' <<-EOF
+		$1
+	EOF
+)"
+filePath="$(pwd "$1")"
+
+pdf_previewer() {
+	# check whether zathura is not running
+	if ! pgrep -x "zathura" >/dev/null; then
+		zathura "$1"
+	fi
+}
+
+leakCheck() {
+	# these some advanced leak-detecting stuff that I do not need
+	# valgrind --leak-check=full \
+	# 	--show-leak-kinds=all \
+	# 	--trace-children=yes \
+	# 	--track-origins=yes \
+	# 	./"$withoutExtension".eil ||
+
+	# Run valgrind without showing diagnostics
+	valgrind ./"${withoutExtension}".eil 2>/dev/null ||
+		dunstify \
+			"MEMORY LEAK DETECTED"
+	find "${filePath}" -maxdepth 1 -type f \
+		-regextype posix-extended \
+		-regex ".*/(vgcore\.[0-9]{5}$|vgcore\.[0-9]{4}$)" -delete
+	# sleep 1
+	# clear
+	# ./"$withoutExtension".eil
+}
+
+c_cpp_linkers() {
+	if grep --fixed-strings --line-regexp --quiet \
+		--max-count=1 "#include <curl/curl.h>" "$1"; then
+		printf -- '-lcurl'
+	fi
+}
+
+if [ "${extension}" = "c" ]; then
+	clang -O3 -Weverything "$(c_cpp_linkers "$1")" \
+		-o"${withoutExtension}".eil "$1"
+	leakCheck
+
+elif [ "${extension}" = "cpp" ]; then
+	clang++ -O3 -Weverything "$(c_cpp_linkers "$1")" \
+		-o"${withoutExtension}".eil "$1"
+	leakCheck
+
+elif [ "${extension}" = "rs" ]; then
+	rustc -C opt-level=3 -o "${withoutExtension}".rut "$1"
+	./"${withoutExtension}".rut
+
+elif [ "${extension}" = "go" ]; then
+	go run "$1"
+
+elif [ "${extension}" = "md" ]; then
+	firefox "$1"
+
+elif [ "${extension}" = "py" ]; then
+	flake8 "$1"
+	black --line-length 80 "$1"
+
+elif [ "${extension}" = "sh" ]; then
+	./"$1"
+
+elif [ "${extension}" = "tex" ]; then
+	pdf_previewer "${withoutExtension}".pdf &
+	latexmk "$1"
+else
+	printf 'not supported\n'
+fi

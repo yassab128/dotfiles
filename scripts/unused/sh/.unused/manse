@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -efu
+
+eval "$(
+	# do not change $@ to $*
+	{ man -wk -- "$@" || exit; } |
+		awk '
+		NR == 1 {
+			printf "nvim -R -n \"+tab Man %s | -tabclose | ", $0
+			while ((getline) == 1) {
+				printf "tab Man %s | ", $0
+			}
+			printf "tabfirst\"\n"
+			exit
+		}
+		'
+)"

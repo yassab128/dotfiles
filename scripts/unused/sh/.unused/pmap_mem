@@ -1,0 +1,116 @@
+#!/bin/sh
+
+set -efu
+
+# pmap ignores processes (like aria2c, sshd), it is absolutely bad
+# so much work, just to find out pmap is absoltely broken
+
+# shows far less processes than ps_mem, therefore pmap is not be relied on
+
+# clear the terminal beforehand
+clear
+
+# run the ps commmand independently (without pipes) so that `ps` can
+# be excluded later from the output (otherwise you have to exclude other
+# commands too like awk or grep)
+processes="$(ps -eo trs=,pid=,comm= --sort=comm)"
+
+# filter the processes: remove the first column (which is trs) and keep
+# only the pid and the command name so that it be can used later in
+# $ramUsed, all this is done only if trs is different from 0
+pidNcomm="$(
+	awk '
+	($1 != 0 && $3 != "ps"){
+		$1 = ""
+		print
+	}
+' <<-EOF
+		${processes}
+	EOF
+)"
+
+# take pidNcomm and give it to pmap for evaluation. It is faster to do it
+# this way than to run `pmap` for each command -- the repated calls to pmap
+# will make this shell script far too slow and unusable
+ramUsed="$(
+	eval "$(
+		awk '
+BEGIN {
+	ORS = " "
+	print "pmap --extended"
+}
+{
+	print $1
+}
+END{
+	print "\n"
+}
+' <<EOF
+${pidNcomm}
+EOF
+	)" | awk '
+# get to the the last line (starts with "t")
+/^t/ {
+# the fourth column is RSS
+printf "%.02f\n", $4 / 1024
+}
+'
+)"
+
+# compare the number of lines in the output of "pmap" with those originally
+# from "ps". If they are not equal (some processes disappeared before pmap
+# processed their RSS usage) run the shell script again (exec is important)
+pidNcommSize="$(
+	wc -l <<EOF
+${pidNcomm}
+EOF
+)"
+ramUsedSize="$(
+	wc -l <<EOF
+${ramUsed}
+EOF
+)"
+
+if [ "${pidNcommSize}" -ne "${ramUsedSize}" ]; then
+	# run the shell script again
+	# printf 'not equal
+	# %s != %s\n' "$pidNcommSize" "$ramUsedSize"
+	exec "$0"
+fi
+
+# join the the two ouputs horizontally
+paste /dev/fd/3 /dev/fd/4 3<<EOF 4<<EOF |
+${pidNcomm}
+EOF
+${ramUsed}
+EOF
+	gawk '
+{
+	# this variable is used because some commands have space in them
+	processName = ""
+	for (i = 2; i < NF; ++i) {
+		processName = processName " " $i
+	}
+	if (processName in memoryUsage) {
+		memoryUsage[processName] += $NF
+		++runningInstances[processName]
+	} else {
+		memoryUsage[processName] = $NF
+		runningInstances[processName] = 1
+	}
+}
+
+END {
+	PROCINFO["sorted_in"] = "@val_num_asc"
+	totalMemoryUsage = 0
+	for (i in memoryUsage) {
+		totalMemoryUsage += memoryUsage[i]
+		printf "%-10s %-20s %-8s\n",
+		memoryUsage[i] "M",
+		i,
+		"(" runningInstances[i] ")"
+	}
+	print "-----------------------------------\n" "total",
+	"memory usage:", totalMemoryUsage "M"
+}
+'

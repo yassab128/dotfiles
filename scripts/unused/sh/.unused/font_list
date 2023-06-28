@@ -1,0 +1,81 @@
+#!/bin/sh
+
+set -efu
+
+# consult `man fonts-conf` to know more about the options of `--format`
+# fc-list --format='%{family} '\
+# '%{familylang} '\
+# '%{style} '\
+# '%{stylelang} '\
+# '%{fullname} '\
+# '%{fullnamelang} '\
+# '%{slant} '\
+# '%{weight} '\
+# '%{size} '\
+# '%{width} '\
+# '%{aspect} '\
+# '%{pixelsize} '\
+# '%{spacing} '\
+# '%{foundry} '\
+# '%{antialias} '\
+# '%{hinting} '\
+# '%{hintstyle} '\
+# '%{verticallayout} '\
+# '%{autohint} '\
+# '%{globaladvance} '\
+# '%{file} '\
+# '%{index} '\
+# '%{ftface} '\
+# '%{rasterizer} '\
+# '%{outline} '\
+# '%{scalable} '\
+# '%{color} '\
+# '%{scale} '\
+# '%{dpi} '\
+# '%{rgba} '\
+# '%{lcdfilter} '\
+# '%{minspace} '\
+# '%{charset} '\
+# '%{lang} '\
+# '%{fontversion} '\
+# '%{capability} '\
+# '%{fontformat} '\
+# '%{embolden} '\
+# '%{embeddedbitmap} '\
+# '%{decorative} '\
+# '%{fontfeatures} '\
+# '%{namelang} '\
+# '%{prgname} '\
+# '%{postscriptname} '\
+# '%{fonthashint}\n'
+
+eval "$(
+	fc-list --format='%{family}\n' | gawk '
+{
+	# the linter demands it
+	if ($0 in tot){
+		tot[$0]++
+	} else {
+		tot[$0] = 1
+	}
+}
+
+END {
+	PROCINFO["sorted_in"] = "@ind_str_asc"
+	for (i in tot) {
+			printf "%-60s | %s\n", i, tot[i]
+	}
+	# print length(tot), "Fonts"
+} ' | fzf --tac | awk '
+BEGIN {
+	FS = "|"
+}
+{
+	gsub(/ /,"", $0) # remove trailing spaces from the font picked
+	print "fc-list",
+	$1,
+	"--format=\"%{fullname}, %{familylang},",
+	"%{fontformat}\\n\" | fzf"
+}
+'
+)"

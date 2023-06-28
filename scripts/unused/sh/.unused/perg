@@ -1,0 +1,74 @@
+#!/usr/bin/gawk -E
+
+@include "getopt.awk"
+
+function usage()
+{
+	print "Use the Source, Luke!"
+}
+
+function process_options()
+{
+	no_contains = ""
+	supported_options = "e:i:"
+	while ((C = getopt(ARGC, ARGV, supported_options)) != -1) {
+		C == "e" ? no_contains = Optarg :
+		C == "i" ? contains = Optarg :
+		usage()
+	}
+}
+
+BEGIN {
+	process_options()
+
+	LINT = "fatal"
+
+	gsub(/ /, "|", contains)
+	if (no_contains) {
+		gsub(/ /, "|", no_contains)
+	}
+
+	first_occurrence = contains
+	sub(/\|.*/, "", first_occurrence)
+
+	rest_of_occurrences = contains
+	sub(/^[^|]+\|?/, "", rest_of_occurrences)
+
+	grep_cmd = "/usr/bin/grep -Ilr " first_occurrence " || true"
+
+	# Initialize the array.
+	split("", files)
+	while ((grep_cmd | getline) > 0) {
+		files[$0] = ""
+	}
+	close(grep_cmd)
+
+	for (i in files) {
+		rest_of_occurrences_temp = rest_of_occurrences
+		file_matches = 1
+		while ((getline < i) > 0) {
+
+			if (no_contains && $0 ~ no_contains) {
+				file_matches = 0
+				break
+			}
+
+			# AWK does not have something similar to `redo` in Perl.
+			while (1) {
+				if (rest_of_occurrences_temp &&
+					match($0, rest_of_occurrences_temp, arr)) {
+					arr[0] = arr[0] "\\|?"
+					sub(arr[0], "", rest_of_occurrences_temp)
+				} else {
+					break
+				}
+			}
+
+		}
+		close(i)
+
+		if (file_matches && !(rest_of_occurrences_temp)) {
+			print i
+		}
+	}
+}

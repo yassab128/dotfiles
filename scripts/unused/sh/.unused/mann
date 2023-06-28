@@ -1,0 +1,88 @@
+#!/bin/sh
+
+# online man pages
+# for more information consult wikipedia.org/wiki/Man_page#Manual_sections
+
+while getopts 'n:p:s:' option; do
+	case "${option}" in
+	n)
+		# the number has to be between 1 and 8, inclusive
+		sectionNumber=${OPTARG}
+		;;
+	p)
+		# will be passed to `nvim` if provided
+		pattern=${OPTARG}
+		;;
+	s)
+		# unlike the other two, this one is mandatory
+		search=${OPTARG}
+		;;
+	*)
+		# ext if an unsupported flag is given
+		printf 'Illegal option!\n'
+		exit
+		;;
+	esac
+done
+
+if [ -z "${search}" ]; then
+	printf 'an argument for -s is mandatory\n'
+	exit
+fi
+
+manfzf() {
+	results="$(curl --silent --location \
+		"https://manned.org/browse/search?q=${search}" |
+		grep --only-matching "${search}\.[1-8]" | sort --unique)"
+
+	resultsNumber="$(
+		wc --lines <<-EOF
+			${results}
+		EOF
+	)"
+
+	if [ "${resultsNumber}" -gt 1 ]; then
+		choice="$(
+			fzf <<-EOF
+				${results}
+			EOF
+		)"
+	elif [ -n "${results}" ]; then
+		choice=${results}
+	else
+		printf 'The command might not have a man page.\n'
+		exit
+	fi
+
+	if [ -z "${choice}" ]; then
+		printf 'No man page was chosen.\n'
+		exit
+	fi
+}
+
+if [ -n "${sectionNumber}" ]; then
+	choice="${search}.${sectionNumber}"
+else
+	manfzf
+fi
+
+src="$(
+	curl --silent https://manned.org/"${choice}" |
+		# for some commands it is /tput.1/HASH/src
+		# and some others it is /ls/HASH/src
+		# the regex OR operator is used here to cover both cases
+		grep --max-count=1 --only-matching "/\(${search}\|${choice}\)/[^/]\+/src"
+
+)"
+
+manPage() {
+	curl --silent "https://manned.org${src}" --output - |
+		man -l /dev/stdin
+}
+
+if [ -n "${pattern}" ]; then
+	# manPage | nvim -R -n +Man! +"/^\s\+${pattern}\>/"
+	manPage | less --pattern="^\s+${pattern}"
+else
+	manPage
+fi

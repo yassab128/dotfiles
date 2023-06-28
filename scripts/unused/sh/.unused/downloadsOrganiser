@@ -1,0 +1,73 @@
+#!/bin/sh
+
+set -efu
+
+# create the directories if they do not exist
+! [ -d /home/pactrag/Downloads/Compressed/ ] &&
+	! [ -d /home/pactrag/Downloads/Documents/ ] &&
+	! [ -d /home/pactrag/Downloads/Pictures/ ] &&
+	! [ -d /home/pactrag/Downloads/Music/ ] &&
+	! [ -d /home/pactrag/Downloads/Executables/ ] &&
+	! [ -d /home/pactrag/Downloads/Videos/ ] &&
+	mkdir /home/pactrag/Downloads/Compressed/ \
+		/home/pactrag/Downloads/Documents/ \
+		/home/pactrag/Downloads/Pictures/ \
+		/home/pactrag/Downloads/Music/ \
+		/home/pactrag/Downloads/Executables/ \
+		/home/pactrag/Downloads/Videos/
+
+eval "$(
+	find /home/pactrag/Downloads -maxdepth 1 -type f |
+		awk '
+BEGIN {
+	FS = "."
+}
+
+{
+	gsub(/\.aria2$/, "", $0)
+
+	if ($0 in file) {
+		# ignore if duplicate (uncompleted download files)
+		delete file[$0]
+		next
+	} else {
+		file[$0] = ""
+	}
+
+	if ($NF ~ /zip|rar|7z|gzip|gz|tar|arj|gz|xz|iso/) {
+		file[$0]="/home/pactrag/Downloads/Compressed/"
+		next
+	} else if ($NF ~ /ps|docx|pdf|doc|txt|rtf|odt|tex|docm|wks|wps|ppt/ ||
+		$NF ~ /ods|pptx|xlr|xlt|xls|xlsx|xml|key|rss|cer|djvu|fb2|fb3/ ||
+		$NF ~ /mobi|epub|azw|lit|odf|kfx/) {
+		file[$0]="/home/pactrag/Downloads/Documents/"
+		next
+	} else if ($NF ~ /jpg|jpeg|peg|png|gif|tiff|tif|svg|bmp|ai|ico|icns/ ||
+		$NF ~ /ppm|pgm|pnm|pbm|bgp|webp/) {
+		file[$0]="/home/pactrag/Downloads/Pictures/"
+		next
+	} else if ($NF ~ /mp3|aac|wav|ogg|flac|wma|ac3|pcm|aiff|alac|wpl|aa/ ||
+		$NF ~ /act|ape|m4a|m4p|oga|mogg|tta/) {
+		file[$0]="/home/pactrag/Downloads/Music/"
+		next
+	} else if ($NF ~ /exe|apk|com|deb|msi|dmg|bin|vcd|pl|cgi|jar|py/ ||
+		$NF ~ /wsf|rpm/) {
+		file[$0]="/home/pactrag/Downloads/Executables/"
+		next
+	} else if ($NF ~ /mkv|avi|3gp|3g2|mov|bik|wmv|flv|swf|m2v|m2p|vob/ ||
+		$NF ~ /ifo|mp4|m4v|mpg|asf|mpeg|mpv|qt|webm|ogv/) {
+		file[$0]="/home/pactrag/Downloads/Videos/"
+	}
+	else {
+		# in case the extension is undefined
+		delete file[$0]
+	}
+}
+
+END {
+	for (i in file) {
+		print "mv '\''" i "'\''", file[i]
+	}
+}
+'
+)"
