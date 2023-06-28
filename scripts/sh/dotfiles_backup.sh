@@ -18,7 +18,6 @@ dotgit() {
 eval "$(
 	du \
 		"$HOME/.config" \
-		"$HOME/scripts" \
 		--apparent-size --all --max-depth=1 |
 		awk '
 BEGIN {
@@ -32,7 +31,10 @@ BEGIN {
 }
 '
 )"
-
+dotgit add "$HOME/scripts"\
+	"$HOME/.bashrc"\
+	"$HOME/.profile"\
+	"$HOME/.env"
 # remove non-existing files from the git repo
 while read -r path; do
 	absolutePath="$HOME/${path}"

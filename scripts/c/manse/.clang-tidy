@@ -1,0 +1,11 @@
+Checks: '
+	*,
+	-cert-err34-c,
+	-altera-id-dependent-backward-branch,
+	-android-cloexec-fopen,
+	-android-cloexec-socket,
+	-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,
+	-cppcoreguidelines-init-variables,
+	-llvmlibc-restrict-system-libc-headers,
+'
+WarningsAsErrors: '*'

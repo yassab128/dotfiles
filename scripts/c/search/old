@@ -1,0 +1,141 @@
+#include "../my_macros.h"
+#include <fcntl.h>
+#include <fts.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+struct string {
+	char *data;
+	unsigned long length;
+};
+
+#if 0
+#	define MAXTHREADS 131072
+
+static void *
+just_sleep(void *arg)
+{
+	(void)arg;
+	puts("heil");
+	return EXIT_SUCCESS;
+}
+
+static void
+testing_threads()
+{
+	pthread_t thread_id[MAXTHREADS];
+	unsigned int i = 0;
+	unsigned int n = 0;
+
+	for (; i < MAXTHREADS; ++i) {
+		CHECK(pthread_create(thread_id + i, 0, just_sleep, (void *)0));
+		printf("%d\n", i);
+	}
+
+	for (; n < i; n++) {
+		CHECK(pthread_join(thread_id[i], 0));
+	}
+}
+#endif
+
+static int
+compare(const FTSENT **one, const FTSENT **two)
+{
+	return ((*one)->fts_namelen > (*two)->fts_namelen);
+}
+
+struct human_size {
+	double value;
+	char unit;
+	char pad[7];
+};
+
+static struct human_size
+convert_size(long size)
+{
+	struct human_size file_size;
+	if (size > 1073741824) {
+		file_size.value = (double)size / 1073741824;
+		file_size.unit = 'G';
+	} else if (size > 1048576) {
+		file_size.value = (double)size / 1048576;
+		file_size.unit = 'M';
+	} else if (size > 1024) {
+		file_size.value = (double)size / 1024;
+		file_size.unit = 'K';
+	} else {
+		file_size.value = (double)size;
+		file_size.unit = 'B';
+	}
+	return file_size;
+}
+
+#define MAX_FILES 1048576
+#define MAX_DIRECTORIES 1048576
+
+int
+main(const int argc, const char *const *const argv)
+{
+	FTS *tree;
+	struct human_size file_size;
+	const FTSENT *node;
+	struct string *files;
+	struct string *directories;
+	unsigned long files_count = 0;
+	unsigned long directories_count = 0;
+	char *const path_argv[] = {".", 0};
+
+	if (argc != 2) {
+		puts("argc != 2");
+		return EXIT_FAILURE;
+	}
+	tree = fts_open(path_argv, 0, 0);
+
+	files = malloc(MAX_FILES * sizeof(struct string));
+	directories = malloc(MAX_DIRECTORIES * sizeof(struct string));
+	for (node = fts_read(tree); node; node = fts_read(tree)) {
+		if ((node->fts_info != FTS_F && node->fts_info != FTS_D) ||
+		 !strcasestr(node->fts_name, argv[1])) {
+			continue;
+		}
+		switch (node->fts_info) {
+		case FTS_F:
+			file_size = convert_size(node->fts_statp->st_size);
+			files[files_count].length = (unsigned long)asprintf(
+			 &files[files_count].data, "%s %.1f%c\n",
+			 node->fts_path, file_size.value, file_size.unit);
+			++files_count;
+			break;
+		case FTS_D:
+			directories[directories_count].length =
+			 (unsigned long)asprintf(
+			  &directories[directories_count].data, "%s\n",
+			  node->fts_path);
+			++directories_count;
+			break;
+		default:
+			break;
+		}
+	}
+	CHECK(fts_close(tree));
+	puts("\033[1;33mdirectories\033[0m");
+	while (directories_count--) {
+		fwrite(directories[directories_count].data, 1,
+		 directories[directories_count].length, stdout);
+		free(directories[directories_count].data);
+	}
+	puts("\033[1;33mfiles\033[0m");
+	while (files_count--) {
+		fwrite(
+		 files[files_count].data, 1, files[files_count].length, stdout);
+		free(files[files_count].data);
+	}
+	free(files);
+	free(directories);
+	return EXIT_SUCCESS;
+}

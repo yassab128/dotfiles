@@ -1,0 +1,9 @@
+Checks: '
+	*,
+	-cert-err34-c,
+	-cppcoreguidelines-init-variables,
+	-altera-id-dependent-backward-branch,
+	-llvmlibc-restrict-system-libc-headers,
+	-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
+'
+WarningsAsErrors: '*'

@@ -1,0 +1,3 @@
+#/bin/sh
+
+clang-format --style="{BreakBeforeBraces: Linux, UseTab: Always, IndentWidth: 8}" ./xkcd_fetcher.c

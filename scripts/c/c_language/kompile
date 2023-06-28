@@ -1,0 +1,37 @@
+#!/bin/sh
+
+set -efu
+
+clear
+
+file="$1"
+shift
+
+file_without_extension="${file%%.c}"
+
+is_processing_linkers=true
+i=1
+binary_args=''
+linkers=''
+while [ ${i} -le $# ]; do
+	eval "arg=\${${i}}"
+	if [ "${arg}" = "--" ]; then
+		is_processing_linkers=false
+	elif "${is_processing_linkers}"; then
+		 linkers="${linkers} ${arg}"
+	else
+		 binary_args="${binary_args} ${arg}"
+	fi
+	i=$((i + 1))
+done
+
+clang -O3 -Weverything -o"${file_without_extension}" "${file}" ${linkers}
+# clang -Weverything -o"${file_without_extension}" "${file}" ${linkers}
+
+# clang-tidy --checks='*' "${file}" 2>/dev/null
+clang-tidy "${file}" 2>/dev/null
+printf '####################################################################\n'
+
+valgrind ${file_without_extension} ${binary_args} 2>/dev/null ||
+	dunstify "MEMORY LEAK DETECTED"
+# rm ${file_without_extension}

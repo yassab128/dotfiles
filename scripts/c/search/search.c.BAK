@@ -1,0 +1,154 @@
+#include "../my_macros.h"
+#include <fcntl.h>
+#include <fts.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+#if 0
+#define MAXTHREADS 131072
+
+static void    *
+just_sleep(void *arg)
+{
+	(void) arg;
+	puts("heil");
+	return EXIT_SUCCESS;
+}
+
+static void
+testing_threads()
+{
+	pthread_t 	thread_id[MAXTHREADS];
+	unsigned int 	i = 0;
+	unsigned int 	n = 0;
+
+	for (; i < MAXTHREADS; ++i) {
+		CHECK(pthread_create(thread_id + i, 0, just_sleep, (void *) 0));
+		printf("%d\n", i);
+	}
+
+	for (; n < i; n++) {
+		CHECK(pthread_join(thread_id[i], 0));
+	}
+}
+#endif
+
+/*
+   static int
+   compare(const FTSENT **one, const FTSENT **two)
+   {
+   return ((*one)->fts_namelen > (*two)->fts_namelen);
+   }
+   FTS *tree = fts_open(path_argv, 0, &compare);
+ */
+
+struct human_size {
+	double 		value;
+	char 		unit;
+	char 		pad      [7];
+};
+
+static struct human_size
+convert_size(long size)
+{
+	struct human_size file_size;
+
+	if (size > 1073741824) {
+		file_size.value = (double) size / 1073741824;
+		file_size.unit = 'G';
+	} else if (size > 1048576) {
+		file_size.value = (double) size / 1048576;
+		file_size.unit = 'M';
+	} else if (size > 1024) {
+		file_size.value = (double) size / 1024;
+		file_size.unit = 'K';
+	} else {
+		file_size.value = (double) size;
+		file_size.unit = 'B';
+	}
+	return file_size;
+}
+
+#define MAX_FILES 1048576
+#define MAX_DIRECTORIES 1048576
+
+int
+main(const int argc, const char *const * const argv)
+{
+	FTS            *tree;
+	struct human_size file_size;
+	const FTSENT   *node;
+	char          **files;
+	long           *files_size;
+	char          **directories;
+	unsigned long 	files_count = 0;
+	unsigned long 	directories_count = 0;
+	char           *const path_argv[] = {".", 0};
+
+	if (argc != 2) {
+		puts("argc != 2");
+		return EXIT_FAILURE;
+	}
+	tree = fts_open(path_argv, 0, 0);
+	CHECK(!tree);
+
+	directories = malloc(MAX_DIRECTORIES * sizeof(char *));
+	CHECK(!directories);
+	files = malloc(MAX_FILES * sizeof(char *));
+	CHECK(!files);
+	files_size = malloc(MAX_FILES * sizeof(long));
+	CHECK(!files_size);
+
+	for (node = fts_read(tree); node; node = fts_read(tree)) {
+		if (!strcasestr(node->fts_name, argv[1])) {
+			continue;
+		}
+		switch (node->fts_info) {
+		case FTS_F:
+			files_size[files_count] = node->fts_statp->st_size;
+			files[files_count] = malloc(node->fts_pathlen + 1);
+			memcpy(files[files_count], node->fts_path,
+			       node->fts_pathlen + 1);
+			++files_count;
+			break;
+		case FTS_D:
+			directories[directories_count] =
+				malloc(node->fts_pathlen + 1);
+			memcpy(directories[directories_count], node->fts_path,
+			       node->fts_pathlen + 1);
+			++directories_count;
+			break;
+		default:
+			break;
+		}
+	}
+	CHECK(fts_close(tree));
+	puts("\033[1;33mdirectories\033[0m");
+	while (directories_count--) {
+		puts(directories[directories_count]);
+		free(directories[directories_count]);
+	}
+	puts("\033[1;33mfiles\033[0m");
+	while (files_count--) {
+		file_size = convert_size(files_size[files_count]);
+		printf("%s %.1f%c\n", files[files_count], file_size.value,
+		       file_size.unit);
+		free(files[files_count]);
+	}
+	free(files);
+	free(files_size);
+	free(directories);
+	return EXIT_SUCCESS;
+	//End.
+	{
+		puts("fjdlks");
+		puts("fjdlks");
+		puts("hola");
+	}
+	puts("what");
+}

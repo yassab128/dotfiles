@@ -1,0 +1,262 @@
+== Info:   Trying 142.250.201.74:443...
+== Info: Connected to oauth2.googleapis.com (142.250.201.74) port 443 (#0)
+== Info: ALPN, offering h2
+== Info: ALPN, offering http/1.1
+== Info:  CAfile: /etc/ssl/certs/ca-certificates.crt
+== Info:  CApath: none
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.3 (OUT), TLS handshake, Client hello (1):
+=> Send SSL data, 512 bytes (0x200)
+0000: ........p'49....n..Us:.^..$.......{... ..'...U.....LD..~.......K
+0040: k..0ii".>.......,.0.........+./...$.(.k.#.'.g.....9.....3.....=.
+0080: <.5./.....u.........oauth2.googleapis.com.......................
+00c0: .3t.........h2.http/1.1.........1.....0.........................
+0100: ........................+............-.....3.&.$... Z..>.|.....o
+0140: .%.........I.X..yOmn............................................
+0180: ................................................................
+01c0: ................................................................
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....z
+== Info: TLSv1.3 (IN), TLS handshake, Server hello (2):
+<= Recv SSL data, 122 bytes (0x7a)
+0000: ...v...x%$....J.,.`TN.FMi...,cGj@k)..  ..'...U.....LD..~.......K
+0040: k..0ii"......3.$... .V.....N....Q.s[\\_..w.{..%.Dl..+....
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+<= Recv SSL data, 15 bytes (0xf)
+0000: .............h2
+== Info: TLSv1.3 (IN), TLS handshake, Certificate (11):
+<= Recv SSL data, 4396 bytes (0x112c)
+0000: ...(...$...0...0................\.......8..0...*.H........0F1.0.
+0040: ..U....US1"0 ..U....Google Trust Services LLC1.0...U....GTS CA 1
+0080: C30...220228031148Z..220523031147Z0"1 0...U....upload.video.goog
+00c0: le.com0Y0...*.H.=....*.H.=....B...e.....tTk.0.o..?...Yf..k,...@.
+0100: .C9=. ..(a......../[.vql.....J7.:....0...0...U...........0...U.%
+0140: ..0...+.......0...U.......0.0...U.........s..-.s.%?;...h|.D0...U
+0180: .#..0....t......=...F..q5.'0j..+........^0\0'..+.....0...http:/
+01c0: /ocsp.pki.goog/gts1c301..+.....0..%http://pki.goog/repo/certs/gt
+0200: s1c3.der0.....U......0.....upload.video.google.com..*.clients.go
+0240: ogle.com..*.docs.google.com..*.drive.google.com..*.gdata.youtube
+0280: .com..*.googleapis.com..*.photos.google.com..*.youtube-3rd-party
+02c0: .com..upload.google.com..*.upload.google.com..upload.youtube.com
+0300: ..*.upload.youtube.com..uploads.stage.gdata.youtube.com..bg-call
+0340: -donation.goog..bg-call-donation-alpha.goog..bg-call-donation-ca
+0380: nary.goog..bg-call-donation-dev.goog0!..U. ..0.0...g.....0...+..
+03c0: ...y...0<..U...50301./.-.+http://crls.pki.goog/gts1c3/QOvJ0N1sT2
+0400: A.crl0.....+.....y............u.)y...99!.Vs.c.w..W}.`...M]&\%]..
+0440: ...>........F0D. (p..9z..u.~H...`M.=.v.....#...... P....9#B...3
+0480: 0........8.0:|.Q..._.v..e..eO2.......A.[.{.%,....K..B}#...>..K.
+04c0: ....G0E.!..<s*.=.~$.......`..}!..j.Q.F..l.. $Ni..V..;.4|........
+0500: ..{.T9E>b..k0...*.H.............e...>;.z.,....w.. K.74..C.;P....
+0540: .z.....nW<g..fEfV.'f}......+n|...%(...].U...Y[....c.r...........
+0580: kw....z..\`.....vV.z..B..v4x..)x...k8.......R...a.z.O...4...5...
+05c0: 9....V.j......INH.XW.|..D.5.v.l.....t......L..C."|.q...N.(q....
+0600: Q...k......7.z...mm..................0...0..~..........SYk4....P
+0640: f0...*.H........0G1.0...U....US1"0 ..U....Google Trust Services 
+0680: LLC1.0...U....GTS Root R10...200813000042Z..270930000042Z0F1.0..
+06c0: .U....US1"0 ..U....Google Trust Services LLC1.0...U....GTS CA 1C
+0700: 30.."0...*.H.............0............b..7.7B.l...e.%...k..m.Z#
+0740: .........|....B.^V$.z3....i..t.WLfh.w7US.9.M.4._%w7;...<......C.
+0780: ..G..D.c..A..A0H......E.!..B...+eV4.&....}....H|7M?.....u..yW\.W
+07c0: n.........%..,...*....c.<PI...._.+Y.....Q..w....O.pI.\m .......
+0800: w.-...k....+........'....Q.................0..|0...U...........0
+0840: ...U.%..0...+.........+.......0...U.......0.......0...U.......t
+0880: ......=...F..q5.'0...U.#..0.....+&q.+H'./Rf,....q>0h..+........\
+08c0: 0Z0&..+.....0...http://ocsp.pki.goog/gtsr100..+.....0..$http://p
+0900: ki.goog/repo/certs/gtsr1.der04..U...-0+0).'.%.#http://crl.pki.go
+0940: og/gtsr1/gtsr1.crl0W..U. .P0N08..+.....y...0*0(..+.........https
+0980: ://pki.goog/repository/0...g.....0...g.....0...*.H..............
+09c0: }. \.<...W.......rq.6...@..L.F...$..Pq"...n..jo......_.l.......
+0a00: b....[.f.........i>z.FI_F.A...Me4...?O.lI..SA..!.....D[*P..M.S6
+0a40: .B..T..wS.d8'...X..|9-[..........S$....y.&.a.SR.B..f+?..........
+0a80: .q.5($.....-.H.=Y.Q.t..|...[..4..........."....q....s$.7S...?..\
+0ac0: .6..;.)...:b;lc...Yq.c'.L....s..*....l2.3...Qq.4...].QX......Y.q
+0b00: ..M(..m......F...k.w.....#.........D..u#.4.. ..^...RF.....!pQ...
+0b40: ..U.+.3w.KB..w..s.....7?..*f.s.2.2l2....#.[}Mep.+.=...m.2.....c.
+0b80: ..]...q^*..."..e:...e.....[.Y.G.-.$:...&....7..o....Q......Q...
+0bc0: ...f0..b0..J.......w..l.6...!...X..0...*.H........0W1.0...U....B
+0c00: E1.0...U....GlobalSign nv-sa1.0...U....Root CA1.0...U....GlobalS
+0c40: ign Root CA0...200619000042Z..280128000042Z0G1.0...U....US1"0 ..
+0c80: U....Google Trust Services LLC1.0...U....GTS Root R10.."0...*.H.
+0cc0: ............0...............w.;...>...@<....}2..q.......j.....K
+0d00: .+...................^..R..#'....c...~..^.h...ZG.M.3.N.....lK...
+0d40: ...d)%#....=.`.......H.M..z.....Y........1.......ml....~&.E.=.y.
+0d80: .(..&......<h.S..:.+.....z..u....Vd..Oh.=......@..\....5l..P..
+0dc0: L... .3.R..2.).%*.H.r..d...........8f..c...x.{\w.v......y.W..&..
+0e00: ............U.....K)...2%N*.eD.....I...|..@{.C..l..}...L......K.
+0e40: ....E.v..@+.S....;......1..w.o{>...".....2..c.Qr.]....)h3.:f...&
+0e80: ...Wex'.^I......!............lH<@.~.Z.V<.....K.9K..?.U.n$..q...
+0ec0: .......A...=:..z.7...........80..40...U...........0...U.......0.
+0f00: ...0...U........+&q.+H'./Rf,....q>0...U.#..0...`{f.E....P/}..4..
+0f40: ..K0`..+........T0R0%..+.....0...http://ocsp.pki.goog/gsr10)..+.
+0f80: ....0...http://pki.goog/gsr1/gsr1.crt02..U...+0)0'.%.#.!http://c
+0fc0: rl.pki.goog/gsr1/gsr1.crl0;..U. .4020...g.....0...g.....0...+...
+1000: ..y....0...+.....y....0...*.H.............4...(...v..1z!..R>..t.
+1040: A..=5......\_...|......W.&o[..Fh.7okz...7.%Q..h...I.Z...#...+...
+1080: ..Ij.u.......XHW.5.....o..o.......*..Ni..-.h..+s....".7..f.I..U.
+10c0: g.2..&.p.=.gm=|.4..2..n.jo.....K.;..7..D.~.l..F.....!.f...Ul.)..
+1100: .f[.wIH(....3rS..5.b..$...9..~*A.R.......?..
+== Info: TLSv1.3 (IN), TLS handshake, CERT verify (15):
+<= Recv SSL data, 79 bytes (0x4f)
+0000: ...K...G0E. ?.T.Sa=E...G.>..?..Q.E.U$4..y....!....s....l.R.^..=+
+0040: d.>Jw#.("..qd..
+== Info: TLSv1.3 (IN), TLS handshake, Finished (20):
+<= Recv SSL data, 52 bytes (0x34)
+0000: ...0Z..I.I.........L<..".%.W...g..s.../hW..\..q.*Z..
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: ....E
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (OUT), TLS handshake, Finished (20):
+=> Send SSL data, 52 bytes (0x34)
+0000: ...0.9.k......".....r?..U.0p....i.n.......V .,.cA{kF
+== Info: SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+== Info: ALPN, server accepted to use h2
+== Info: Server certificate:
+== Info:  subject: CN=upload.video.google.com
+== Info:  start date: Feb 28 03:11:48 2022 GMT
+== Info:  expire date: May 23 03:11:47 2022 GMT
+== Info:  subjectAltName: host "oauth2.googleapis.com" matched cert's "*.googleapis.com"
+== Info:  issuer: C=US; O=Google Trust Services LLC; CN=GTS CA 1C3
+== Info:  SSL certificate verify ok.
+== Info: Using HTTP2, server supports multiplexing
+== Info: Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+=> Send SSL data, 5 bytes (0x5)
+0000: ....)
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: ....,
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+== Info: h2h3 [:method: POST]
+== Info: h2h3 [:path: /token]
+== Info: h2h3 [:scheme: https]
+== Info: h2h3 [:authority: oauth2.googleapis.com]
+== Info: h2h3 [user-agent: curl/7.82.0]
+== Info: h2h3 [accept: */*]
+== Info: h2h3 [content-length: 264]
+== Info: h2h3 [content-type: application/x-www-form-urlencoded]
+== Info: Using Stream ID: 1 (easy handle 0x5608320eacf0)
+=> Send SSL data, 5 bytes (0x5)
+0000: ....c
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send header, 159 bytes (0x9f)
+0000: POST /token HTTP/2
+0014: Host: oauth2.googleapis.com
+0031: user-agent: curl/7.82.0
+004a: accept: */*
+0057: content-length: 264
+006c: content-type: application/x-www-form-urlencoded
+009d: 
+=> Send SSL data, 5 bytes (0x5)
+0000: ...."
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send data, 264 bytes (0x108)
+0000: client_id=575205653021-ivlgjpvhdm0mp9id16fc3t4irhmfclfk.apps.goo
+0040: gleusercontent.com&client_secret=6OslLIoWUNYZ_u2qsydIvSA7&grant_
+0080: type=refresh_token&refresh_token=1//0doIgp17m0RqECgYIARAAGA0SNwF
+00c0: -L9IryYKpd4OExs6tUj9L9xPbxeDJLUKb9IESudJOHGDeZ6gT__uJEMjwOI_ziXL
+0100: zSlZeFkw
+== Info: We are completely uploaded and fine
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....?
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+<= Recv SSL data, 279 bytes (0x117)
+0000: ..........R!.........g..U..X.b.....A.u.3.lyj.Z.V.:h.T[.,.I.G..p"
+0040: ...>s(l]2&..{./..\.....V..Qp#...;/,Ytg@Th7..BEQ9%.JB.....z...hm
+0080: ..?..f.J..k.!Y...}ba..y...U.1.?&E..`._4:j),.i7;....x;}F..L.....
+00c0: 3....h.'6...K.p...........E.....eK..].Dt.-....../.+m.].PNa..:I..
+0100: x..p..-.....*....8.zz..
+== Info: TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+<= Recv SSL data, 279 bytes (0x117)
+0000: .........vq..........g..U..X.b....k.&.............s6..m^..vL.Ut}
+0040: ,...."..f.Y...l.......73.Y...km....b...[..t+...k.X..d....A.=.'..
+0080: .P..0S...i.6b.TM2.t*....!.>.$......Y........PF.xEYJ.*d(....Zh...
+00c0: -.'...H{s....{Ch...1..F"V..`.L......N.>..kd.:.|_.2.g..].mG...2.
+0100: [>....[`....*....8.zz..
+== Info: old SSL session ID is stale, removing
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....9
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+<= Recv header, 13 bytes (0xd)
+0000: HTTP/2 200 
+<= Recv header, 63 bytes (0x3f)
+0000: cache-control: no-cache, no-store, max-age=0, must-revalidate
+<= Recv header, 37 bytes (0x25)
+0000: date: Sat, 19 Mar 2022 00:09:56 GMT
+<= Recv header, 40 bytes (0x28)
+0000: expires: Mon, 01 Jan 1990 00:00:00 GMT
+<= Recv header, 18 bytes (0x12)
+0000: pragma: no-cache
+<= Recv header, 47 bytes (0x2f)
+0000: content-type: application/json; charset=utf-8
+<= Recv header, 16 bytes (0x10)
+0000: vary: X-Origin
+<= Recv header, 15 bytes (0xf)
+0000: vary: Referer
+<= Recv header, 30 bytes (0x1e)
+0000: vary: Origin,Accept-Encoding
+<= Recv header, 36 bytes (0x24)
+0000: server: scaffolding on HTTPServer2
+<= Recv header, 21 bytes (0x15)
+0000: x-xss-protection: 0
+<= Recv header, 29 bytes (0x1d)
+0000: x-frame-options: SAMEORIGIN
+<= Recv header, 33 bytes (0x21)
+0000: x-content-type-options: nosniff
+<= Recv header, 173 bytes (0xad)
+0000: alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=
+0040: ":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma
+0080: =2592000,quic=":443"; ma=2592000; v="46,43"
+<= Recv header, 21 bytes (0x15)
+0000: accept-ranges: none
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv SSL data, 5 bytes (0x5)
+0000: ..../
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+<= Recv data, 277 bytes (0x115)
+0000: {.  "access_token": "ya29.A0ARrdaM-Ugv-lmteIP5uG4y0oAo5F0Ysqe0r0
+0040: XjcbvrqBFNnF4G1RRO1Xy_sxIJFGZpODEtaFbfBXrE3bAT8ydxYrpN5qs0kjMR2n
+0080: fcOifcYec88L4Eq9L5RYOWiL4mFLlRX64tgm9zVxYDI7ugUNd-EL6dYDS2Q",.  
+00c0: "expires_in": 3599,.  "scope": "https://mail.google.com/",.  "to
+0100: ken_type": "Bearer".}
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: Connection #0 to host oauth2.googleapis.com left intact

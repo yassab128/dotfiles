@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export XAUTHORITY=/home/aptrug/.Xauthority
+export DISPLAY=:0
+
+./xlib_popup
