@@ -10,18 +10,6 @@ Mode Set By User=false
 Time=2023,6,28,8,8,0.239
 URL=file:///home/aptrug/.config/mimeapps.list
 
-[file:///home/aptrug/.ssh/id_ed25519.pub]
-Bookmarks=
-Checksum=0e579eade94cde12ab81c7152e336c6cbb8ce781
-Encoding=UTF-8
-Highlighting=None
-Highlighting Set By User=false
-Indentation Mode=normal
-Mode=Normal
-Mode Set By User=false
-Time=2023,6,28,9,11,27.493
-URL=file:///home/aptrug/.ssh/id_ed25519.pub
-
 [file:///home/aptrug/Downloads/dotfiles-master/.bashrc]
 Bookmarks=
 Checksum=51e33f811681e9b304764a5cdc9c3243f3335dba
