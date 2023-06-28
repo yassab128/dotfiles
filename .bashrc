@@ -1,14 +1,16 @@
 if [ -z "${TMUX-}" ]; then
 	if [ -n "${DISPLAY-}" ]; then
 		exec tmux new -As 'display'
-	else
-		exec tmux new -As 'tty'
+	# else
+	# 	exec tmux new -As 'tty'
 	fi
 fi
 
 alias\
 	ls='ls -F'\
 	au='ffplay -autoexit -nodisp -loglevel quiet'\
+	cpu='ps -eo comm,rss,pcpu --sort=pcpu'\
+	mem='ps -eo comm,rss,pcpu --sort=rss'\
 	l='ls -Ahlt'\
 	speed_test='curl -o/dev/null '\
 	clear='printf "\033[H\033[J"; [ -n "${TMUX-}" ] && tmux clear-history'\

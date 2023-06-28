@@ -111,7 +111,7 @@ plugin=org.kde.plasma.systemmonitor.memory
 
 [Containments][2][Applets][31][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][2][Applets][31][Configuration][Appearance]
 chartFace=org.kde.ksysguard.piechart
@@ -128,6 +128,13 @@ totalSensors=["memory/physical/usedPercent"]
 [Containments][2][Applets][4]
 immutability=1
 plugin=org.kde.plasma.pager
+
+[Containments][2][Applets][4][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][4][Configuration][General]
+displayedText=Number
 
 [Containments][2][Applets][5]
 immutability=1
@@ -158,7 +165,7 @@ DialogHeight=84
 DialogWidth=1366
 
 [Containments][2][General]
-AppletOrder=3;4;5;28;31;29;6;7;21;22
+AppletOrder=3;5;4;28;31;29;6;7;21;22
 
 [Containments][8]
 activityId=
@@ -202,7 +209,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][15][Configuration]
-PreloadWeight=75
+PreloadWeight=90
 
 [Containments][8][Applets][16]
 immutability=1
@@ -263,7 +270,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][27][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][8][Applets][9]
 immutability=1

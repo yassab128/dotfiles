@@ -1,0 +1,62 @@
+[General]
+FirstRun=0
+
+[KgTheme]
+Theme=themes/granatier.desktop
+
+[MainWindow]
+1366x768 screen: XPosition=228
+1366x768 screen: YPosition=120
+State=AAAA/wAAAAD9AAAAAAAAA44AAAHiAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+
+[Player][1]
+Enabled=1
+KeyDown=Down
+KeyLeft=Left
+KeyPutBomb=Return
+KeyRight=Right
+KeyUp=Up
+Name=Player 1
+PlayerID=player1.desktop
+
+[Player][2]
+Enabled=1
+KeyDown=S
+KeyLeft=A
+KeyPutBomb=Q
+KeyRight=D
+KeyUp=W
+Name=Player 2
+PlayerID=player2.desktop
+
+[Player][3]
+Enabled=0
+KeyDown=K
+KeyLeft=J
+KeyPutBomb=Space
+KeyRight=L
+KeyUp=I
+Name=Player 3
+PlayerID=player3.desktop
+
+[Player][4]
+Enabled=0
+KeyDown=
+KeyLeft=
+KeyPutBomb=
+KeyRight=
+KeyUp=
+Name=Player 4
+PlayerID=player4.desktop
+
+[Player][5]
+Enabled=0
+KeyDown=
+KeyLeft=
+KeyPutBomb=
+KeyRight=
+KeyUp=
+Name=Player 5
+PlayerID=player5.desktop

@@ -10,6 +10,18 @@ Mode Set By User=false
 Time=2023,6,28,8,8,0.239
 URL=file:///home/aptrug/.config/mimeapps.list
 
+[file:///home/aptrug/.ssh/id_ed25519.pub]
+Bookmarks=
+Checksum=e4033f405734bd970de469c40412cd0e3a6f437a
+Encoding=UTF-8
+Highlighting=None
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Normal
+Mode Set By User=false
+Time=2023,6,28,10,6,56.607
+URL=file:///home/aptrug/.ssh/id_ed25519.pub
+
 [file:///home/aptrug/Downloads/dotfiles-master/.bashrc]
 Bookmarks=
 Checksum=51e33f811681e9b304764a5cdc9c3243f3335dba
@@ -33,6 +45,30 @@ Mode=Normal
 Mode Set By User=false
 Time=2023,6,28,8,8,11.441
 URL=file:///home/aptrug/Downloads/dotfiles-master/.config/mimeapps.list
+
+[file:///home/aptrug/Downloads/dotfiles-master/.config/nvim/init.lua]
+Bookmarks=
+Checksum=78165365e86b0eca644290de8576a1487be09ed6
+Encoding=UTF-8
+Highlighting=Lua
+Highlighting Set By User=false
+Indentation Mode=lua
+Mode=Lua
+Mode Set By User=false
+Time=2023,6,28,10,21,3.543
+URL=file:///home/aptrug/Downloads/dotfiles-master/.config/nvim/init.lua
+
+[file:///home/aptrug/Downloads/dotfiles-master/.config/nvim/init.vim]
+Bookmarks=
+Checksum=7779dd8bd8655c5913a7580ff43858e164b49dfc
+Encoding=UTF-8
+Highlighting=None
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Normal
+Mode Set By User=false
+Time=2023,6,28,10,20,58.821
+URL=file:///home/aptrug/Downloads/dotfiles-master/.config/nvim/init.vim
 
 [file:///home/aptrug/Downloads/dotfiles-master/.env]
 Bookmarks=
