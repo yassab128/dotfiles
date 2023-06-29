@@ -13,3 +13,5 @@ vim.api.nvim_create_autocmd({'BufWritePost'}, {
 	group = c_indent,
 	command = 'call feedkeys("<CR>")'
 })
+-- vim.opt.makeprg = "clang-tidy 2>&-"
+-- vim.opt.errorformat = "%f:%l:%c: %t: %m"
