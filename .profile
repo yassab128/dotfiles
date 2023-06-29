@@ -22,22 +22,9 @@ unlink_some_files
 
 [ -r ~/.env ] && . ~/.env
 
-if test -z "${TMUX-}"; then
-	case ${OS_TYPE} in
-	0)
-		if test ${XDG_VTNR} -eq 1; then
-			export DISPLAY=':0'
-			{
-				Xorg -keeptty ${DISPLAY} vt${XDG_VTNR} &
-			} 3>&1 1>&2 2>&3 3>&- | read
-			exec bspwm
-		fi
-		;;
-	*)
-		exec tmux
-		;;
-	esac
-fi
+# if test -z "${TMUX-}"; then
+# 	exec tmux
+# fi
 
 test -r ~/.bashrc && . ~/.bashrc
 
