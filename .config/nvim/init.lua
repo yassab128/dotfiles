@@ -112,7 +112,6 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 	-- delete unnecessary EOL spaces and EOF blank lines.
 	command = "silent! %s/\\s\\+$//e | silent! %s/\\n\\+\\%$//e"
 })
-vim.api.nvim_set_option_value('filetype', 'c', {scope='local'})
 -- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 -- 	pattern = '*.html',
 -- 	group = 'vimrc', -- equivalent to group=mygroup
