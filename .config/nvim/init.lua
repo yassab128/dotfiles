@@ -11,6 +11,7 @@ local file_path = vim.fn.expand("%")
 -- }
 
 vim.opt.tabstop = 8
+-- vim.opt.hidden = true
 vim.opt.shiftwidth = 8
 vim.opt.number = true
 vim.opt.clipboard = "unnamedplus"
