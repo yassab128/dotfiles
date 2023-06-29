@@ -1,10 +1,10 @@
-if [ -z "${TMUX-}" ]; then
-	if [ -n "${DISPLAY-}" ]; then
-		exec tmux new -As 'display'
-	# else
-	# 	exec tmux new -As 'tty'
-	fi
-fi
+# if [ -z "${TMUX-}" ]; then
+# 	if [ -n "${DISPLAY-}" ]; then
+# 		exec tmux new -As 'display'
+# 	# else
+# 	# 	exec tmux new -As 'tty'
+# 	fi
+# fi
 
 alias\
 	ls='ls -F'\
