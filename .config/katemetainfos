@@ -117,3 +117,15 @@ Mode=Normal
 Mode Set By User=false
 Time=2023,6,28,8,6,48.475
 URL=file:///home/aptrug/Downloads/dotfiles-master/.vim/vimrc
+
+[file:///home/aptrug/scripts/c/zeit/Makefile]
+Bookmarks=
+Checksum=d1a16239c4e577203d032cf1e716127cc4f3d285
+Encoding=UTF-8
+Highlighting=Makefile
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Makefile
+Mode Set By User=false
+Time=2023,6,30,8,13,59.653
+URL=file:///home/aptrug/scripts/c/zeit/Makefile
