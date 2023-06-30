@@ -6,7 +6,7 @@ ConfigVersion=3
 MasterMixer=PulseAudio::Playback_Devices:1
 MasterMixerDevice=alsa_output.pci-0000_00_1f.3.analog-stereo
 MixerIgnoreExpression=Modem
-Size=478,360
+Size=640,480
 Visible=false
 
 [Profiles]
@@ -22,4 +22,7 @@ Split=false
 Split=false
 
 [View.PulseAudio.Playback_Streams.1.default.PulseAudio::Playback_Streams:1.restore:sink-input-by-media-role:event]
+Split=false
+
+[View.PulseAudio.Playback_Streams.1.default.PulseAudio::Playback_Streams:1.stream:0]
 Split=false
