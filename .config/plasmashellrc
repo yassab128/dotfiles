@@ -2,9 +2,6 @@
 1366x768 screen: Height=529
 1366x768 screen: Width=410
 
-[PlasmaTransientsConfig]
-PreloadWeight=42
-
 [PlasmaViews][Panel 2][Defaults]
 thickness=44
 
