@@ -1,9 +1,9 @@
 updateInfoAdded=true
 
 [ark.upd]
-ctime=1687894780
+ctime=1688709749
 done=add-hamburgermenu-to-toolbar
-mtime=1686081756
+mtime=1688487148
 
 [breezehighcontrasttobreezedark.upd]
 ctime=1687894755
@@ -31,9 +31,9 @@ done=PlasmaVolume_DisableKMixAutostart
 mtime=1687280445
 
 [dolphin_detailsmodesettings.upd]
-ctime=1687894759
+ctime=1688709751
 done=rename-leading-padding
-mtime=1686070245
+mtime=1688475368
 
 [filepicker.upd]
 ctime=1687894733
@@ -66,9 +66,9 @@ done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_op
 mtime=1687279371
 
 [gwenview.upd]
-ctime=1687894745
+ctime=1688709754
 done=SideBar_StatusBar_Rename,ImageView_AlphaBackgroundMode_Update,DeleteThumbnailSetting_Rename
-mtime=1686118735
+mtime=1688478879
 
 [icons_remove_effects.upd]
 ctime=1688052328
@@ -76,17 +76,17 @@ done=IconsRemoveEffects
 mtime=1687285199
 
 [katesession_migration.upd]
-ctime=1687894780
+ctime=1688709758
 done=migrate_kate_sessions_applet_to_kdeplasma-addons
-mtime=1686081884
+mtime=1688487281
 
 [katomic-levelset.upd]
-ctime=1687894743
-mtime=1686072633
+ctime=1688709758
+mtime=1688477494
 
 [kcalcrc.upd]
-ctime=1687894780
-mtime=1686082070
+ctime=1688709758
+mtime=1688487464
 
 [kcm_rename_plasma_desktop.upd]
 ctime=1687896198
@@ -104,66 +104,66 @@ done=kcminputrc_migrate_key_repeat
 mtime=1687279882
 
 [kgthemeprovider-migration.upd]
-ctime=1687894741
-mtime=1686067568
+ctime=1688709750
+mtime=1688471582
 
 [kleopatra.upd]
-ctime=1687894768
+ctime=1688709764
 done=kleopatra-15.08-kickoff
-mtime=1686080065
+mtime=1688485432
 
 [klickety.upd]
-ctime=1687894743
-mtime=1686073044
+ctime=1688709765
+mtime=1688477916
 
 [konsole.upd]
-ctime=1688052329
+ctime=1688709768
 done=konsole_globalaccel,add-hamburgermenu-to-toolbar
-mtime=1687077021
+mtime=1688487922
 
 [konversation.upd]
-ctime=1687894759
-mtime=1686076411
+ctime=1688709769
+mtime=1688481432
 
 [kopete-account-kconf_update.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-gaim_to_pidgin_style.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-initialstatus.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-jabberpriorityaddition-kconf_update.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-jabberproxytype-kconf_update.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-nameTracking.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-pluginloader.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-pluginloader2.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-update_icq_server.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [kopete-update_icq_ssl.upd]
-ctime=1687894760
-mtime=1686076485
+ctime=1688709769
+mtime=1688481508
 
 [krunnerglobalshortcuts2.upd]
 ctime=1688052328
@@ -206,9 +206,9 @@ done=split-variants
 mtime=1687279882
 
 [okular.upd]
-ctime=1687894745
+ctime=1688709781
 done=annotation-toolbar,builtin-annotations
-mtime=1686074410
+mtime=1688479237
 
 [plasmashell-5.27-use-panel-thickness-in-default-group.upd]
 ctime=1688052328
@@ -216,23 +216,23 @@ done=plasmashell-5.27-use-panel-thickness-in-default-group
 mtime=1687285199
 
 [spectacle_clipboard.upd]
-ctime=1687894746
+ctime=1688709782
 done=clipboard-settings-change
-mtime=1686074575
+mtime=1688479425
 
 [spectacle_newConfig.upd]
-ctime=1687894746
-mtime=1686074575
+ctime=1688709782
+mtime=1688479425
 
 [spectacle_rememberregion.upd]
-ctime=1687894746
+ctime=1688709782
 done=spectacle-migrate-rememberregion
-mtime=1686074575
+mtime=1688479425
 
 [spectacle_shortcuts.upd]
-ctime=1687894746
+ctime=1688709782
 done=spectacle-migrate-shortcuts
-mtime=1686074575
+mtime=1688479425
 
 [style_widgetstyle_default_breeze.upd]
 ctime=1688052328
@@ -240,11 +240,11 @@ done=StyleWidgetStyleDefaultBreeze
 mtime=1687285199
 
 [webenginepart.upd]
-ctime=1687894759
+ctime=1688709768
 done=MoveNonPasswordStorableSites
-mtime=1686076263
+mtime=1688481283
 
 [webengineurlinterceptoradblock.upd]
-ctime=1687894769
+ctime=1688709760
 done=webengineurlinterceptoradblock_move_settings
-mtime=1686079904
+mtime=1688485265
