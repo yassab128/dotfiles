@@ -1,13 +1,10 @@
-[KFileDialog Settings]
-detailViewIconSize=16
+[Number]
+NumberOfWindows=1
 
-[MainWindow]
-1366x768 screen: Height=652
-1366x768 screen: Width=1020
+[WindowProperties1]
 1366x768 screen: Window-Maximized=true
-1366x768 screen: XPosition=228
-1366x768 screen: YPosition=72
+ClassName=SettingsBase
 MenuBar=Disabled
+ObjectName=MainWindow#1
 State=AAAA/wAAAAD9AAAAAAAABVYAAAK3AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-eDP-1=eDP-1
