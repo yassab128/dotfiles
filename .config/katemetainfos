@@ -10,6 +10,18 @@ Mode Set By User=false
 Time=2023,6,28,8,8,0.239
 URL=file:///home/aptrug/.config/mimeapps.list
 
+[file:///home/aptrug/.config/nvim/after/ftplugin/c.lua]
+Bookmarks=
+Checksum=5fe83cf9235360be623c59aef490e2eabe358253
+Encoding=UTF-8
+Highlighting=Lua
+Highlighting Set By User=false
+Indentation Mode=lua
+Mode=Lua
+Mode Set By User=false
+Time=2023,7,14,20,43,25.536
+URL=file:///home/aptrug/.config/nvim/after/ftplugin/c.lua
+
 [file:///home/aptrug/.ssh/id_ed25519.pub]
 Bookmarks=
 Checksum=e4033f405734bd970de469c40412cd0e3a6f437a
@@ -129,3 +141,15 @@ Mode=Makefile
 Mode Set By User=false
 Time=2023,6,30,8,13,59.653
 URL=file:///home/aptrug/scripts/c/zeit/Makefile
+
+[mtp:/ONEPLUS A6013/Internal shared storage/projects/init.lua]
+Bookmarks=
+Checksum=b6020c10ffee1f4bd32488e71fedfbb4ab03c1d7
+Encoding=UTF-8
+Highlighting=Lua
+Highlighting Set By User=false
+Indentation Mode=lua
+Mode=Lua
+Mode Set By User=false
+Time=2023,7,14,20,44,15.398
+URL=mtp:/ONEPLUS A6013/Internal shared storage/projects/init.lua
