@@ -192,7 +192,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][11][Configuration]
-PreloadWeight=85
+PreloadWeight=95
 
 [Containments][8][Applets][12]
 immutability=1
@@ -254,7 +254,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=65
+PreloadWeight=75
 
 [Containments][8][Applets][25]
 immutability=1
