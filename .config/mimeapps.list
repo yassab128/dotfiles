@@ -1,6 +1,7 @@
 [Added Associations]
 audio/x-mod=org.kde.kate.desktop;
 inode/directory=org.kde.dolphin.desktop;
+video/mp4=mpv.desktop;
 x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
@@ -10,6 +11,7 @@ x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 [Default Applications]
 audio/x-mod=org.kde.kate.desktop;
 inode/directory=org.kde.dolphin.desktop;
+video/mp4=mpv.desktop;
 x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
