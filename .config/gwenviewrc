@@ -1,2 +1,22 @@
 [$Version]
 update_info=gwenview.upd:SideBar_StatusBar_Rename,gwenview.upd:ImageView_AlphaBackgroundMode_Update,gwenview.upd:DeleteThumbnailSetting_Rename
+
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+1366x768 screen: XPosition=363
+1366x768 screen: YPosition=140
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAGsAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+
+[Recent Files]
+File1[$e]=mtp:/ONEPLUS A6013/Internal shared storage/Pictures/IMG_20230924_182256.jpg
+File2[$e]=$HOME/Pictures/IMG_20230924_182919.jpg
+Name1[$e]=IMG_20230924_182256.jpg
+Name2[$e]=IMG_20230924_182919.jpg
+
+[SideBar]
+InformationSplitterSizes=214,241
