@@ -1005,6 +1005,7 @@ XftHintStyle[$d]
 XftSubPixel[$d]
 font[$d]
 menuFont[$d]
+smallestReadableFont[$d]
 toolBarFont[$d]
 
 [Gestures]
