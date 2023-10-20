@@ -1,3 +1,16 @@
+[KDiskFree]
+Device=100
+Free=80
+Full%=50
+HeaderSectionIndices=0,1,2,3,4,5,6,7
+Icon=49
+MountPoint=120
+Size=80
+SortColumn=0
+SortOrder=0
+Type=80
+UsageBar=520
+
 [KFileDialog Settings]
 detailViewIconSize=16
 
@@ -8,7 +21,6 @@ detailViewIconSize=16
 1366x768 screen: XPosition=228
 1366x768 screen: YPosition=72
 MenuBar=Disabled
-RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAAAABVYAAAK3AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABVYAAAK4AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
