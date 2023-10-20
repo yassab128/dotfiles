@@ -1,0 +1,8 @@
+[FileDialogSize]
+1366x768 screen: Height=687
+1366x768 screen: Width=1249
+
+[KFileDialog Settings]
+Recent Files[$e]=AP_A520FXXSGCTK1_CL13670986_QB35745423_REV00_user_low_ship_meta.tar.md5,file:$HOME/Downloads/AP_A520FXXSGCTK1_CL13670986_QB35745423_REV00_user_low_ship_meta.tar.md5,file:$HOME/Downloads/CP_A520FXXSGCTK1_CP17376635_CL13670986_QB35745423_REV00_user_low_ship.tar.md5,file:$HOME/Downloads/CSC_OJV_A520FOJVGCTK1_CL14751429_QB35746319_REV00_user_low_ship.tar.md5,file:$HOME/Downloads/SAMFW.COM_SM-A520F_MAT_A520FXXSGCTK1_fac.zip,file:$HOME/Downloads/wut/system.img.lz4,file:$HOME/Downloads/wut/AP_A520FXXSGCTK1_CL13670986_QB35745423_REV00_user_low_ship_meta.tar
+Recent URLs[$e]=file:$HOME/Downloads/,file:$HOME/,file:///usr/bin/,file:$HOME/Downloads/wut/
+detailViewIconSize=16

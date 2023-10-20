@@ -144,9 +144,10 @@ BrowserApplication=firefox.desktop
 ColorSchemeHash=2ef8a9f7238e072ca91b0eb590f49ded650c76bd
 XftHintStyle=hintslight
 XftSubPixel=rgb
-font=Noto Sans Arabic,10,-1,5,50,0,0,0,0,0
-menuFont=Noto Sans Arabic,10,-1,5,50,0,0,0,0,0
-toolBarFont=Noto Sans Arabic,10,-1,5,50,0,0,0,0,0
+font=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+menuFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=DejaVu Serif,8,-1,5,50,0,0,0,0,0
+toolBarFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -171,7 +172,7 @@ View Style=DetailTree
 [WM]
 activeBackground=227,229,231
 activeBlend=227,229,231
-activeFont=Noto Sans Arabic,10,-1,5,50,0,0,0,0,0
+activeFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
 activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241
