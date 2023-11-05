@@ -6,29 +6,29 @@ done=add-hamburgermenu-to-toolbar
 mtime=1697306599
 
 [breezehighcontrasttobreezedark.upd]
-ctime=1697797319
+ctime=1699146521
 done=BreezeHighContrastToBreezeDark
-mtime=1696158329
+mtime=1698157038
 
 [breezetobreezeclassic.upd]
-ctime=1697797319
+ctime=1699146521
 done=BreezeToBreezeClassic
-mtime=1696158329
+mtime=1698157038
 
 [breezetobreezelight.upd]
-ctime=1697797319
+ctime=1699146521
 done=BreezeToBreezeLight
-mtime=1696158329
+mtime=1698157038
 
 [delete_cursor_old_default_size.upd]
-ctime=1697797320
+ctime=1699146528
 done=DeleteCursorOldDefaultSize
-mtime=1696115357
+mtime=1698229305
 
 [disable_kmix.upd]
-ctime=1697797324
+ctime=1699146537
 done=PlasmaVolume_DisableKMixAutostart
-mtime=1696115147
+mtime=1698160263
 
 [dolphin_detailsmodesettings.upd]
 ctime=1697797350
@@ -41,29 +41,29 @@ done=filepicker-remove-old-previews-entry
 mtime=1697115550
 
 [fonts_akregator.upd]
-ctime=1697797320
+ctime=1699146527
 done=Plasma_Fonts_Akregator
-mtime=1696154704
+mtime=1698157670
 
 [fonts_global.upd]
-ctime=1697797320
+ctime=1699146527
 done=Fonts_Global
-mtime=1696154704
+mtime=1698157670
 
 [fonts_global_toolbar.upd]
-ctime=1697797320
+ctime=1699146527
 done=Fonts_Global_Toolbar
-mtime=1696154704
+mtime=1698157670
 
 [fonts_kate.upd]
-ctime=1697797320
+ctime=1699146527
 done=Plasma_Fonts_Kate
-mtime=1696154704
+mtime=1698157670
 
 [gtkconfig.upd]
-ctime=1697797314
+ctime=1699146526
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
-mtime=1696145026
+mtime=1698159270
 
 [gwenview.upd]
 ctime=1697797340
@@ -71,9 +71,9 @@ done=SideBar_StatusBar_Rename,ImageView_AlphaBackgroundMode_Update,DeleteThumbna
 mtime=1697013456
 
 [icons_remove_effects.upd]
-ctime=1697797320
+ctime=1699146528
 done=IconsRemoveEffects
-mtime=1696115357
+mtime=1698229305
 
 [katesession_migration.upd]
 ctime=1697797372
@@ -89,19 +89,19 @@ ctime=1697797373
 mtime=1697020374
 
 [kcm_rename_plasma_desktop.upd]
-ctime=1697797323
+ctime=1699146537
 done=5.24PlasmaDesktopKCMRename
-mtime=1696114932
+mtime=1698159753
 
 [kcminputrc_fix_botched_5_21_0.upd]
-ctime=1697797323
+ctime=1699146537
 done=kcminputrc_fix_botched_5_21_0_pre,kcminputrc_fix_botched_5_21_0
-mtime=1696114932
+mtime=1698159753
 
 [kcminputrc_repeat.upd]
-ctime=1697797323
+ctime=1699146537
 done=kcminputrc_migrate_key_repeat
-mtime=1696114932
+mtime=1698159753
 
 [kgthemeprovider-migration.upd]
 ctime=1697797333
@@ -166,44 +166,44 @@ ctime=1697797352
 mtime=1697016419
 
 [krunnerglobalshortcuts2.upd]
-ctime=1697797320
+ctime=1699146528
 done=5.22KRunnerGlobalShortcuts
-mtime=1696115357
+mtime=1698229305
 
 [krunnerhistory.upd]
-ctime=1697797320
+ctime=1699146528
 done=5.21KRunnerHistory
-mtime=1696115357
+mtime=1698229305
 
 [kscreenlocker.upd]
-ctime=1697797317
+ctime=1699146526
 done=0.1-autolock
-mtime=1696111007
+mtime=1698156860
 
 [ksmserver_update_loginMode_value.upd]
-ctime=1697797323
+ctime=1699146537
 done=ksmserver_update_loginMode_value_default_enum
-mtime=1696114932
+mtime=1698159753
 
 [kwin.upd]
-ctime=1697797319
+ctime=1699146526
 done=replace-scalein-with-scale,port-minimizeanimation-effect-to-js,port-scale-effect-to-js,port-dimscreen-effect-to-js,auto-bordersize,animation-speed,desktop-grid-click-behavior,no-swap-encourage,make-translucency-effect-disabled-by-default,remove-flip-switch-effect,remove-cover-switch-effect,remove-cubeslide-effect,remove-xrender-backend,enable-scale-effect-by-default,overview-group-plugin-id,animation-speed-cleanup,replace-cascaded-zerocornered
-mtime=1696605783
+mtime=1698157131
 
 [kwinrules.upd]
-ctime=1697797319
+ctime=1699146526
 done=replace-placement-string-to-enum,use-virtual-desktop-ids
-mtime=1696605783
+mtime=1698157131
 
 [kxkb.upd]
-ctime=1697797323
+ctime=1699146537
 done=remove-empty-lists,add-back-resetoptions
-mtime=1696114932
+mtime=1698159753
 
 [kxkb_variants.upd]
-ctime=1697797323
+ctime=1699146537
 done=split-variants
-mtime=1696114932
+mtime=1698159753
 
 [okular.upd]
 ctime=1697797342
@@ -211,9 +211,9 @@ done=annotation-toolbar,builtin-annotations
 mtime=1697013883
 
 [plasmashell-5.27-use-panel-thickness-in-default-group.upd]
-ctime=1697797320
+ctime=1699146528
 done=plasmashell-5.27-use-panel-thickness-in-default-group
-mtime=1696115357
+mtime=1698229305
 
 [spectacle_clipboard.upd]
 ctime=1697797342
@@ -235,9 +235,9 @@ done=spectacle-migrate-shortcuts
 mtime=1697014081
 
 [style_widgetstyle_default_breeze.upd]
-ctime=1697797320
+ctime=1699146528
 done=StyleWidgetStyleDefaultBreeze
-mtime=1696115357
+mtime=1698229305
 
 [webenginepart.upd]
 ctime=1697797351
