@@ -1,15 +1,19 @@
 [ExtractDialog]
 DirHistory[$e]=$HOME/gaming/
 
+[General]
+LockSidebar=true
+ShowSidebar=true
+
 [KFileDialog Settings]
 Recent Files[$e]=file:$HOME/gaming,file:$HOME/gaming
 Recent URLs[$e]=file:$HOME/gaming/
 detailViewIconSize=16
 
 [MainWindow]
-1366x768 screen: XPosition=228
-1366x768 screen: YPosition=120
-State=AAAA/wAAAAD9AAAAAAAAA44AAAHMAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+1366x768 screen: XPosition=197
+1366x768 screen: YPosition=124
+State=AAAA/wAAAAD9AAAAAQAAAAEAAACoAAAB0vwCAAAAAfsAAAAWAGEAcgBrAF8AcwBpAGQAZQBiAGEAcgEAAAAuAAAB0gAAAHMBAAACAAAC5QAAAdIAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
 StatusBar=Disabled
 ToolBarsMovable=Disabled
 eDP-1=eDP-1

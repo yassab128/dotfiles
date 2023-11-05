@@ -7,7 +7,7 @@ PreviewSize=32
 [ExtractDialog]
 1366x768 screen: Height=512
 1366x768 screen: Width=910
-DirHistory[$e]=$HOME/ton/
+DirHistory[$e]=$HOME/nsfw/,$HOME/ton/
 
 [General]
 Version=202
@@ -16,8 +16,8 @@ ViewPropsTimestamp=2023,6,28,9,5,29.226
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
-Recent Files[$e]=file:$HOME/ton/ton,file:$HOME/ton/ton
-Recent URLs[$e]=file:$HOME/ton/
+Recent Files[$e]=file:$HOME/nsfw,file:$HOME/nsfw
+Recent URLs[$e]=file:$HOME/ton/,file:$HOME/nsfw/
 detailViewIconSize=16
 
 [KPropertiesDialog]
