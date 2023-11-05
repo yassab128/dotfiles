@@ -304,3 +304,4 @@ knownItems=org.kde.plasma.kclock_1x2,org.kde.plasma.manage-inputmethod,org.kde.p
 
 [ScreenMapping]
 itemsOnDisabledScreens=
+screenMapping=
