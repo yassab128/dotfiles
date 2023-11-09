@@ -282,6 +282,9 @@ PreloadWeight=0
 immutability=1
 plugin=org.kde.merkuro.contact
 
+[Containments][8][Applets][32][Configuration]
+PreloadWeight=55
+
 [Containments][8][Applets][9]
 immutability=1
 plugin=org.kde.kalendar.contact
