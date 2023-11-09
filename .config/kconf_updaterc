@@ -21,9 +21,9 @@ done=BreezeToBreezeLight
 mtime=1698157038
 
 [delete_cursor_old_default_size.upd]
-ctime=1699146528
+ctime=1699534015
 done=DeleteCursorOldDefaultSize
-mtime=1698229305
+mtime=1699472191
 
 [disable_kmix.upd]
 ctime=1699146537
@@ -71,9 +71,9 @@ done=SideBar_StatusBar_Rename,ImageView_AlphaBackgroundMode_Update,DeleteThumbna
 mtime=1697013456
 
 [icons_remove_effects.upd]
-ctime=1699146528
+ctime=1699534015
 done=IconsRemoveEffects
-mtime=1698229305
+mtime=1699472191
 
 [katesession_migration.upd]
 ctime=1697797372
@@ -166,14 +166,14 @@ ctime=1697797352
 mtime=1697016419
 
 [krunnerglobalshortcuts2.upd]
-ctime=1699146528
+ctime=1699534015
 done=5.22KRunnerGlobalShortcuts
-mtime=1698229305
+mtime=1699472191
 
 [krunnerhistory.upd]
-ctime=1699146528
+ctime=1699534015
 done=5.21KRunnerHistory
-mtime=1698229305
+mtime=1699472191
 
 [kscreenlocker.upd]
 ctime=1699146526
@@ -211,9 +211,9 @@ done=annotation-toolbar,builtin-annotations
 mtime=1697013883
 
 [plasmashell-5.27-use-panel-thickness-in-default-group.upd]
-ctime=1699146528
+ctime=1699534015
 done=plasmashell-5.27-use-panel-thickness-in-default-group
-mtime=1698229305
+mtime=1699472191
 
 [spectacle_clipboard.upd]
 ctime=1697797342
@@ -235,9 +235,9 @@ done=spectacle-migrate-shortcuts
 mtime=1697014081
 
 [style_widgetstyle_default_breeze.upd]
-ctime=1699146528
+ctime=1699534015
 done=StyleWidgetStyleDefaultBreeze
-mtime=1698229305
+mtime=1699472191
 
 [webenginepart.upd]
 ctime=1697797351
