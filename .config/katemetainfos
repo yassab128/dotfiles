@@ -1,3 +1,15 @@
+[file:///home/aptrug/.local/share/Paradox Interactive/Hearts of Iron IV/_dlc_load.json]
+Bookmarks=
+Checksum=58ba1be156f606dfd4d8fec0a3e3161ea1da48d3
+Encoding=UTF-8
+Highlighting=JSON
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=JSON
+Mode Set By User=false
+Time=2023,11,19,13,2,18.848
+URL=file:///home/aptrug/.local/share/Paradox Interactive/Hearts of Iron IV/_dlc_load.json
+
 [file:///home/aptrug/.local/share/Paradox Interactive/Hearts of Iron IV/dlc_load.json]
 Bookmarks=
 Checksum=bb8a3e5e5f97b1c71eb5de3a1c0d67eea1af0b40
@@ -33,6 +45,18 @@ Mode=Modula-2
 Mode Set By User=false
 Time=2023,11,10,13,48,42.73
 URL=file:///home/aptrug/.local/share/Paradox Interactive/Hearts of Iron IV/mod/2149567872/descriptor.mod
+
+[file:///home/aptrug/.local/share/Paradox Interactive/Hearts of Iron IV/mod/899431080.mod]
+Bookmarks=
+Checksum=17720e2771f3a8eaa5366cf9d198f2a6c83dd53e
+Encoding=UTF-8
+Highlighting=Modula-2
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Modula-2
+Mode Set By User=false
+Time=2023,11,19,13,1,55.866
+URL=file:///home/aptrug/.local/share/Paradox Interactive/Hearts of Iron IV/mod/899431080.mod
 
 [file:///tmp/ark-ApNpFc/World_Ablaze_79.mod]
 Checksum=271cd8ab4ef9631d6013f56b22761a94ee77f2f0
