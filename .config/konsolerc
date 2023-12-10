@@ -4,6 +4,7 @@ ConfigVersion=1
 [MainWindow]
 1366x768 screen: Height=696
 1366x768 screen: Width=1366
+1366x768 screen: Window-Maximized=true
 1366x768 screen: XPosition=0
 1366x768 screen: YPosition=28
 RestorePositionForNextInstance=false
