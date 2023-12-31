@@ -11,8 +11,9 @@ Recent URLs[$e]=file:$HOME/gaming/
 detailViewIconSize=16
 
 [MainWindow]
-1366x768 screen: XPosition=728
-1366x768 screen: YPosition=201
+1366x768 screen: XPosition=686
+1366x768 screen: YPosition=239
+RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAQAAAAEAAAC8AAAB0vwCAAAAAfsAAAAWAGEAcgBrAF8AcwBpAGQAZQBiAGEAcgEAAAAuAAAB0gAAAHMBAAACAAAC0QAAAdIAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
 StatusBar=Disabled
 ToolBarsMovable=Disabled
