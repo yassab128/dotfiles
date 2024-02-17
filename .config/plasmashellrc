@@ -5,7 +5,7 @@
 [PlasmaViews][Panel 2]
 alignment=1
 panelOpacity=0
-panelVisibility=0
+panelVisibility=1
 
 [PlasmaViews][Panel 2][Defaults]
 thickness=44
