@@ -1,7 +1,8 @@
 [Wallet]
 Close When Idle=false
 Close on Screensaver=false
-Enabled=true
+Default Wallet=kdewallet
+Enabled=false
 First Use=false
 Idle Timeout=10
 Launch Manager=false
