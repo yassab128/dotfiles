@@ -26,7 +26,7 @@ noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
 
 [Containments][1][General]
 ToolBoxButtonState=topcenter
-ToolBoxButtonX=282
+ToolBoxButtonX=345
 
 [Containments][2]
 activityId=
@@ -247,7 +247,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=85
+PreloadWeight=77
 
 [Containments][8][Applets][25]
 immutability=1
@@ -289,7 +289,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][34][Configuration]
-PreloadWeight=60
+PreloadWeight=52
 
 [Containments][8][Applets][9]
 immutability=1
