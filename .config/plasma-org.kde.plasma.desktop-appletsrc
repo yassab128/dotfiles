@@ -288,6 +288,9 @@ PreloadWeight=85
 immutability=1
 plugin=org.kde.plasma.brightness
 
+[Containments][8][Applets][34][Configuration]
+PreloadWeight=60
+
 [Containments][8][Applets][9]
 immutability=1
 plugin=org.kde.kalendar.contact

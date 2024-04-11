@@ -1,6 +1,16 @@
 [General]
 default-transport=89551151
 
+[Transport 1403057423]
+auth=true
+encryption=SSL
+host=smtp.gmail.com
+id=1403057423
+name=SMTP (aptrug@gmail.com)
+port=465
+storepass=true
+user=aptrug@gmail.com
+
 [Transport 89551151]
 auth=true
 authtype=XOAUTH2

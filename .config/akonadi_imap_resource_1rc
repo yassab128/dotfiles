@@ -1,0 +1,11 @@
+[cache]
+AccountIdentity=86616266
+IntervalCheckTime=60
+TrashCollection=13
+TrashCollectionMigrated=true
+UseDefaultIdentity=false
+
+[network]
+ImapServer=imap.gmail.com
+SubscriptionEnabled=true
+UserName=aptrug@gmail.com

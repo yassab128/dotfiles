@@ -1,7 +1,35 @@
 [General]
-Default Identity=2016428321
+Default Identity=799544058
 
 [Identity #0]
+Attach Vcard=false
+Autocrypt=false
+Autocrypt Prefer=false
+Default Domain=archlinux
+Disable Fcc=false
+Drafts=12
+Email Address=aptrug@gmail.com
+Email Aliases=
+FaceEnabled=false
+Fcc=6
+Identity=Aptrug
+Image Location=
+Inline Signature=
+Inlined Html=false
+Name=Aptrug
+Override Encryption Defaults=false
+Pgp Auto Encrypt=false
+Pgp Auto Sign=false
+Preferred Crypto Message Format=auto
+Signature Enabled=false
+Signature Type=inline
+Templates=14
+VCardFile=/home/aptrug/.local/share/kmail2/Aptrug.vcf
+Warn not Encrypt=false
+X-FaceEnabled=false
+uoid=799544058
+
+[Identity #1]
 Default Domain=archlinux
 Disable Fcc=false
 Identity=Unnamed
@@ -10,3 +38,16 @@ Inline Signature=
 Override Encryption Defaults=false
 Signature Enabled=false
 uoid=2016428321
+
+[Identity #2]
+Default Domain=archlinux
+Disable Fcc=false
+Email Address=aptrug@gmail.com
+Identity=Aptrug (gmail.com)
+Image Location=
+Inline Signature=
+Name=Aptrug
+Override Encryption Defaults=false
+Signature Enabled=false
+Transport=1403057423
+uoid=86616266
