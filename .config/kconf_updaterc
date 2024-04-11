@@ -1,9 +1,9 @@
 updateInfoAdded=true
 
 [ark.upd]
-ctime=1702215679
+ctime=1712812183
 done=add-hamburgermenu-to-toolbar
-mtime=1701863392
+mtime=1710883340
 
 [breezehighcontrasttobreezedark.upd]
 ctime=1702215689
@@ -31,14 +31,14 @@ done=PlasmaVolume_DisableKMixAutostart
 mtime=1701816651
 
 [dolphin_detailsmodesettings.upd]
-ctime=1702215693
+ctime=1712812257
 done=rename-leading-padding,move-content-display
-mtime=1701826334
+mtime=1710874057
 
 [filepicker.upd]
-ctime=1707827438
+ctime=1712812183
 done=filepicker-remove-old-previews-entry
-mtime=1706981421
+mtime=1708550509
 
 [fonts_akregator.upd]
 ctime=1702215731
@@ -61,9 +61,9 @@ done=Plasma_Fonts_Kate
 mtime=1701812982
 
 [gtkconfig.upd]
-ctime=1702215725
+ctime=1712812577
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
-mtime=1701815483
+mtime=1711626327
 
 [gwenview.upd]
 ctime=1707142934
@@ -85,8 +85,8 @@ ctime=1702215723
 mtime=1701855066
 
 [kcalcrc.upd]
-ctime=1702215724
-mtime=1701863768
+ctime=1712812424
+mtime=1710883751
 
 [kcm_rename_plasma_desktop.upd]
 ctime=1702215779
@@ -108,18 +108,18 @@ ctime=1702215686
 mtime=1701821594
 
 [kleopatra.upd]
-ctime=1702215742
+ctime=1712812535
 done=kleopatra-15.08-kickoff
-mtime=1701861244
+mtime=1710881651
 
 [klickety.upd]
-ctime=1702215745
-mtime=1701855587
+ctime=1712812459
+mtime=1710877106
 
 [konsole.upd]
-ctime=1707142988
+ctime=1712812564
 done=konsole_globalaccel,add-hamburgermenu-to-toolbar
-mtime=1702270770
+mtime=1710884335
 
 [konversation.upd]
 ctime=1702215753
@@ -186,9 +186,9 @@ done=ksmserver_update_loginMode_value_default_enum
 mtime=1701816132
 
 [kwin.upd]
-ctime=1707142960
+ctime=1712812581
 done=replace-scalein-with-scale,port-minimizeanimation-effect-to-js,port-scale-effect-to-js,port-dimscreen-effect-to-js,auto-bordersize,animation-speed,desktop-grid-click-behavior,no-swap-encourage,make-translucency-effect-disabled-by-default,remove-flip-switch-effect,remove-cover-switch-effect,remove-cubeslide-effect,remove-xrender-backend,enable-scale-effect-by-default,overview-group-plugin-id,animation-speed-cleanup,replace-cascaded-zerocornered
-mtime=1704459213
+mtime=1711795001
 
 [kwinrules.upd]
 ctime=1707142960
@@ -205,15 +205,39 @@ ctime=1702215779
 done=split-variants
 mtime=1701816132
 
+[migrate-calendar-to-plugin-id.upd]
+ctime=1712812589
+mtime=1711623209
+
 [okular.upd]
-ctime=1702215777
+ctime=1712812499
 done=annotation-toolbar,builtin-annotations
-mtime=1701857285
+mtime=1710878329
+
+[plasma6.0-remove-dpi-settings.upd]
+ctime=1712812589
+mtime=1711623209
+
+[plasma6.0-remove-old-shortcuts.upd]
+ctime=1712812589
+mtime=1711623209
 
 [plasmashell-5.27-use-panel-thickness-in-default-group.upd]
 ctime=1707142971
 done=plasmashell-5.27-use-panel-thickness-in-default-group
 mtime=1702320594
+
+[plasmashell-6.0-keep-custom-position-of-panels.upd]
+ctime=1712812589
+mtime=1711623209
+
+[plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels.upd]
+ctime=1712812589
+mtime=1711623209
+
+[spectacle.upd]
+ctime=1712812505
+mtime=1710878470
 
 [spectacle_clipboard.upd]
 ctime=1702215785
@@ -240,9 +264,9 @@ done=StyleWidgetStyleDefaultBreeze
 mtime=1702320594
 
 [webenginepart.upd]
-ctime=1702215752
+ctime=1712812517
 done=MoveNonPasswordStorableSites
-mtime=1701859557
+mtime=1710880213
 
 [webengineurlinterceptoradblock.upd]
 ctime=1702215730
