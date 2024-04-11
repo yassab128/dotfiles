@@ -1,0 +1,6 @@
+[Desktop Entry]
+DBusActivatable=true
+Exec=kclockd
+Name=/usr/bin/kclockd
+Type=Application
+X-Flatpak=/usr/bin/kclockd
