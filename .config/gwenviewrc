@@ -15,8 +15,10 @@ eDP-1=eDP-1
 [Recent Files]
 File1[$e]=mtp:/ONEPLUS A6013/Internal shared storage/Pictures/IMG_20230924_182256.jpg
 File2[$e]=$HOME/Pictures/IMG_20230924_182919.jpg
+File3[$e]=$HOME/Downloads/illusions.webp
 Name1[$e]=IMG_20230924_182256.jpg
 Name2[$e]=IMG_20230924_182919.jpg
+Name3[$e]=illusions.webp
 
 [SideBar]
 InformationSplitterSizes=214,241
