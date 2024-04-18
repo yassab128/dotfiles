@@ -1,9 +1,9 @@
 updateInfoAdded=true
 
 [ark.upd]
-ctime=1712812183
+ctime=1713407370
 done=add-hamburgermenu-to-toolbar
-mtime=1710883340
+mtime=1712689477
 
 [breezehighcontrasttobreezedark.upd]
 ctime=1702215689
@@ -31,9 +31,9 @@ done=PlasmaVolume_DisableKMixAutostart
 mtime=1701816651
 
 [dolphin_detailsmodesettings.upd]
-ctime=1712812257
+ctime=1713407380
 done=rename-leading-padding,move-content-display
-mtime=1710874057
+mtime=1713341138
 
 [filepicker.upd]
 ctime=1712812183
@@ -61,9 +61,9 @@ done=Plasma_Fonts_Kate
 mtime=1701812982
 
 [gtkconfig.upd]
-ctime=1712812577
+ctime=1713407424
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
-mtime=1711626327
+mtime=1713344090
 
 [gwenview.upd]
 ctime=1707142934
@@ -85,8 +85,8 @@ ctime=1702215723
 mtime=1701855066
 
 [kcalcrc.upd]
-ctime=1712812424
-mtime=1710883751
+ctime=1713407418
+mtime=1712689767
 
 [kcm_rename_plasma_desktop.upd]
 ctime=1702215779
@@ -108,18 +108,18 @@ ctime=1702215686
 mtime=1701821594
 
 [kleopatra.upd]
-ctime=1712812535
+ctime=1713407473
 done=kleopatra-15.08-kickoff
-mtime=1710881651
+mtime=1712687997
 
 [klickety.upd]
-ctime=1712812459
-mtime=1710877106
+ctime=1713407480
+mtime=1712684028
 
 [konsole.upd]
-ctime=1712812564
+ctime=1713407506
 done=konsole_globalaccel,add-hamburgermenu-to-toolbar
-mtime=1710884335
+mtime=1712690144
 
 [konversation.upd]
 ctime=1702215753
@@ -186,9 +186,9 @@ done=ksmserver_update_loginMode_value_default_enum
 mtime=1701816132
 
 [kwin.upd]
-ctime=1712812581
+ctime=1713407435
 done=replace-scalein-with-scale,port-minimizeanimation-effect-to-js,port-scale-effect-to-js,port-dimscreen-effect-to-js,auto-bordersize,animation-speed,desktop-grid-click-behavior,no-swap-encourage,make-translucency-effect-disabled-by-default,remove-flip-switch-effect,remove-cover-switch-effect,remove-cubeslide-effect,remove-xrender-backend,enable-scale-effect-by-default,overview-group-plugin-id,animation-speed-cleanup,replace-cascaded-zerocornered
-mtime=1711795001
+mtime=1713341881
 
 [kwinrules.upd]
 ctime=1707142960
@@ -206,21 +206,24 @@ done=split-variants
 mtime=1701816132
 
 [migrate-calendar-to-plugin-id.upd]
-ctime=1712812589
-mtime=1711623209
+ctime=1713407446
+done=migrate-calendar-plugins
+mtime=1713342537
 
 [okular.upd]
-ctime=1712812499
+ctime=1713407577
 done=annotation-toolbar,builtin-annotations
-mtime=1710878329
+mtime=1712685161
 
 [plasma6.0-remove-dpi-settings.upd]
-ctime=1712812589
-mtime=1711623209
+ctime=1713407446
+done=migrate-calendar-plugins,plasma6.0-remove-dpi-settings
+mtime=1713342537
 
 [plasma6.0-remove-old-shortcuts.upd]
-ctime=1712812589
-mtime=1711623209
+ctime=1713407446
+done=plasma6.0-remove-dpi-settings,plasma6.0-remove-old-shortcuts
+mtime=1713342537
 
 [plasmashell-5.27-use-panel-thickness-in-default-group.upd]
 ctime=1707142971
@@ -228,16 +231,19 @@ done=plasmashell-5.27-use-panel-thickness-in-default-group
 mtime=1702320594
 
 [plasmashell-6.0-keep-custom-position-of-panels.upd]
-ctime=1712812589
-mtime=1711623209
+ctime=1713407446
+done=plasma6.0-remove-old-shortcuts,plasmashell-6.0-keep-custom-position-of-panels
+mtime=1713342537
 
 [plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels.upd]
-ctime=1712812589
-mtime=1711623209
+ctime=1713407446
+done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels
+mtime=1713342537
 
 [spectacle.upd]
-ctime=1712812505
-mtime=1710878470
+ctime=1713407604
+done=plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels,24.02.0-video_format,24.02.0-keep_old_save_location,24.02.0-rename_settings,24.02.0-keep_old_filename_templates,24.02.0-change_placeholder_format
+mtime=1712685304
 
 [spectacle_clipboard.upd]
 ctime=1702215785
@@ -264,9 +270,9 @@ done=StyleWidgetStyleDefaultBreeze
 mtime=1702320594
 
 [webenginepart.upd]
-ctime=1712812517
+ctime=1713407499
 done=MoveNonPasswordStorableSites
-mtime=1710880213
+mtime=1712686790
 
 [webengineurlinterceptoradblock.upd]
 ctime=1702215730
