@@ -1,0 +1,24 @@
+00:00:00.301208 VirtualBox GUI VM Selector Window 7.0.16 r162802 linux.amd64 (Apr 17 2024 07:13:40) release log
+00:00:00.301209 Log opened 2024-04-18T03:53:16.549568000Z
+00:00:00.301210 Build Type: release
+00:00:00.301211 OS Product: Linux
+00:00:00.301212 OS Release: 6.8.7-arch1-1
+00:00:00.301213 OS Version: #1 SMP PREEMPT_DYNAMIC Wed, 17 Apr 2024 15:20:28 +0000
+00:00:00.301226 DMI Product Name: 20JNS0CN00
+00:00:00.301232 DMI Product Version: ThinkPad T470 W10DG
+00:00:00.301236 Firmware type: UEFI
+00:00:00.301881 Secure Boot: Disabled
+00:00:00.301911 Host RAM: 7705MB (7.5GB) total, 4493MB (4.3GB) available
+00:00:00.301913 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.301914 Process ID: 5511
+00:00:00.301914 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.301938 Qt version: 5.15.13
+00:00:00.302553 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
+00:00:00.306539 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.306561 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:01.007020 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 0x0 x 1366x724
+00:02:57.326884 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:02:57.427717 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:03:20.186826 ERROR [COM]: aRC=NS_ERROR_UNEXPECTED (0x8000ffff) aIID={c0447716-ff5a-4795-b57a-ecd5fffa18a4} aComponent={SessionWrap} aText={The session is not locked (session state: Unlocked)}, preserve=false aResultDetail=0
+00:03:36.447449 GUI: UICommon: Handling aboutToQuit request..
+00:03:37.003978 GUI: UICommon: aboutToQuit request handled!

@@ -1,0 +1,84 @@
+00:00:00.000908 main     VirtualBox XPCOM Server 7.0.16 r162802 linux.amd64 (Apr 17 2024 07:13:40) release log
+00:00:00.000913 main     Log opened 2024-04-18T03:53:10.174815000Z
+00:00:00.000913 main     Build Type: release
+00:00:00.000916 main     OS Product: Linux
+00:00:00.000917 main     OS Release: 6.8.7-arch1-1
+00:00:00.000918 main     OS Version: #1 SMP PREEMPT_DYNAMIC Wed, 17 Apr 2024 15:20:28 +0000
+00:00:00.000951 main     DMI Product Name: 20JNS0CN00
+00:00:00.000961 main     DMI Product Version: ThinkPad T470 W10DG
+00:00:00.000967 main     Firmware type: UEFI
+00:00:00.002162 main     Secure Boot: Disabled
+00:00:00.002247 main     Host RAM: 7705MB (7.5GB) total, 4535MB (4.4GB) available
+00:00:00.002251 main     Executable: /usr/lib/virtualbox/VBoxSVC
+00:00:00.002252 main     Process ID: 5453
+00:00:00.002253 main     Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.004083 main     IPC socket path: /tmp/.vbox-aptrug-ipc/ipcd
+00:00:00.111979 nspr-2   VirtualBox: object creation starts
+00:00:00.112133 nspr-2   Home directory: '/home/aptrug/.config/VirtualBox'
+00:00:00.167706 nspr-2   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp4s0: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:00.169043 nspr-2   HostDnsMonitor: initializing
+00:00:00.169304 nspr-2   NAT: resolv.conf: nameserver 192.168.2.1
+00:00:00.169321 nspr-2   HostDnsMonitor: updating information
+00:00:00.169334 nspr-2   HostDnsMonitor: old information
+00:00:00.169336 nspr-2     no server entries
+00:00:00.169338 nspr-2     no domain set
+00:00:00.169339 nspr-2     no search string entries
+00:00:00.169341 nspr-2   HostDnsMonitor: new information
+00:00:00.169342 nspr-2     server 1: 192.168.2.1
+00:00:00.169345 nspr-2     no domain set
+00:00:00.169346 nspr-2     no search string entries
+00:00:00.172072 nspr-2   Failed to open "/dev/vboxdrvu", errno=2, rc=VERR_VM_DRIVER_NOT_INSTALLED
+00:00:00.172281 nspr-2   VD: VDInit finished with VINF_SUCCESS
+00:00:00.172410 nspr-2   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={aac6c7cb-a371-4c58-ab51-0616896b2f2c} aComponent={SystemPropertiesWrap} aText={Cannot determine default Guest Additions ISO location. Most likely they are not available}, preserve=false aResultDetail=0
+00:00:00.173295 nspr-2   VirtualBox: object created
+00:00:00.869841 nspr-3   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.872369 nspr-3   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:00:00.931636 nspr-4   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.933348 nspr-4   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:00:01.011537 nspr-3   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=false aResultDetail=0
+00:00:01.397502 nspr-2   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:01.405361 nspr-2   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:00:07.114542 nspr-4   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=false aResultDetail=0
+00:00:09.105915 nspr-3   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:09.113751 nspr-3   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:00:24.937873 nspr-4   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={aac6c7cb-a371-4c58-ab51-0616896b2f2c} aComponent={SystemPropertiesWrap} aText={Cannot determine default Guest Additions ISO location. Most likely they are not available}, preserve=false aResultDetail=0
+00:00:43.836223 nspr-4   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:43.838227 nspr-4   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:00:43.841525 nspr-4   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:43.843659 nspr-4   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:03:03.321279 createBase Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:03:03.327908 createBase Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:03:03.345291 nspr-3   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:03.346604 nspr-2   Saving settings file "/home/aptrug/VirtualBoxVMs/Windows10_x64/Windows10_x64.vbox" with version "1.19-linux"
+00:03:03.353967 nspr-2   Finished saving settings file "/home/aptrug/VirtualBoxVMs/Windows10_x64/Windows10_x64.vbox"
+00:03:03.354127 nspr-2   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:03:03.356141 nspr-2   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:03:03.360038 nspr-5   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:03:03.362463 nspr-5   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:03:03.364432 nspr-2   Saving settings file "/home/aptrug/VirtualBoxVMs/Windows10_x64/Windows10_x64.vbox" with version "1.19-linux"
+00:03:03.366401 nspr-2   Finished saving settings file "/home/aptrug/VirtualBoxVMs/Windows10_x64/Windows10_x64.vbox"
+00:03:03.394052 nspr-3   UnattendedInstaller::initInstaller: UnattendedInstaller::savePassedData(): 
+00:03:03.394087 nspr-3   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={6f89464f-7773-436a-a4df-592e4e537fa0} aComponent={UnattendedWrap} aText={Failed to open '/usr/share/virtualbox/UnattendedTemplates/win_nt6_unattended.xml' (VERR_FILE_NOT_FOUND)}, preserve=false aResultDetail=-102
+00:03:03.418962 nspr-3   Saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:03:03.421182 nspr-3   Finished saving settings file "/home/aptrug/.config/VirtualBox/VirtualBox.xml"
+00:03:03.859127 nspr-4   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:03.886113 nspr-4   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is PoweredOff)}, preserve=false aResultDetail=0
+00:03:03.887824 nspr-2   Failed to open "/dev/vboxdrvu", errno=2, rc=VERR_VM_DRIVER_NOT_INSTALLED
+00:03:04.049199 nspr-4   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:04.050920 nspr-4   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:25.728471 nspr-3   Launched VM: 2751471600 pid: 5663 (0x161f) frontend: GUI/Qt name: Windows10_x64
+00:03:25.829965 nspr-2   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is PoweredOff)}, preserve=false aResultDetail=0
+00:03:25.831518 nspr-2   Failed to open "/dev/vboxdrvu", errno=2, rc=VERR_VM_DRIVER_NOT_INSTALLED
+00:03:25.862964 nspr-2   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:25.864227 nspr-2   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:26.229767 Watcher  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The virtual machine 'Windows10_x64' has terminated unexpectedly during startup with exit code 1 (0x1)}, preserve=false aResultDetail=0
+00:03:26.363839 nspr-4   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is PoweredOff)}, preserve=false aResultDetail=0
+00:03:26.367473 nspr-5   Failed to open "/dev/vboxdrvu", errno=2, rc=VERR_VM_DRIVER_NOT_INSTALLED
+00:03:26.392602 nspr-4   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:26.395121 nspr-4   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={e54f6256-97a7-4947-8a78-10c013ddf4b8} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=true aResultDetail=0
+00:03:45.378516 main     VirtualBox: object deletion starts
+00:03:45.378551 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={ad47ad09-787b-44ab-b343-a082a3f2dfb1} aComponent={MediumWrap} aText={Medium '/home/aptrug/VirtualBoxVMs/Windows10_x64/Windows10_x64.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+00:03:45.379036 main     HostDnsMonitor: shutting down ...
+00:03:45.441251 main     HostDnsMonitor: shut down
+00:03:45.467243 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={7682d5eb-f00e-44f1-8ca2-99d08b1cd607} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+00:03:45.467318 main     VirtualBox: object deleted
