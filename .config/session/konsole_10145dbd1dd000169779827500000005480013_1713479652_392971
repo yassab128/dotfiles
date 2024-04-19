@@ -1,0 +1,31 @@
+[1]
+Active=1
+Tabs=[{"Orientation":"Horizontal","Widgets":[{"SessionRestoreId":1}]},{"Orientation":"Horizontal","Widgets":[{"SessionRestoreId":2}]}]
+
+[Number]
+NumberOfSessions=2
+NumberOfWindows=1
+
+[Session1]
+Encoding=UTF-8
+LocalTab=%d : %n
+Profile[$e]=FALLBACK/
+RemoteTab=(%u) %H
+SessionGuid={f2fae180-2a94-4bac-b529-2b757424ae88}
+TabColor=
+WorkingDir[$e]=$HOME/.wine/drive_c/Program Files/FullMetalDaemonMuramasa
+
+[Session2]
+Encoding=UTF-8
+LocalTab=%d : %n
+Profile[$e]=FALLBACK/
+RemoteTab=(%u) %H
+SessionGuid={b504f37f-b17d-42a0-8f6f-3f22905719cc}
+TabColor=
+WorkingDir[$e]=$HOME/.wine/drive_c/Program Files/FullMetalDaemonMuramasa
+
+[WindowProperties1]
+ClassName=Konsole::MainWindow
+MenuBar=Disabled
+ObjectName=MainWindow#1
+ToolBarsMovable=Disabled
