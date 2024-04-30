@@ -5,7 +5,11 @@ TurnOffDisplayWhenIdle=false
 AutoSuspendAction=0
 LidAction=64
 
+[Battery][Display]
+TurnOffDisplayWhenIdle=false
+
 [Battery][SuspendAndShutdown]
+AutoSuspendAction=0
 LidAction=64
 
 [LowBattery][SuspendAndShutdown]
