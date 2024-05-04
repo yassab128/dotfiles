@@ -3,7 +3,7 @@ DirHistory[$e]=$HOME/gaming/
 
 [General]
 LockSidebar=true
-ShowSidebar=true
+ShowSidebar=false
 
 [KFileDialog Settings]
 Recent Files[$e]=file:$HOME/gaming,file:$HOME/gaming
