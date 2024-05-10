@@ -2,26 +2,28 @@
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
 
 [LegacySession: saved at previous logout]
-count=0
+clientMachine1=localhost
+command1=vmware
+count=1
 
 [Session: saved at previous logout]
-clientId1=10145dbd1dd000171516926000000005980005
-clientId2=10145dbd1dd000171516926000000005980006
+clientId1=10145dbd1dd000171525843700000006030004
+clientId2=10145dbd1dd000171525843800000006030005
 clientId3=10145dbd1dd000168790581000000005010014
-clientId4=10145dbd1dd000171516926100000005980007
+clientId4=10145dbd1dd000171525843800000006030007
 clientId5=10145dbd1dd000171512790500000005920008
 count=5
-discardCommand4[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171516926100000005980007_1715195847_812770
+discardCommand4[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171525843800000006030007_1715298678_150020
 program1=/usr/bin/kclockd
 program2=/usr/lib/DiscoverNotifier
 program3=/usr/bin/kongressac
 program4=/usr/bin/kmix
 program5=/usr/bin/kalendarac
-restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000171516926000000005980005_1715195847_814556
-restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171516926000000005980006_1715195847_844236
-restartCommand3=/usr/bin/kongressac,-session,10145dbd1dd000168790581000000005010014_1715195847_839222
-restartCommand4=/usr/bin/kmix,-session,10145dbd1dd000171516926100000005980007_1715195847_812770
-restartCommand5=/usr/bin/kalendarac,-session,10145dbd1dd000171512790500000005920008_1715195847_815502
+restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000171525843700000006030004_1715298678_146867
+restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171525843800000006030005_1715298678_147009
+restartCommand3=/usr/bin/kongressac,-session,10145dbd1dd000168790581000000005010014_1715298678_151963
+restartCommand4=/usr/bin/kmix,-session,10145dbd1dd000171525843800000006030007_1715298678_150020
+restartCommand5=/usr/bin/kalendarac,-session,10145dbd1dd000171512790500000005920008_1715298678_154827
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
