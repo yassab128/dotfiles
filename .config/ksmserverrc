@@ -2,26 +2,28 @@
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
 
 [LegacySession: saved at previous logout]
-count=0
+clientMachine1=localhost
+command1=vmware
+count=1
 
 [Session: saved at previous logout]
-clientId1=10145dbd1dd000171550913400000006650004
-clientId2=10145dbd1dd000171550913400000006650006
+clientId1=10145dbd1dd000171552834300000006740004
+clientId2=10145dbd1dd000171552834400000006740006
 clientId3=10145dbd1dd000168790581000000005010014
-clientId4=10145dbd1dd000171525843800000006030007
+clientId4=10145dbd1dd000171552834400000006740007
 clientId5=10145dbd1dd000171534567600000006770008
 count=5
-discardCommand4[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171525843800000006030007_1715526860_120679
-program1=/usr/lib/DiscoverNotifier
-program2=/usr/bin/kclockd
+discardCommand4[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171552834400000006740007_1715551134_103893
+program1=/usr/bin/kclockd
+program2=/usr/lib/DiscoverNotifier
 program3=/usr/bin/kongressac
 program4=/usr/bin/kmix
 program5=/usr/bin/kalendarac
-restartCommand1=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171550913400000006650004_1715526860_123393
-restartCommand2=/usr/bin/kclockd,-session,10145dbd1dd000171550913400000006650006_1715526860_116967
-restartCommand3=/usr/bin/kongressac,-session,10145dbd1dd000168790581000000005010014_1715526860_116601
-restartCommand4=/usr/bin/kmix,-session,10145dbd1dd000171525843800000006030007_1715526860_120679
-restartCommand5=/usr/bin/kalendarac,-session,10145dbd1dd000171534567600000006770008_1715526860_122060
+restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000171552834300000006740004_1715551134_78034
+restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171552834400000006740006_1715551134_84685
+restartCommand3=/usr/bin/kongressac,-session,10145dbd1dd000168790581000000005010014_1715551134_85039
+restartCommand4=/usr/bin/kmix,-session,10145dbd1dd000171552834400000006740007_1715551134_103893
+restartCommand5=/usr/bin/kalendarac,-session,10145dbd1dd000171534567600000006770008_1715551134_106795
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
