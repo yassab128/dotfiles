@@ -2,28 +2,26 @@
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
 
 [LegacySession: saved at previous logout]
-clientMachine1=localhost
-command1=vmware
-count=1
+count=0
 
 [Session: saved at previous logout]
-clientId1=10145dbd1dd000171552834300000006740004
-clientId2=10145dbd1dd000171552834400000006740006
+clientId1=10145dbd1dd000171658651500000006450004
+clientId2=10145dbd1dd000171658651500000006450005
 clientId3=10145dbd1dd000168790581000000005010014
-clientId4=10145dbd1dd000171552834400000006740007
-clientId5=10145dbd1dd000171534567600000006770008
+clientId4=10145dbd1dd000171658651600000006450007
+clientId5=10145dbd1dd000171658651600000006450008
 count=5
-discardCommand4[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171552834400000006740007_1715551134_103893
+discardCommand4[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171658651600000006450007_1716587276_71591
 program1=/usr/bin/kclockd
 program2=/usr/lib/DiscoverNotifier
 program3=/usr/bin/kongressac
 program4=/usr/bin/kmix
 program5=/usr/bin/kalendarac
-restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000171552834300000006740004_1715551134_78034
-restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171552834400000006740006_1715551134_84685
-restartCommand3=/usr/bin/kongressac,-session,10145dbd1dd000168790581000000005010014_1715551134_85039
-restartCommand4=/usr/bin/kmix,-session,10145dbd1dd000171552834400000006740007_1715551134_103893
-restartCommand5=/usr/bin/kalendarac,-session,10145dbd1dd000171534567600000006770008_1715551134_106795
+restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000171658651500000006450004_1716587276_69935
+restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171658651500000006450005_1716587276_70668
+restartCommand3=/usr/bin/kongressac,-session,10145dbd1dd000168790581000000005010014_1716587276_72548
+restartCommand4=/usr/bin/kmix,-session,10145dbd1dd000171658651600000006450007_1716587276_71591
+restartCommand5=/usr/bin/kalendarac,-session,10145dbd1dd000171658651600000006450008_1716587276_74608
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
