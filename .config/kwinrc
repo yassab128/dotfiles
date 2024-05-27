@@ -7,6 +7,12 @@ Id_2=db740eb4-d1a9-4b0b-8d49-462a83a799a2
 Number=2
 Rows=1
 
+[NightColor]
+Active=true
+LatitudeAuto=32.88
+LongitudeAuto=-6.91
+NightTemperature=3000
+
 [Tiling]
 padding=4
 
