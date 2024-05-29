@@ -2,13 +2,10 @@
 NumberOfWindows=1
 
 [WindowProperties1]
-1366x768 screen: Height=480
-1366x768 screen: Width=640
 1366x768 screen: XPosition=0
 1366x768 screen: YPosition=0
 ClassName=KMixWindow
 ObjectName=KMixWindow
-RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAAAAAAAAAAAAAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
