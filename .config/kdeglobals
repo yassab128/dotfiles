@@ -136,8 +136,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=844,598
-History Items[$e]=file:$HOME/scripts/c/zeit
+DirSelectDialog Size=884,512
+History Items[$e]=file:$HOME/Downloads,file:$HOME/scripts/c/zeit
 
 [General]
 BrowserApplication=firefox.desktop
