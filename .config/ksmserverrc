@@ -5,4 +5,25 @@ update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_valu
 count=0
 
 [Session: saved at previous logout]
-count=0
+clientId1=10145dbd1dd000171791441500000006650005
+clientId2=10145dbd1dd000171791441500000006650006
+clientId3=10145dbd1dd000171791441600000006650007
+clientId4=10145dbd1dd000171791441600000006650008
+count=4
+discardCommand3[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171791441600000006650007_1717981750_452759
+program1=/usr/lib/DiscoverNotifier
+program2=/usr/bin/kclockd
+program3=/usr/bin/kmix
+program4=/usr/bin/kalendarac
+restartCommand1=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171791441500000006650005_1717981750_452443
+restartCommand2=/usr/bin/kclockd,-session,10145dbd1dd000171791441500000006650006_1717981750_452586
+restartCommand3=/usr/bin/kmix,-session,10145dbd1dd000171791441600000006650007_1717981750_452759
+restartCommand4=/usr/bin/kalendarac,-session,10145dbd1dd000171791441600000006650008_1717981750_456063
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+restartStyleHint4=0
+userId1=aptrug
+userId2=aptrug
+userId3=aptrug
+userId4=aptrug
