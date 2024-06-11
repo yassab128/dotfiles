@@ -2,23 +2,25 @@
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
 
 [LegacySession: saved at previous logout]
-count=0
+clientMachine1=localhost
+command1=vmware
+count=1
 
 [Session: saved at previous logout]
-clientId1=10145dbd1dd000171801954900000006480005
-clientId2=10145dbd1dd000171801954900000006480006
-clientId3=10145dbd1dd000171791441600000006650007
+clientId1=10145dbd1dd000171807330700000006530004
+clientId2=10145dbd1dd000171801954900000006480005
+clientId3=10145dbd1dd000171807330800000006530007
 clientId4=10145dbd1dd000171801955000000006480008
 count=4
-discardCommand3[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171791441600000006650007_1718071234_458302
-program1=/usr/bin/kclockd
-program2=/usr/lib/DiscoverNotifier
+discardCommand3[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000171807330800000006530007_1718077714_224147
+program1=/usr/lib/DiscoverNotifier
+program2=/usr/bin/kclockd
 program3=/usr/bin/kmix
 program4=/usr/bin/kalendarac
-restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000171801954900000006480005_1718071234_459873
-restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171801954900000006480006_1718071234_458354
-restartCommand3=/usr/bin/kmix,-session,10145dbd1dd000171791441600000006650007_1718071234_458302
-restartCommand4=/usr/bin/kalendarac,-session,10145dbd1dd000171801955000000006480008_1718071234_461704
+restartCommand1=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000171807330700000006530004_1718077714_223561
+restartCommand2=/usr/bin/kclockd,-session,10145dbd1dd000171801954900000006480005_1718077714_223779
+restartCommand3=/usr/bin/kmix,-session,10145dbd1dd000171807330800000006530007_1718077714_224147
+restartCommand4=/usr/bin/kalendarac,-session,10145dbd1dd000171801955000000006480008_1718077714_223731
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
