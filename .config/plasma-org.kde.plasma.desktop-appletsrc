@@ -6,8 +6,9 @@ wheel:Vertical;NoModifier=org.kde.switchdesktop
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
+ItemGeometries-1280x720=Applet-27:1018.35,0,256,272,0;
 ItemGeometries-1366x768=Applet-27:1104,0,256,272,0;
-ItemGeometriesHorizontal=Applet-27:1104,0,256,272,0;
+ItemGeometriesHorizontal=Applet-27:1018.35,0,256,272,0;
 activityId=8ec7deee-a386-417c-ae5d-74e78a3efabf
 formfactor=0
 immutability=1
