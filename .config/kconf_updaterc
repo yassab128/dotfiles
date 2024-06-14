@@ -1,9 +1,9 @@
 updateInfoAdded=true
 
 [ark.upd]
-ctime=1716884389
+ctime=1718365924
 done=add-hamburgermenu-to-toolbar
-mtime=1716323077
+mtime=1718127236
 
 [breezehighcontrasttobreezedark.upd]
 ctime=1702215689
@@ -31,14 +31,14 @@ done=PlasmaVolume_DisableKMixAutostart
 mtime=1701816651
 
 [dolphin_detailsmodesettings.upd]
-ctime=1716884398
+ctime=1718365925
 done=rename-leading-padding,move-content-display
-mtime=1716314522
+mtime=1718118859
 
 [dolphin_directorysizemode.upd]
-ctime=1716884398
+ctime=1718365925
 done=convert-directorysizecount-to-directorysizemode
-mtime=1716314522
+mtime=1718118859
 
 [filepicker.upd]
 ctime=1716884390
@@ -90,8 +90,8 @@ ctime=1702215723
 mtime=1701855066
 
 [kcalcrc.upd]
-ctime=1717161410
-mtime=1716935307
+ctime=1718365929
+mtime=1718131438
 
 [kcm_rename_plasma_desktop.upd]
 ctime=1702215779
@@ -118,13 +118,13 @@ done=kleopatra-15.08-kickoff
 mtime=1712687997
 
 [klickety.upd]
-ctime=1716884526
-mtime=1716316976
+ctime=1718365932
+mtime=1718121120
 
 [konsole.upd]
-ctime=1716884618
+ctime=1718365937
 done=konsole_globalaccel,add-hamburgermenu-to-toolbar
-mtime=1716477616
+mtime=1718128215
 
 [konversation.upd]
 ctime=1702215753
@@ -216,9 +216,9 @@ done=migrate-calendar-plugins
 mtime=1717830843
 
 [okular.upd]
-ctime=1716884560
+ctime=1718365989
 done=annotation-toolbar,builtin-annotations
-mtime=1716318219
+mtime=1718122383
 
 [plasma6.0-remove-dpi-settings.upd]
 ctime=1717892275
@@ -246,9 +246,9 @@ done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default
 mtime=1717830843
 
 [spectacle.upd]
-ctime=1716884566
+ctime=1718365993
 done=plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels,24.02.0-video_format,24.02.0-keep_old_save_location,24.02.0-rename_settings,24.02.0-keep_old_filename_templates,24.02.0-change_placeholder_format
-mtime=1716318354
+mtime=1718122528
 
 [spectacle_clipboard.upd]
 ctime=1702215785
@@ -275,9 +275,9 @@ done=StyleWidgetStyleDefaultBreeze
 mtime=1702320594
 
 [webenginepart.upd]
-ctime=1716884588
+ctime=1718365937
 done=MoveNonPasswordStorableSites
-mtime=1716319833
+mtime=1718124137
 
 [webengineurlinterceptoradblock.upd]
 ctime=1702215730
