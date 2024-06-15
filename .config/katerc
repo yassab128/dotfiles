@@ -126,11 +126,13 @@ Word Completion Remove Tail=true
 Search History=1521
 
 [MainWindow]
-1366x768 screen: Window-Maximized=true
+1366x768 screen: Height=696
+1366x768 screen: Width=682
 
 [filetree]
 editShade=183,220,246
 listMode=false
+middleClickToClose=false
 shadingEnabled=true
 showCloseButton=false
 showFullPathOnRoots=false
