@@ -124,7 +124,7 @@ plugin=org.kde.plasma.systemmonitor.memory
 
 [Containments][2][Applets][31][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=95
+PreloadWeight=100
 popupHeight=180
 popupWidth=156
 
