@@ -3,6 +3,7 @@
         "data": [
             {
                 "autoRotation": "InTabletMode",
+                "colorProfileSource": "sRGB",
                 "connectorName": "eDP-1",
                 "edidHash": "6ed0389cde87a1bbe1ef8d0e5a662484",
                 "edidIdentifier": "BOE 1715 0 1 2015 0",

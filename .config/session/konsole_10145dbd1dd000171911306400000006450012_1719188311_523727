@@ -11,9 +11,9 @@ Encoding=UTF-8
 LocalTab=%d : %n
 Profile[$e]=FALLBACK/
 RemoteTab=(%u) %H
-SessionGuid={aead0acd-f903-4173-8939-facbc856f05d}
+SessionGuid={6fbcffde-3f60-45f4-8f87-15e6c8534e8b}
 TabColor=
-WorkingDir[$e]=$HOME
+WorkingDir[$e]=$HOME/Downloads
 
 [WindowProperties1]
 ClassName=Konsole::MainWindow
