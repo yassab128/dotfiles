@@ -234,7 +234,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=90
+PreloadWeight=95
 
 [Containments][8][Applets][18][Configuration][General]
 migrated=true
@@ -298,7 +298,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][34][Configuration]
-PreloadWeight=35
+PreloadWeight=45
 
 [Containments][8][Applets][9]
 immutability=1
@@ -322,4 +322,4 @@ knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.battery,org.kde.plas
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
+screenMapping=desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf

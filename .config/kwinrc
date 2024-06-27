@@ -11,7 +11,7 @@ Rows=1
 Active=true
 LatitudeAuto=32.34
 LongitudeAuto=-6.35
-NightTemperature=2500
+NightTemperature=1800
 
 [Tiling]
 padding=4
