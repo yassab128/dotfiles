@@ -144,10 +144,6 @@ BrowserApplication=firefox.desktop
 ColorSchemeHash=38f350e0530aaa58cc20a2cf2011a8a2d0c7a4fc
 XftHintStyle=hintslight
 XftSubPixel=rgb
-font=DejaVu Sans,10,-1,5,50,0,0,0,0,0
-menuFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
-smallestReadableFont=DejaVu Serif,8,-1,5,50,0,0,0,0,0
-toolBarFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -172,7 +168,6 @@ View Style=DetailTree
 [WM]
 activeBackground=227,229,231
 activeBlend=227,229,231
-activeFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
 activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241
