@@ -7,8 +7,8 @@ RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
 ItemGeometries-1280x720=Applet-27:1018.35,0,256,272,0;
-ItemGeometries-1366x768=Applet-27:1104,0,256,272,0;
-ItemGeometriesHorizontal=Applet-27:1104,0,256,272,0;
+ItemGeometries-1366x768=Applet-27:896,0,464,464,0;
+ItemGeometriesHorizontal=Applet-27:896,0,464,464,0;
 activityId=8ec7deee-a386-417c-ae5d-74e78a3efabf
 formfactor=0
 immutability=1
@@ -22,7 +22,7 @@ immutability=1
 plugin=org.kde.plasma.notes
 
 [Containments][1][Applets][27][Configuration][General]
-cursorPosition=157
+cursorPosition=172
 fontSize=10
 noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
 
@@ -322,4 +322,4 @@ knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.battery,org.kde.plas
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
+screenMapping=desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/ランス１０.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
