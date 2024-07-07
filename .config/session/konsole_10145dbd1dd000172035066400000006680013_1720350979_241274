@@ -13,7 +13,7 @@ Profile[$e]=FALLBACK/
 RemoteTab=(%u) %H
 SessionGuid={73b02739-d3f8-4288-b91f-b3a5d8c53a05}
 TabColor=
-WorkingDir[$e]=$HOME/rance/rance10/ransu
+WorkingDir[$e]=$HOME
 
 [WindowProperties1]
 ClassName=Konsole::MainWindow
