@@ -22,10 +22,10 @@ immutability=1
 plugin=org.kde.plasma.notes
 
 [Containments][1][Applets][27][Configuration][General]
-cursorPosition=331
+cursorPosition=385
 fontSize=10
 noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
-scrollY=67
+scrollY=68
 
 [Containments][1][General]
 ToolBoxButtonState=topcenter
@@ -45,7 +45,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 popupHeight=450
 popupWidth=396
 
@@ -62,7 +62,9 @@ plugin=org.kde.plasma.systemmonitor.net
 
 [Containments][2][Applets][28][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=55
+PreloadWeight=60
+popupHeight=90
+popupWidth=156
 
 [Containments][2][Applets][28][Configuration][Appearance]
 chartFace=org.kde.ksysguard.textonly
@@ -85,7 +87,7 @@ plugin=org.kde.plasma.systemmonitor.cpu
 
 [Containments][2][Applets][29][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=65
+PreloadWeight=70
 popupHeight=256
 popupWidth=156
 
