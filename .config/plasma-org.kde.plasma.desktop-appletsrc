@@ -322,4 +322,4 @@ knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.battery,org.kde.plas
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
+screenMapping=desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
