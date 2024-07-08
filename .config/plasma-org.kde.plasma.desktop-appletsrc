@@ -237,7 +237,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][8][Applets][18][Configuration][General]
 migrated=true
@@ -301,7 +301,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][34][Configuration]
-PreloadWeight=65
+PreloadWeight=57
 
 [Containments][8][Applets][9]
 immutability=1
