@@ -87,7 +87,7 @@ plugin=org.kde.plasma.systemmonitor.cpu
 
 [Containments][2][Applets][29][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=70
+PreloadWeight=75
 popupHeight=256
 popupWidth=156
 
