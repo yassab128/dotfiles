@@ -1,9 +1,9 @@
 [1]
 Active=0
-Tabs=[{"Orientation":"Horizontal","Widgets":[{"SessionRestoreId":1}]}]
+Tabs=[{"Orientation":"Horizontal","Widgets":[{"SessionRestoreId":1}]},{"Orientation":"Horizontal","Widgets":[{"SessionRestoreId":2}]}]
 
 [Number]
-NumberOfSessions=1
+NumberOfSessions=2
 NumberOfWindows=1
 
 [Session1]
@@ -12,6 +12,15 @@ LocalTab=%d : %n
 Profile[$e]=FALLBACK/
 RemoteTab=(%u) %H
 SessionGuid={4c402e81-3754-4935-b9e7-af38fcf87b5e}
+TabColor=
+WorkingDir[$e]=$HOME/Downloads/Textractor/x86
+
+[Session2]
+Encoding=UTF-8
+LocalTab=%d : %n
+Profile[$e]=FALLBACK/
+RemoteTab=(%u) %H
+SessionGuid={87f4ca0f-53b7-46ef-9615-0dfed0d56786}
 TabColor=
 WorkingDir[$e]=$HOME/Downloads/Textractor/x86
 
