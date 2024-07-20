@@ -13,7 +13,7 @@ Profile[$e]=FALLBACK/
 RemoteTab=(%u) %H
 SessionGuid={bad90793-2a05-44d7-87e7-cf4f3876224b}
 TabColor=
-WorkingDir[$e]=$HOME/.wine/drive_c/Program Files (x86)/AliceSoft/ransu7
+WorkingDir[$e]=$HOME/Downloads
 
 [WindowProperties1]
 ClassName=Konsole::MainWindow

@@ -11,18 +11,18 @@ Encoding=UTF-8
 LocalTab=%d : %n
 Profile[$e]=FALLBACK/
 RemoteTab=(%u) %H
-SessionGuid={4c402e81-3754-4935-b9e7-af38fcf87b5e}
+SessionGuid={ee24b593-92e5-49d5-91a7-7d1767285793}
 TabColor=
-WorkingDir[$e]=$HOME/Downloads/Textractor/x86
+WorkingDir[$e]=$HOME/.wine/drive_c/Program Files (x86)/light/kkk
 
 [Session2]
 Encoding=UTF-8
 LocalTab=%d : %n
 Profile[$e]=FALLBACK/
 RemoteTab=(%u) %H
-SessionGuid={87f4ca0f-53b7-46ef-9615-0dfed0d56786}
+SessionGuid={66ead733-fd5a-434f-bd7b-1a25e32665cf}
 TabColor=
-WorkingDir[$e]=$HOME/Downloads/Textractor/x86
+WorkingDir[$e]=$HOME/.wine/drive_c/Program Files (x86)/light/kkk
 
 [WindowProperties1]
 ClassName=Konsole::MainWindow
