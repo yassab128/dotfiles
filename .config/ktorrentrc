@@ -57,7 +57,7 @@ shrunken=true
 
 [TorrentActivitySplitters]
 hsplit=AAAA/wAAAAEAAAACAAABAAAAAwAB/////wEAAAABAA==
-vsplit=AAAA/wAAAAEAAAACAAACo/////8B/////wEAAAACAA==
+vsplit=AAAA/wAAAAEAAAACAAACowAAAOgB/////wEAAAACAA==
 
 [TorrentSearchBar]
 hidden=true

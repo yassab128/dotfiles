@@ -9,7 +9,7 @@
 alias\
 	ls='ls -F'\
 	au='ffplay -autoexit -nodisp -loglevel quiet'\
-	jine='LANG=ja_JP.UTF-8 wine'\
+	jine='LC_ALL=ja_JP.UTF-8 TZ="Asia/Tokyo" wine'\
 	cpu='ps -eo comm,rss,pcpu --sort=pcpu'\
 	mem='ps -eo comm,rss,pcpu --sort=rss'\
 	l='ls -Ahlt'\
