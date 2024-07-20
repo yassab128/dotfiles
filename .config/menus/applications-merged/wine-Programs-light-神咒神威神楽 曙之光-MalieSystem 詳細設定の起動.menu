@@ -1,0 +1,24 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+"http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
+<Menu>
+  <Name>Applications</Name>
+  <Menu>
+    <Name>wine-wine</Name>
+    <Directory>wine-wine.directory</Directory>
+  <Menu>
+    <Name>wine-Programs</Name>
+    <Directory>wine-Programs.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-light</Name>
+    <Directory>wine-Programs-light.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-light-神咒神威神楽 曙之光</Name>
+    <Directory>wine-Programs-light-神咒神威神楽 曙之光.directory</Directory>
+    <Include>
+      <Filename>wine-Programs-light-神咒神威神楽 曙之光-MalieSystem 詳細設定の起動.desktop</Filename>
+    </Include>
+  </Menu>
+  </Menu>
+  </Menu>
+  </Menu>
+</Menu>

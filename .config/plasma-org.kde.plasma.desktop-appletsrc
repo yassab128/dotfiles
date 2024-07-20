@@ -22,14 +22,14 @@ immutability=1
 plugin=org.kde.plasma.notes
 
 [Containments][1][Applets][27][Configuration][General]
-cursorPosition=331
 fontSize=10
 noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
-scrollY=68
 
 [Containments][1][General]
 ToolBoxButtonState=topcenter
 ToolBoxButtonX=345
+positions={"1366x768":["1"\\,"12"\\,"desktop:/SavedStuff.txt"\\,"0"\\,"2"\\,"desktop:/Rance10TextractorSettings.txt"\\,"0"\\,"3"\\,"desktop:/Cheat Engine.desktop"\\,"0"\\,"0"\\,"desktop:/Cheat Engine.lnk"\\,"0"\\,"1"]}
+sortMode=-1
 
 [Containments][2]
 activityId=
@@ -325,4 +325,4 @@ knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.battery,org.kde.plas
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/SavedStuff.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
+screenMapping=desktop:/Rance10TextractorSettings.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/SavedStuff.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
