@@ -9,7 +9,7 @@ RightButton;NoModifier=org.kde.contextmenu
 ItemGeometries-1280x720=Applet-27:1018.35,0,256,272,0;
 ItemGeometries-1366x768=Applet-27:880,0,464,464,0;
 ItemGeometries-800x600=Applet-27:317,0,464,464,0;
-ItemGeometriesHorizontal=Applet-27:317,0,464,464,0;
+ItemGeometriesHorizontal=Applet-27:880,0,464,464,0;
 activityId=8ec7deee-a386-417c-ae5d-74e78a3efabf
 formfactor=0
 immutability=1
@@ -29,7 +29,7 @@ noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
 [Containments][1][General]
 ToolBoxButtonState=topcenter
 ToolBoxButtonX=345
-positions={"1366x768":["1"\\,"12"\\,"desktop:/Cheat Engine.desktop"\\,"0"\\,"0"\\,"desktop:/kkk_hooks.txt"\\,"0"\\,"5"\\,"desktop:/SavedStuff.txt"\\,"0"\\,"2"\\,"desktop:/Rance10TextractorSettings.txt"\\,"0"\\,"3"\\,"desktop:/Cheat Engine.lnk"\\,"0"\\,"1"\\,"desktop:/steam.desktop"\\,"0"\\,"4"]\\,"800x600":[""]}
+positions={"1366x768":["1"\\,"12"\\,"desktop:/SavedStuff.txt"\\,"0"\\,"2"\\,"desktop:/Rance10TextractorSettings.txt"\\,"0"\\,"3"\\,"desktop:/Cheat Engine.desktop"\\,"0"\\,"0"\\,"desktop:/kkk_hooks.txt"\\,"0"\\,"5"\\,"desktop:/Cheat Engine.lnk"\\,"0"\\,"1"\\,"desktop:/steam.desktop"\\,"0"\\,"4"]\\,"800x600":[""]}
 sortMode=-1
 
 [Containments][2]
@@ -326,4 +326,4 @@ knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.battery,org.kde.plas
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Rance10TextractorSettings.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/steam.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/SavedStuff.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/kkk_hooks.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
+screenMapping=desktop:/Rance10TextractorSettings.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.lnk,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/steam.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/SavedStuff.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/kkk_hooks.txt,0,8ec7deee-a386-417c-ae5d-74e78a3efabf,desktop:/Cheat Engine.desktop,0,8ec7deee-a386-417c-ae5d-74e78a3efabf
