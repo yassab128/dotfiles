@@ -10,6 +10,7 @@ alias\
 	ls='ls -F'\
 	au='ffplay -autoexit -nodisp -loglevel quiet'\
 	jine='LC_ALL=ja_JP.UTF-8 TZ="Asia/Tokyo" wine'\
+	aria='aria2c --enable-rpc --rpc-listen-all'\
 	cpu='ps -eo comm,rss,pcpu --sort=pcpu'\
 	mem='ps -eo comm,rss,pcpu --sort=rss'\
 	l='ls -Ahlt'\
