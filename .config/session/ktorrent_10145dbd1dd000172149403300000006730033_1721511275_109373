@@ -1,6 +1,0 @@
-[Number]
-NumberOfWindows=1
-
-[WindowProperties1]
-ClassName=kt::GUI
-ObjectName=MainWindow#1
