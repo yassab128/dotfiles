@@ -2,29 +2,27 @@
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
 
 [LegacySession: saved at previous logout]
-clientMachine1=localhost
-command1=lutris
-count=1
+count=0
 
 [Session: saved at previous logout]
-clientId1=10145dbd1dd000172138791200000006720005
-clientId2=10145dbd1dd000172147056900000006730006
+clientId1=10145dbd1dd000172158117100000006660004
+clientId2=10145dbd1dd000172158117100000006660006
 clientId3=10145dbd1dd000172151141400000006340008
-clientId4=10145dbd1dd000172151141400000006340009
-clientId5=10145dbd1dd000172156215200000006340032
+clientId4=10145dbd1dd000172158117300000006660009
+clientId5=10145dbd1dd000172158605400000006660027
 count=5
-discardCommand3[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000172151141400000006340008_1721579393_56062
-discardCommand5[$e]=rm,$HOME/.config/session/dolphin_10145dbd1dd000172156215200000006340032_1721579393_53716
+discardCommand3[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000172151141400000006340008_1721608693_999524
+discardCommand5[$e]=rm,$HOME/.config/session/yakuake_10145dbd1dd000172158605400000006660027_1721608694_1233
 program1=/usr/bin/kclockd
 program2=/usr/lib/DiscoverNotifier
 program3=/usr/bin/kmix
 program4=/usr/bin/kalendarac
-program5=/usr/sbin/dolphin
-restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000172138791200000006720005_1721579393_55524
-restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000172147056900000006730006_1721579393_53493
-restartCommand3=/usr/bin/kmix,-session,10145dbd1dd000172151141400000006340008_1721579393_56062
-restartCommand4=/usr/bin/kalendarac,-session,10145dbd1dd000172151141400000006340009_1721579393_59918
-restartCommand5=/usr/sbin/dolphin,-session,10145dbd1dd000172156215200000006340032_1721579393_53716
+program5=/usr/bin/yakuake
+restartCommand1=/usr/bin/kclockd,-session,10145dbd1dd000172158117100000006660004_1721608693_996791
+restartCommand2=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000172158117100000006660006_1721608694_6332
+restartCommand3=/usr/bin/kmix,-session,10145dbd1dd000172151141400000006340008_1721608693_999524
+restartCommand4=/usr/bin/kalendarac,-session,10145dbd1dd000172158117300000006660009_1721608694_1579
+restartCommand5=/usr/bin/yakuake,-session,10145dbd1dd000172158605400000006660027_1721608694_1233
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
