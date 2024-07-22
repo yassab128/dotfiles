@@ -1,5 +1,9 @@
 [Dialogs]
 FirstRun=false
 
+[Shortcuts]
+next-session=Ctrl+PgDown
+previous-session=Ctrl+PgUp
+
 [Window]
 Width=100
