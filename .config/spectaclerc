@@ -2,6 +2,7 @@
 update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_rememberregion.upd:spectacle-migrate-rememberregion
 
 [ImageSave]
+lastImageSaveLocation=file:///home/aptrug/Screenshots/Screenshot_20240723_060052.png
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]

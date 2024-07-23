@@ -4,6 +4,12 @@ Encoding=ISO-8859-15
 Time=2024,7,8,18,17,49.645
 URL=file:///home/aptrug/.wine/drive_c/Program Files (x86)/AliceSoft/ransu7/AliceStart.ini
 
+[file:///home/aptrug/Downloads/rance03_updater_ver101/『ランス03』アップデータVer.1.01解説.txt]
+Checksum=6e3126a0f236bd1c17e2b57aacc529514a334bcf
+Encoding=ISO-8859-15
+Time=2024,7,23,5,59,59.173
+URL=file:///home/aptrug/Downloads/rance03_updater_ver101/『ランス03』アップデータVer.1.01解説.txt
+
 [file:///home/aptrug/Downloads/rancexupgrades/rance10_updater_ver101/UpdateFiles/Files/Rance10/AliceStart.ini]
 Checksum=c9b2c1446cfe036738a37422107ae98833ecf04a
 Encoding=ISO-8859-15
