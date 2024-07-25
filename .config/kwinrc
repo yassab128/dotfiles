@@ -4,7 +4,8 @@ update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-
 [Desktops]
 Id_1=d3d861a8-3ce4-4ced-a4a8-ec83ad6e0c61
 Id_2=db740eb4-d1a9-4b0b-8d49-462a83a799a2
-Number=2
+Id_3=f22d9d33-9b4c-4c80-9994-27638fccac47
+Number=3
 Rows=1
 
 [NightColor]
