@@ -1,2 +1,3 @@
-2024/07/20-16:15:35.513 4e53 Creating DB /home/aptrug/.config/falkon/profiles/default/Session Storage since it was missing.
-2024/07/20-16:15:35.519 4e53 Reusing MANIFEST /home/aptrug/.config/falkon/profiles/default/Session Storage/MANIFEST-000001
+2024/07/26-05:10:17.187 127e3 Reusing MANIFEST /home/aptrug/.config/falkon/profiles/default/Session Storage/MANIFEST-000001
+2024/07/26-05:10:17.187 127e3 Recovering log #3
+2024/07/26-05:10:17.188 127e3 Reusing old log /home/aptrug/.config/falkon/profiles/default/Session Storage/000003.log 

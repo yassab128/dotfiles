@@ -1,4 +1,4 @@
-Title: Custom Rules
+Title: カスタムルールの編集
 Url: 
 [Adblock Plus 1.1.1]
 @@||duckduckgo.com^$document
