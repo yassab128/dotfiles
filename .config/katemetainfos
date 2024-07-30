@@ -4,6 +4,24 @@ Encoding=ISO-8859-15
 Time=2024,7,8,18,17,49.645
 URL=file:///home/aptrug/.wine/drive_c/Program Files (x86)/AliceSoft/ransu7/AliceStart.ini
 
+[file:///home/aptrug/.wine/drive_c/games/HentaiPrison/AUTORUN.INF]
+Checksum=c036270d9607a42b0dbfb7944ac4e8cbb9b53d73
+Encoding=ISO-8859-15
+Time=2024,7,30,20,21,49.001
+URL=file:///home/aptrug/.wine/drive_c/games/HentaiPrison/AUTORUN.INF
+
+[file:///home/aptrug/.wine/drive_c/games/HentaiPrison/________.TXT]
+Checksum=bac1d0e700bf6363ed49bf535b71a3515f9a2106
+Encoding=ISO-8859-15
+Time=2024,7,30,20,28,42.155
+URL=file:///home/aptrug/.wine/drive_c/games/HentaiPrison/________.TXT
+
+[file:///home/aptrug/.wine/drive_c/games/Qruppo/HentaiPrison/readme.txt]
+Checksum=bac1d0e700bf6363ed49bf535b71a3515f9a2106
+Encoding=ISO-8859-15
+Time=2024,7,30,20,19,4.737
+URL=file:///home/aptrug/.wine/drive_c/games/Qruppo/HentaiPrison/readme.txt
+
 [file:///home/aptrug/Downloads/rance03_updater_ver101/『ランス03』アップデータVer.1.01解説.txt]
 Checksum=6e3126a0f236bd1c17e2b57aacc529514a334bcf
 Encoding=ISO-8859-15
