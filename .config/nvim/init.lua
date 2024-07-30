@@ -10,10 +10,11 @@ local file_path = vim.fn.expand("%")
 -- 	shiftwidth = 8
 -- }
 
-vim.opt.tabstop = 8
+vim.opt.tabstop = 4
 -- vim.opt.hidden = true
-vim.opt.shiftwidth = 8
+vim.opt.shiftwidth = 4
 vim.opt.number = true
+vim.opt.expandtab = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
