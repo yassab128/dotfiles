@@ -6,6 +6,7 @@ NumberOfWindows=1
 1280x720 screen: YPosition=0
 ClassName=KMixWindow
 ObjectName=KMixWindow
+RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAAAAAAAAAAAAAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
