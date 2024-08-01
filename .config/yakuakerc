@@ -6,4 +6,5 @@ next-session=Ctrl+PgDown
 previous-session=Ctrl+PgUp
 
 [Window]
+Height=100
 Width=100
