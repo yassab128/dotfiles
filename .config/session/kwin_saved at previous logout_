@@ -1,5 +1,5 @@
 [Session]
-active=-1
+active=1
 activities1=
 activities2=
 activities3=8ec7deee-a386-417c-ae5d-74e78a3efabf
@@ -110,8 +110,8 @@ restore6=0,0,0,724
 restore7=0,0,0,724
 restore8=0,0,0,724
 restore9=0,0,0,724
-sessionId1=10145dbd1dd000172241010700000006310000
-sessionId2=10145dbd1dd000172241010700000006310000
+sessionId1=10145dbd1dd000172243788300000007480000
+sessionId2=10145dbd1dd000172243788300000007480000
 sessionId3=10145dbd1dd000172240941900000006220107
 sessionId4=
 sessionId5=10145dbd1dd000172150473500000006730036
@@ -165,7 +165,7 @@ skipTaskbar7=false
 skipTaskbar8=false
 skipTaskbar9=false
 stackingOrder1=0
-stackingOrder2=4
+stackingOrder2=1
 stackingOrder3=42
 stackingOrder4=4
 stackingOrder5=4
