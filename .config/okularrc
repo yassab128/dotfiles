@@ -15,5 +15,7 @@ eDP-1=eDP-1
 [Recent Files]
 File1[$e]=$HOME/Downloads/Ravager Walkthrough.pdf
 File2[$e]=$HOME/.wine/dosdevices/c:/Program Files/FullMetalDaemonMuramasa/Manual.pdf
+File3[$e]=$HOME/Downloads/Ravager/Ravager_Walkthrough_v515.pdf
 Name1[$e]=Ravager Walkthrough.pdf
 Name2[$e]=Manual.pdf
+Name3[$e]=Ravager_Walkthrough_v515.pdf
