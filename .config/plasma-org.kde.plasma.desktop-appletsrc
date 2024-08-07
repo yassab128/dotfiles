@@ -27,6 +27,10 @@ cursorPosition=8
 fontSize=10
 noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
 
+[Containments][1][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][1][General]
 ToolBoxButtonState=topcenter
 ToolBoxButtonX=345
