@@ -123,7 +123,7 @@ Word Completion Minimal Word Length=3
 Word Completion Remove Tail=true
 
 [KTextEditor::Search]
-Search History=1521
+Search History=font,1521
 
 [MainWindow]
 1280x720 screen: Window-Maximized=true
