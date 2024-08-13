@@ -17,3 +17,6 @@ StatusBar=Disabled
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
 splitterSizes=606,303
+
+[Viewer]
+ToolBarsMovable=Disabled
