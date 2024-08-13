@@ -28,7 +28,7 @@ unlink_some_files
 
 test -r ~/.bashrc && . ~/.bashrc
 
-export PROMPT_COMMAND='history -a'
+# export PROMPT_COMMAND='history -a'
 
 # NEXINIT='set ruler '\
 # 'number '\
@@ -57,7 +57,7 @@ sshmux() {
 
 # Ignore duplicates and don't save
 # commands starting with a space
-export HISTCONTROL='ignoredups:ignorespace'
+# export HISTCONTROL='ignoredups:ignorespace'
 
 ulimit -c 0
 
