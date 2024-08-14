@@ -8,6 +8,6 @@
 # defaults.pcm.card 1
 
 defaults {
-	pcm.card 1
-	ctl.card 1
+	pcm.card 0
+	ctl.card 0
 }
