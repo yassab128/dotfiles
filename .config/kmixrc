@@ -39,6 +39,9 @@ Split=false
 [View.PulseAudio.Playback_Streams.1.default.PulseAudio::Playback_Streams:1.stream:1881]
 Split=false
 
+[View.PulseAudio.Playback_Streams.1.default.PulseAudio::Playback_Streams:1.stream:274]
+Split=false
+
 [View.PulseAudio.Playback_Streams.1.default.PulseAudio::Playback_Streams:1.stream:319]
 Split=false
 
