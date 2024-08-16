@@ -3,7 +3,7 @@ FullScreen=false
 
 [General]
 LockSidebar=true
-ShowSidebar=true
+ShowSidebar=false
 
 [MainWindow]
 1366x768 screen: Window-Maximized=true
