@@ -4,19 +4,19 @@ elif test -d '/storage'; then
 	export OS_TYPE=1
 fi
 
-unlink_some_files()
-{
-	files=''
-	for i in\
-			"${HOME}/.bash_history"\
-			"${HOME}/.viminfo"\
-			"${HOME}/.python_history"; do
-		if [ -f "${i}" ]; then
-			files="${files} ${i}"
-		fi
-	done
-	[ -n "${files}" ] && rm ${files}
-}
+# unlink_some_files()
+# {
+# 	files=''
+# 	for i in\
+# 			"${HOME}/.bash_history"\
+# 			"${HOME}/.viminfo"\
+# 			"${HOME}/.python_history"; do
+# 		if [ -f "${i}" ]; then
+# 			files="${files} ${i}"
+# 		fi
+# 	done
+# 	[ -n "${files}" ] && rm ${files}
+# }
 
 unlink_some_files
 
