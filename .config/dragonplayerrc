@@ -1,0 +1,27 @@
+[General]
+BrowserApplication[$d]
+ColorScheme[$d]
+ColorSchemeHash[$d]
+File1[$e]=$HOME/Videos/video_2024-08-17_12-43-57.mkv
+Name1[$e]=video_2024-08-17_12-43-57.mkv
+TimeFormat=1
+Volume=1
+XftHintStyle[$d]
+XftSubPixel[$d]
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[Phonon::AudioOutput]
+Dragon Player_Volume=1
+
+[file:///home/aptrug/Videos/video_2024-08-17_12-43-57.mkv]
+AudioChannel=2
+Brightness=0
+Contrast=0
+Date=2024,8,17
+Hue=0
+IsVideo=true
+Position=8134
+Preferred Size=1280,595
+Saturation=0
