@@ -14,7 +14,7 @@ alias\
 	au='ffplay -autoexit -nodisp -loglevel quiet'\
 	jine='LC_ALL=ja_JP.UTF-8 TZ="Asia/Tokyo" wine'\
 	jutris='LC_ALL=ja_JP.UTF-8 TZ="Asia/Tokyo" lutris'\
-	phone_transfer='lftp 192.168.3.158 -p 8021'\
+	phone_transfer='lftp 192.168.3.158 -p 2121'\
 	aria='aria2c --enable-rpc --rpc-listen-all'\
 	cpu='ps -eo comm,rss,pcpu --sort=pcpu'\
 	mem='ps -eo comm,rss,pcpu --sort=rss'\
