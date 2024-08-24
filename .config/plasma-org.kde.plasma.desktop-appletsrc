@@ -126,7 +126,7 @@ favoritesPortedToKAstats=true
 global=Alt+F1
 
 [Containments][2][Applets][3][Shortcuts]
-global=Alt+F1
+global=
 
 [Containments][2][Applets][31]
 immutability=1
