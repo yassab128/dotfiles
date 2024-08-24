@@ -10,12 +10,13 @@ local file_path = vim.fn.expand("%")
 -- 	shiftwidth = 8
 -- }
 
-vim.opt.tabstop = 4
+vim.api.nvim_set_hl(0, 'WinBar', { bg = 'White', fg = 'Black' })
+
+vim.opt.tabstop = 8
 -- vim.opt.hidden = true
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 8
 vim.opt.number = true
-vim.opt.expandtab = false
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.showmatch = true
@@ -26,6 +27,8 @@ vim.opt.mouse = "a"
 vim.opt.report = 0
 vim.opt.showbreak = "=>"
 vim.opt.list = true
+vim.opt.swapfile = false
+vim.opt.winbar = '%#WinBar#--%f'
 vim.opt.listchars = {
 	multispace = "+-",
 	tab = "< >",
@@ -33,14 +36,13 @@ vim.opt.listchars = {
 }
 
 -- local let = vim.g
--- let.mapleader = " "
+vim.g.mapleader = " "
 
 vim.cmd.highlight({"CursorLine", "cterm=NONE ctermbg=DarkGray"})
 vim.cmd.highlight({"CursorColumn", "cterm=NONE ctermbg=DarkGray"})
 vim.keymap.set("n", "<Leader>w",
 	":set cursorline! cursorcolumn!<CR>", {silent=true})
 vim.keymap.set("n", "<CR>", ":noh<CR>", {silent=true})
--- o.statusline = "%f" .. my_func("@%")
 
 local function status_line()
 	local get_octal = function(a, b, c)
@@ -99,9 +101,9 @@ local function status_line()
 			bytes_number)
 		end
 	end
-	return "[%f] [0" .. file_perm_octal() .. "] [" .. get_file_size() ..
+	return "[0" .. file_perm_octal() .. "] [" .. get_file_size() ..
 	"] %y [%n/" .. get_buf_count() ..
-	"] [%p%%] [%l/%L]%=%#ErrorMsg#%m"
+	"]%=[%p%%] [%l/%L] %#ErrorMsg#%m"
 	-- "%=%#ErrorMsg#%m%#Question#%r%#WarningMsg#%h%#MoreMsg#%w"
 end
 
@@ -113,6 +115,11 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 	group = mygroup,
 	-- delete unnecessary EOL spaces and EOF blank lines.
 	command = "silent! %s/\\s\\+$//e | silent! %s/\\n\\+\\%$//e"
+})
+vim.api.nvim_create_autocmd({'BufEnter'}, {
+	pattern = '*.rpy',
+	group = mygroup,
+	command = "set ft=python"
 })
 -- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 -- 	pattern = '*.html',
