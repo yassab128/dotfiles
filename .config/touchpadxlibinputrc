@@ -1,2 +1,3 @@
 [SynPS/2 Synaptics TouchPad]
+middleEmulation=false
 tapToClick=true
