@@ -43,6 +43,7 @@ vim.cmd.highlight({"CursorColumn", "cterm=NONE ctermbg=DarkGray"})
 vim.keymap.set("n", "<Leader>w",
 	":set cursorline! cursorcolumn!<CR>", {silent=true})
 vim.keymap.set("n", "<CR>", ":noh<CR>", {silent=true})
+-- o.statusline = "%f" .. my_func("@%")
 
 local function status_line()
 	local get_octal = function(a, b, c)
@@ -101,7 +102,7 @@ local function status_line()
 			bytes_number)
 		end
 	end
-	return "[0" .. file_perm_octal() .. "] [" .. "%{v:lua.get_file_size()}" ..
+	return "[0" .. file_perm_octal() .. "] [" .. get_file_size() ..
 	"] %y [%n/" .. get_buf_count() ..
 	"]%=[%p%%] [%l/%L] %#ErrorMsg#%m"
 	-- "%=%#ErrorMsg#%m%#Question#%r%#WarningMsg#%h%#MoreMsg#%w"
