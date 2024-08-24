@@ -1,3 +1,6 @@
 [SynPS/2 Synaptics TouchPad]
+disableWhileTyping=true
+lmrTapButtonMap=true
+lrmTapButtonMap=false
 middleEmulation=false
 tapToClick=true
