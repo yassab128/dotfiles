@@ -101,7 +101,7 @@ local function status_line()
 			bytes_number)
 		end
 	end
-	return "[0" .. file_perm_octal() .. "] [" .. "%{v:lua.get_file_size()}" ..
+	return "[0" .. file_perm_octal() .. "] [" .. get_file_size() ..
 	"] %y [%n/" .. get_buf_count() ..
 	"]%=[%p%%] [%l/%L] %#ErrorMsg#%m"
 	-- "%=%#ErrorMsg#%m%#Question#%r%#WarningMsg#%h%#MoreMsg#%w"
