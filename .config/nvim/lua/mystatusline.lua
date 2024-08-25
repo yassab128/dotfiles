@@ -1,26 +1,25 @@
-function get_octal(a, b, c)
-		local m
-		local n
-		local o
-		if a == 45 then
-			m = 0
-		else
-			m = 4
-		end
-		if b == 45 then
-			n = 0
-		else
-			n = 2
-		end
-		if c == 45 then
-			o = 0
-		else
-			o = 1
-		end
-		return m + n + o
-end
-
 function file_perm_octal()
+		local function get_octal(a, b, c)
+				local m
+				local n
+				local o
+				if a == 45 then
+					m = 0
+				else
+					m = 4
+				end
+				if b == 45 then
+					n = 0
+				else
+					n = 2
+				end
+				if c == 45 then
+					o = 0
+				else
+					o = 1
+				end
+				return m + n + o
+		end
 		local file_perm_string = vim.fn.getfperm(vim.fn.expand("%"))
 		return get_octal(file_perm_string:byte(1),
 		file_perm_string:byte(2),

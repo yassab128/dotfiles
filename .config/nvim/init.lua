@@ -13,6 +13,7 @@ require('mystatusline')
 
 vim.api.nvim_set_hl(0, 'WinBar', {bg = 'White', fg = 'Black'})
 
+-- Remember that vim.o > vim.opt
 vim.o.tabstop = 8
 -- vim.o.hidden = true
 vim.o.shiftwidth = 8
@@ -32,11 +33,7 @@ vim.o.swapfile = false
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.winbar = '%#WinBar#--%f'
-vim.opt.listchars = {
-	multispace = "+-",
-	tab = "< >",
-	trail = "$"
-}
+vim.o.listchars = [[multispace:+-,tab:< >,trail:$]]
 
 -- local let = vim.g
 vim.g.mapleader = " "
@@ -47,9 +44,9 @@ vim.keymap.set("n", "<Leader>w",
 	":set cursorline! cursorcolumn!<CR>", {silent=true})
 vim.keymap.set("n", "<CR>", ":noh<CR>", {silent=true})
 
-local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
+-- local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
-	group = mygroup,
+	-- group = mygroup,
 	pattern = '*',
 	-- delete unnecessary EOL spaces and EOF blank lines.
 	command = "silent! %s/\\s\\+$//e | silent! %s/\\n\\+\\%$//e"
