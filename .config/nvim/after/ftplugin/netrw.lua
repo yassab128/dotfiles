@@ -1,4 +1,7 @@
-cmd = {}
+if g_in_termux then
+	vim.o.mouse = ''
+end
+vim.g.netrw_keepdir = 0
 
 local function isInList(str, list)
 	for _, v in ipairs(list) do
@@ -9,23 +12,21 @@ local function isInList(str, list)
 	return false
 end
 
-function media_halt()
-	if next(cmd) ~= nil then
-		cmd:kill('sigint')
-		cmd = {}
+local function media_halt()
+	if g_netrw_cmd then
+		g_netrw_cmd:kill('sigint')
+		g_netrw_cmd = nil
 	end
 end
 
-function media_play()
-	-- Get the path of the current file under the cursor in netrw
-	local filepath = vim.fn.expand("<cfile>")
-	local filepath = vim.fn.expand("<cfile>")
-	vim.print(filepath)
-	filepath = vim.fn.fnameescape(filepath)
+local function media_play()
+	-- This one doesn't work if spaces are involved
+	-- local filepath = vim.fn.expand("<cfile>")
 
-	vim.print(filepath)
+	-- Get the path of the current file under the cursor in netrw
+	local filepath = vim.fn.getline('.')
+
 	if #filepath < 5 then
-		vim.print(filepath)
 		return
 	end
 
@@ -43,27 +44,19 @@ function media_play()
 
 	media_halt()
 
-	vim.print(vim.b.netrw_curdir .. '/' .. filepath)
-	-- cmd = vim.system({'mpv', '--loop', '--no-video', filepath}, {}):wait()
-	cmd = vim.system({'mpv', '--loop', '--no-video', '--',
-		vim.b.netrw_curdir .. '/' .. filepath}, {}, on_exit)
+	g_netrw_cmd = vim.system({'mpv', '--loop', '--no-video', '--', filepath}, {}, on_exit)
 end
-
--- Disable mouse clicks (because they interfere with files navigation sometimes)
-vim.g.netrw_mousemaps = 0
 
 vim.api.nvim_buf_set_keymap(0, 'n', '.', '', {
 	noremap = true,
 	silent = true,
 	callback = media_play
 })
--- vim.api.nvim_buf_set_keymap(0, 'n', '<LeftMouse>', '', {
--- 	noremap = true,
--- 	silent = true,
--- 	callback = media_play
--- })
 vim.api.nvim_buf_set_keymap(0, 'n', ',', '', {
 	noremap = true,
 	silent = true,
 	callback = media_halt
 })
+-- Disable mouse clicks (because they interfere with files navigation sometimes)
+-- vim.g.netrw_mousemaps = 0
+-- vim.api.nvim_set_keymap('n', '<LeftMouse>', '', { noremap = true, silent = true })

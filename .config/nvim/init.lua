@@ -9,16 +9,25 @@
 -- 	shiftwidth = 8
 -- }
 
+g_in_termux = (os.getenv("TERMUX_VERSION") ~= nil)
+-- g_netrw_cmd has to be defined exactly like this
+g_netrw_cmd = nil
+
 require('mystatusline')
 
-vim.api.nvim_set_hl(0, 'WinBar', {bg = 'White', fg = 'Black'})
+-- vim.api.nvim_set_hl(0, 'WinBar', {bg = 'White', fg = "Black"})
+vim.api.nvim_set_hl(0, "IsModified", {ctermbg = "Red"})
+vim.api.nvim_set_hl(0, "IsNotModified", {ctermbg = "Green"})
+
+if not g_in_termux then
+	vim.o.clipboard = "unnamedplus"
+end
 
 -- Remember that vim.o > vim.opt
 vim.o.tabstop = 8
 -- vim.o.hidden = true
 vim.o.shiftwidth = 8
 vim.o.number = true
-vim.o.clipboard = "unnamedplus"
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.showmatch = true
@@ -32,7 +41,7 @@ vim.o.list = true
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.writebackup = false
-vim.o.winbar = '%#WinBar#--%f'
+vim.o.winbar = "%#IsModified#%{&mod?expand('%'):''}%*%#IsNotModified#%{&mod?'':expand('%')}%*"
 vim.o.listchars = [[multispace:+-,tab:< >,trail:$]]
 
 -- local let = vim.g

@@ -55,5 +55,5 @@ function get_file_size()
 end
 
 vim.opt.statusline = "[0%{v:lua.file_perm_octal()}] [%{v:lua.get_file_size()}]" ..
-	" %y [%n/%{v:lua.get_buf_count()}" ..
-	"]%=[%p%%] [%l/%L] %#ErrorMsg#%m"
+	" [%Y] [%n/%{v:lua.get_buf_count()}" ..
+	"]%=[%p%%] [%l/%L] %#ErrorMsg#%m%r%w%h%q"
