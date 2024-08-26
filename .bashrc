@@ -12,6 +12,7 @@
 alias\
 	ls='ls -F'\
 	au='ffplay -autoexit -nodisp -loglevel quiet'\
+	e='nvim -cExplore'\
 	jine='LC_ALL=ja_JP.UTF-8 TZ="Asia/Tokyo" wine'\
 	jutris='LC_ALL=ja_JP.UTF-8 TZ="Asia/Tokyo" lutris'\
 	phone_transfer='lftp 192.168.3.158 -p 2121'\
