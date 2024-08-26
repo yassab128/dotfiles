@@ -57,3 +57,5 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 -- 	group = 'vimrc', -- equivalent to group=mygroup
 -- 	command = 'set expandtab',
 -- })
+
+vim.api.nvim_set_keymap('n', '<leader>r', ':luafile $MYVIMRC<CR>', {noremap = true, silent = true })
