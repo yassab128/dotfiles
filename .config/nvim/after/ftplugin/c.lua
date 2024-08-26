@@ -15,6 +15,31 @@ vim.api.nvim_create_autocmd({'BufWritePost'}, {
 })
 
 -------------------------------------------------------------------------------
+function clint()
+	local stdout = vim.uv.new_pipe()
+
+	local handle = vim.uv.spawn("/usr/bin/clang-tidy", {
+		args = {'--quiet', '--extra-arg=-Weverything', '--checks=*',
+			vim.fn.expand("%"), '--', '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'},
+		stdio = {nil, stdout, nil}
+	})
+
+	if handle == nil then
+		vim.print("Error encountered while running vim.uv.spawn()")
+		return
+	end
+
+	vim.uv.read_start(stdout, function(err, data)
+		if data then
+			vim.print(">> ", data)
+		else
+			stdout:close()
+		end
+	end)
+
+	handle:close()
+end
+
 
 -- clang-check -extra-arg=-Weverything hello.c
 
@@ -67,37 +92,38 @@ vim.api.nvim_create_autocmd({'BufWritePost'}, {
 -- 	end)
 -- })
 
-function myfunc()
-	vim.print("Hello!")
-	local stdout = vim.uv.new_pipe()
-	local stderr = vim.uv.new_pipe()
-
-	local handle, pid = vim.uv.spawn("date", {
-		stdio = {nil, stdout, stderr}
-	}, function(code, signal) -- on exit
-		vim.print("exit code", code)
-		vim.print("exit signal", signal)
-	end)
-
-	vim.uv.read_start(stdout, function(err, data)
-		assert(not err, err)
-		if data then
-			vim.print("stdout chunk", stdout, data)
-		else
-			vim.print("stdout end", stdout)
-		end
-	end)
-
-	vim.uv.read_start(stderr, function(err, data)
-		assert(not err, err)
-		if data then
-			vim.print("stderr chunk", stderr, data)
-		else
-			vim.print("stderr end", stderr)
-		end
-	end)
-
-	vim.uv.close(handle, function()
-		vim.print("process closed", handle, pid)
-	end)
-end
+-- function myfunc()
+-- 	vim.print("BEGIN!")
+-- 	local stdout = vim.uv.new_pipe()
+-- 	local stderr = vim.uv.new_pipe()
+--
+-- 	local handle = vim.uv.spawn("/usr/bin/clang-check", {
+-- 		args = {'-extra-arg=-Weverything', vim.fn.expand("%")},
+-- 		stdio = {nil, stdout, stderr}
+-- 	})
+--
+-- 	vim.uv.read_start(stdout, function(err, data)
+-- 		if err then
+-- 			vim.print("stdout end", stdout)
+-- 		end
+-- 		if data then
+-- 			vim.print("stdout chunk", data)
+-- 		else
+-- 			vim.uv.close(stdout)
+-- 		end
+-- 	end)
+--
+-- 	vim.uv.read_start(stderr, function(err, data)
+-- 		if err then
+-- 			vim.print("stderr end", stderr)
+-- 		end
+-- 		if data then
+-- 			vim.print("stderr chunk", data)
+-- 		else
+-- 			vim.uv.close(stderr)
+-- 		end
+-- 	end)
+--
+-- 	handle:close()
+-- 	vim.print("END!")
+-- end
