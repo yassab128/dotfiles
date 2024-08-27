@@ -41,20 +41,21 @@ vim.g.mapleader = " "
 vim.api.nvim_set_hl(0, "CursorLine", {cterm=NONE, ctermbg=DarkGray})
 -- vim.api.nvim_set_hl(0, "CursorColumn", {cterm=NONE, ctermbg=DarkGray})
 vim.keymap.set("n", "<Leader>w",
-	":set cursorline! cursorcolumn!<CR>", {silent=true})
+":set cursorline! cursorcolumn!<CR>", {silent=true})
 vim.keymap.set("n", "<CR>", ":noh<CR>", {silent=true})
 
--- local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
+local init_group = vim.api.nvim_create_augroup('vimrc', { clear = true })
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
-	-- group = mygroup,
+	group = init_group,
 	pattern = '*',
 	-- delete unnecessary EOL spaces and EOF blank lines.
 	command = "silent! %s/\\s\\+$//e | silent! %s/\\n\\+\\%$//e"
 })
--- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
--- 	pattern = '*.html',
--- 	group = 'vimrc', -- equivalent to group=mygroup
--- 	command = 'set expandtab',
--- })
 
 vim.api.nvim_set_keymap('n', '<leader>r', ':luafile $MYVIMRC<CR>', {noremap = true, silent = true })
+
+-- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+	-- 	pattern = '*.html',
+	-- 	group = 'vimrc', -- equivalent to group=init_group
+	-- 	command = 'set expandtab',
+	-- })

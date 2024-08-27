@@ -1,13 +1,13 @@
-vim.api.nvim_set_option_value('formatprg', "clang-format --fno-color-diagnostics --style='{UseTab: Always, IndentWidth: 8, AlwaysBreakAfterReturnType: All, AlignAfterOpenBracket: DontAlign, IndentPPDirectives: AfterHash, BreakBeforeBraces: Linux}'", {})
+-- vim.opt_local.equalprg = " clang-format --fno-color-diagnostics --style='{UseTab: Always,IndentWidth: 8,AlwaysBreakAfterReturnType: All,AlignAfterOpenBracket: DontAlign,IndentPPDirectives: AfterHash,BreakBeforeBraces: Linux}'"
+-- For some reason, formatprg can no longer be silenced if formatprg command is too long, like above
+vim.opt_local.equalprg = "clang-format --style='{BasedOnStyle: LLVM,UseTab: Always,IndentWidth: 8}'"
 
 vim.api.nvim_create_autocmd('BufWritePre', {
+	group = init_group,
 	pattern = '*',
 	callback = function()
-		-- Save cursor position and window view before formatting
 		local view = vim.fn.winsaveview()
-		-- Perform formatting
-		vim.cmd('silent! normal! gggqG')
-		-- Restore cursor position and window view
+		vim.cmd('silent! undojoin | silent! normal! gg=G')
 		vim.fn.winrestview(view)
 	end,
 })
