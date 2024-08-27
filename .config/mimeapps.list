@@ -3,19 +3,19 @@ audio/x-mod=org.kde.kate.desktop;
 inode/directory=org.kde.dolphin.desktop;
 video/mp4=mpv.desktop;
 x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
-x-scheme-handler/http=firefox.desktop;
-x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/http=google-chrome.desktop;firefox.desktop;
+x-scheme-handler/https=google-chrome.desktop;firefox.desktop;
 x-scheme-handler/mailto=org.kde.kmail2.desktop;
-x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 x-scheme-handler/rpgmakermp=nwjsoptions.desktop;
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 
 [Default Applications]
 audio/x-mod=org.kde.kate.desktop;
 inode/directory=org.kde.dolphin.desktop;
 video/mp4=mpv.desktop;
 x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
-x-scheme-handler/http=firefox.desktop;
-x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/http=google-chrome.desktop;
+x-scheme-handler/https=google-chrome.desktop;
 x-scheme-handler/mailto=org.kde.kmail2.desktop;
-x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 x-scheme-handler/rpgmakermp=nwjsoptions.desktop
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;

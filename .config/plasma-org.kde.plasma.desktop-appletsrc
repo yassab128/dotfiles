@@ -24,10 +24,10 @@ immutability=1
 plugin=org.kde.plasma.notes
 
 [Containments][1][Applets][27][Configuration][General]
-cursorPosition=426
+cursorPosition=584
 fontSize=10
 noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
-scrollY=182
+scrollY=290
 
 [Containments][1][ConfigDialog]
 DialogHeight=540

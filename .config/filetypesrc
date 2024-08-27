@@ -1,3 +1,5 @@
 [EmbedSettings]
 embed-audio/x-mod=false
 embed-video/mp4=false
+embed-x-scheme-handler/http=false
+embed-x-scheme-handler/https=false

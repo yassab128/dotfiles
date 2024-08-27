@@ -34,7 +34,7 @@ local function media_play()
 
 	local media_extensions = {
 		"mp3", "wav", "flac", "aac", "ogg", "m4a",
-		"avi", "mp4", "mkv", "mov", "wmv", "mpg", "mpeg", "flv",
+		"avi", "mp4", "webm", "mkv", "mov", "wmv", "mpg", "mpeg", "flv",
 	}
 
 	if not isInList(extension, media_extensions) then
