@@ -20,7 +20,9 @@ function file_perm_octal()
 				end
 				return m + n + o
 		end
-		local file_perm_string = vim.fn.getfperm(vim.fn.expand("%"))
+		local myfile = vim.fn.expand("%")
+		vim.print(myfile)
+		local file_perm_string = vim.fn.getfperm(myfile)
 		return get_octal(file_perm_string:byte(1),
 		file_perm_string:byte(2),
 		file_perm_string:byte(3)) ..
@@ -37,7 +39,8 @@ function get_buf_count()
 end
 
 function get_file_size()
-	local bytes_number = vim.fn.getfsize(vim.fn.expand("%"))
+	local myfile = vim.fn.expand("%")
+	local bytes_number = vim.fn.getfsize(myfile)
 	local unit
 	if bytes_number > 1073741824 then
 		return string.format("%.2f GiB",
@@ -56,4 +59,4 @@ end
 
 vim.opt.statusline = "[0%{v:lua.file_perm_octal()}] [%{v:lua.get_file_size()}]" ..
 	" [%Y] [%n/%{v:lua.get_buf_count()}" ..
-	"]%=[%p%%] [%l/%L] %#ErrorMsg#%m%r%w%h%q"
+	"]%=[%p%%] [%l/%L] %#ErrorMsg#%r%w%h%q"

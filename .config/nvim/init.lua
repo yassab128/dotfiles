@@ -1,14 +1,3 @@
--- function my_func(x)
--- 	return #x
--- end
-
--- vim.cmd("runtime vimrc")
-
--- vim.opt = {
--- 	tabstop = 8
--- 	shiftwidth = 8
--- }
-
 g_in_termux = (os.getenv("TERMUX_VERSION") ~= nil)
 -- g_netrw_cmd has to be defined exactly like this
 g_netrw_cmd = nil
@@ -16,8 +5,8 @@ g_netrw_cmd = nil
 require('mystatusline')
 
 -- vim.api.nvim_set_hl(0, 'WinBar', {bg = 'White', fg = "Black"})
-vim.api.nvim_set_hl(0, "IsModified", {ctermbg = "Red"})
-vim.api.nvim_set_hl(0, "IsNotModified", {ctermbg = "Green"})
+vim.api.nvim_set_hl(0, "IsModified", {fg = "Yellow"})
+vim.api.nvim_set_hl(0, "IsNotModified", {fg = "White"})
 
 if not g_in_termux then
 	vim.o.clipboard = "unnamedplus"
@@ -41,14 +30,16 @@ vim.o.list = true
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.writebackup = false
-vim.o.winbar = "%#IsModified#%{&mod?expand('%'):''}%*%#IsNotModified#%{&mod?'':expand('%')}%*"
+-- vim.o.winbar = '%#WinBar#--%f'
+vim.o.cursorline = true
+vim.o.winbar = "  %#IsModified#%{&mod?expand('%:p'):''}%*%#IsNotModified#%{&mod?'':expand('%:p')}%*"
 vim.o.listchars = [[multispace:+-,tab:< >,trail:$]]
 
 -- local let = vim.g
 vim.g.mapleader = " "
 
 vim.api.nvim_set_hl(0, "CursorLine", {cterm=NONE, ctermbg=DarkGray})
-vim.api.nvim_set_hl(0, "CursorColumn", {cterm=NONE, ctermbg=DarkGray})
+-- vim.api.nvim_set_hl(0, "CursorColumn", {cterm=NONE, ctermbg=DarkGray})
 vim.keymap.set("n", "<Leader>w",
 	":set cursorline! cursorcolumn!<CR>", {silent=true})
 vim.keymap.set("n", "<CR>", ":noh<CR>", {silent=true})
