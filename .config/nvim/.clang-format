@@ -1,0 +1,7 @@
+ColumnLimit: 80
+UseTab: Always
+IndentWidth: 8
+AlwaysBreakAfterReturnType: All
+AlignAfterOpenBracket: DontAlign
+IndentPPDirectives: AfterHash
+BreakBeforeBraces: Linux

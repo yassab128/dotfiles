@@ -1,0 +1,1 @@
+exec clang-format --fno-color-diagnostics '--style={UseTab: Always,IndentWidth: 8,AlwaysBreakAfterReturnType: All,AlignAfterOpenBracket: DontAlign,IndentPPDirectives: AfterHash,BreakBeforeBraces: Linux}'

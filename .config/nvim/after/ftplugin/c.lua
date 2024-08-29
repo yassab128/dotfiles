@@ -1,6 +1,8 @@
 -- vim.opt_local.equalprg = " clang-format --fno-color-diagnostics --style='{UseTab: Always,IndentWidth: 8,AlwaysBreakAfterReturnType: All,AlignAfterOpenBracket: DontAlign,IndentPPDirectives: AfterHash,BreakBeforeBraces: Linux}'"
 -- For some reason, formatprg can no longer be silenced if formatprg command is too long, like above
-vim.opt_local.equalprg = "clang-format --style='{BasedOnStyle: LLVM,UseTab: Always,IndentWidth: 8}'"
+-- vim.opt_local.equalprg = "clang-format --style='{BasedOnStyle: LLVM,UseTab: Always,IndentWidth: 8}'"
+-- vim.opt_local.equalprg = "clang-format --fno-color-diagnostics --style=file:" .. g_init_dir .. "/.clang-format"
+vim.opt_local.equalprg = g_init_dir .. "/clang-format.sh"
 
 vim.api.nvim_create_autocmd('BufWritePre', {
 	group = init_group,

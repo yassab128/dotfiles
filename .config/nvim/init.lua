@@ -2,6 +2,8 @@ g_in_termux = (os.getenv("TERMUX_VERSION") ~= nil)
 -- g_netrw_cmd has to be defined exactly like this
 g_netrw_cmd = nil
 
+g_init_dir = vim.fn.stdpath("config")
+
 require('mystatusline')
 
 -- vim.api.nvim_set_hl(0, 'WinBar', {bg = 'White', fg = "Black"})
