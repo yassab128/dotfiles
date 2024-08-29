@@ -23,6 +23,7 @@ vim.o.showmatch = true
 vim.o.textwidth = 80
 vim.o.tabpagemax = 255
 vim.o.shortmess = "a"
+vim.o.splitbelow = true
 vim.o.mouse = "a"
 vim.o.report = 0
 vim.o.showbreak = "=>"
@@ -35,8 +36,9 @@ vim.o.cursorline = true
 vim.o.winbar = "  %#IsModified#%{&mod?expand('%:p'):''}%*%#IsNotModified#%{&mod?'':expand('%:p')}%*"
 vim.o.listchars = [[multispace:+-,tab:< >,trail:$]]
 
--- local let = vim.g
-vim.g.mapleader = " "
+-- vim.g.mapleader = " "
+-- Better be local, if you want to unset it later.
+vim.g.maplocalleader = " "
 
 vim.api.nvim_set_hl(0, "CursorLine", {cterm=NONE, ctermbg=DarkGray})
 -- vim.api.nvim_set_hl(0, "CursorColumn", {cterm=NONE, ctermbg=DarkGray})
