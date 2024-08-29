@@ -67,7 +67,11 @@ local function media_play_sync()
 		return
 	end
 
-	vim.cmd("below terminal mpv '" .. filepath .. "'")
+	local height = vim.api.nvim_get_option('lines')
+	local term_height = math.floor(height / 4)
+	vim.api.nvim_command('split')
+	vim.api.nvim_win_set_height(0, term_height)
+	vim.cmd("terminal mpv -loop '" .. filepath .. "'")
 end
 
 vim.api.nvim_buf_set_keymap(0, 'n', '.', '', {
@@ -91,25 +95,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	command = "startinsert"
 })
 
-local function close_terminal_split()
-	-- Get the current window
-	local current_window = vim.api.nvim_get_current_win()
-
-	-- Get the buffer associated with the current window
-	local current_buf = vim.api.nvim_win_get_buf(current_window)
-
-	-- Check if the buffer is a terminal buffer
-	if vim.bo[current_buf].buftype == 'terminal' then
-		-- Close the terminal buffer
-		vim.api.nvim_buf_delete(current_buf, { force = true })
-	else
-		print("Current buffer is not a terminal buffer.")
-	end
-end
-
 vim.api.nvim_create_autocmd("TermClose", {
-	pattern = "*",
-	callback = close_terminal_split
+	pattern = "term://*",
+	callback = function()
+		vim.cmd("silent! close")
 	end
 })
 
