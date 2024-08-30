@@ -29,10 +29,23 @@ function clint()
 		return
 	end
 
+	local output = {}
+	local index = 0
 	vim.uv.read_start(stdout, function(err, data)
 		if data then
-			vim.print(">> ", data)
+			for line in data:gmatch("[^\n]+") do
+				if string.sub(line, 1, 1) == "/" then
+					index = index + 1
+					table.insert(output, line)
+					output[index] = line
+				else
+					output[index] = output[index] .. "\n" .. line
+				end
+			end
 		else
+			for i, value in ipairs(output) do
+				vim.print(">" .. value)
+			end
 			stdout:close()
 		end
 	end)
