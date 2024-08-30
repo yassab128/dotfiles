@@ -27,7 +27,7 @@ plugin=org.kde.plasma.notes
 cursorPosition=776
 fontSize=10
 noteId=83153ce4-c1fc-4973-b87d-66bfc0d25b
-scrollY=524
+scrollY=262
 
 [Containments][1][ConfigDialog]
 DialogHeight=540
