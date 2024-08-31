@@ -4,6 +4,11 @@
 -- vim.opt_local.equalprg = "clang-format --fno-color-diagnostics --style=file:" .. g_init_dir .. "/.clang-format"
 vim.opt_local.equalprg = g_init_dir .. "/clang-format.sh"
 
+
+---
+-- vim.opt_local.makeprg = "clang-tidy --quiet --extra-arg=-Weverything --checks=* % -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+-- vim.opt_local.errorformat = "%f:%l:%c: %t%*[^:]: %m"
+
 vim.api.nvim_create_autocmd('BufWritePre', {
 	group = init_group,
 	pattern = '*',
@@ -18,7 +23,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 function clint()
 	local stdout = vim.uv.new_pipe()
 
-	local handle = vim.uv.spawn("/usr/bin/clang-tidy", {
+	local handle = vim.uv.spawn("clang-tidy", {
 		args = {'--quiet', '--extra-arg=-Weverything', '--checks=*',
 			vim.fn.expand("%"), '--', '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'},
 		stdio = {nil, stdout, nil}
@@ -36,20 +41,27 @@ function clint()
 			for line in data:gmatch("[^\n]+") do
 				if string.sub(line, 1, 1) == "/" then
 					index = index + 1
-					table.insert(output, line)
 					output[index] = line
-				else
-					output[index] = output[index] .. "\n" .. line
+				-- else
+				-- 	output[index] = output[index] .. "\n" .. line
 				end
 			end
 		else
-			for i, value in ipairs(output) do
-				vim.print(">" .. value)
-			end
 			stdout:close()
+			-- other than vim.schedule(), there is also
+			-- vim.schedule_wrap() and vim.defer_fn()
+			-- for running non thread safe vim commands
+			vim.schedule(function()
+				vim.fn.setqflist({}, 'r', {
+					title = 'ClangTidy',
+					lines = output,
+					errorformat = "%f:%l:%c: %t%*[^:]: %m"
+					-- errorformat = "%A%f:%l:%c: %t%*[^:]: %m,%-Z%p^,%-C%.%#"
+				})
+				vim.cmd("copen")
+			end)
 		end
 	end)
-
 	handle:close()
 end
 
