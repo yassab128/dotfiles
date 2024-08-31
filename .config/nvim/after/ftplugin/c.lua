@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 -------------------------------------------------------------------------------
-function clint()
+local function clint()
 	local stdout = vim.uv.new_pipe()
 
 	local handle = vim.uv.spawn("clang-tidy", {
@@ -35,28 +35,42 @@ function clint()
 		return
 	end
 
-	local quickfix_list = {}
+	quickfix_list = {}
 	local index = 0
 	vim.uv.read_start(stdout, function(err, data)
 		if data then
 			for line in data:gmatch("[^\n]+") do
 				-- table.insert(output, line)
 				if string.sub(line, 1, 1) == "/" then
-					-- index = index + 1
-					-- output[index] = line
-					local _filename, _lnum, _col, _text = line:match("([^:]+):(%d+):(%d+):%s*(.*)")
-					table.insert(quickfix_list, {
+					index = index + 1
+					local _filename, _lnum, _col, _type, _text,
+						_user_data = line:match("(.+):(%d+):(%d+): (%l).+: (.+) (%[.+%])")
+					quickfix_list[index] = {
 						filename = _filename,
-						lnum = tonumber(_lnum),
-						col = tonumber(_col),
-						text = _text
-					})
+						lnum = _lnum,
+						col = _col,
+						type = _type,
+						text = _text,
+						user_data = {rule = _user_data, pointers = {}}
+					}
 				else
-					quickfix_list[index] = quickfix_list[index] .. "\n" .. line
+					table.insert(quickfix_list[index].user_data.pointers, line)
+					-- if quickfix_list[index].user_data.pointer == "" then
+					-- 	quickfix_list[index].user_data.pointer = line
+					-- else
+					-- 	quickfix_list[index].user_data.pointer = quickfix_list[index].user_data.pointer .. "\n" .. line
+					-- end
 				end
 			end
 		else
 			stdout:close()
+			-- vim.print(vim.inspect(quickfix_list))
+			-- for _, i in ipairs(quickfix_list) do
+			-- 	for __, j in ipairs(i.user_data.pointers) do
+			-- 		vim.print(j)
+			-- 	end
+			-- 	vim.print("-------------------------")
+			-- end
 			-- other than vim.schedule(), there is also
 			-- vim.schedule_wrap() and vim.defer_fn()
 			-- for running non thread safe vim commands
@@ -82,6 +96,18 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	callback = clint
 })
 
+local function get_error_info()
+	vim.print("fdsa")
+end
+
+local function map_quickfix_cr()
+	vim.keymap.set('n', '<CR>', get_error_info, { buffer = true, noremap = true, silent = true })
+end
+
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = 'qf',
+	callback = map_quickfix_cr
+})
 
 -- clang-check -extra-arg=-Weverything hello.c
 
