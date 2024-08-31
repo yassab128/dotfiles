@@ -20,7 +20,8 @@ local function clint()
 
 	local handle = vim.uv.spawn("clang-tidy", {
 		args = {'--quiet',
-			'--extra-arg=-Weverything ',
+			'--extra-arg=-ansi',
+			'--extra-arg=-Weverything',
 			'--checks=*,-llvmlibc-restrict-system-libc-headers,-readability-avoid-unconditional-preprocessor-if',
 			vim.fn.expand("%"), '--', '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'},
 		stdio = {nil, stdout, nil}
