@@ -95,3 +95,27 @@ vim.api.nvim_create_autocmd('FileType', {
 			{ buffer = true, noremap = true, silent = true })
 	end
 })
+
+----------------------------------------------------------
+-- local lsp = vim.lsp
+-- local lspconfig = {
+-- 	name = 'clangd',
+-- 	cmd = { 'clangd' },  -- Command to start the language server
+-- 	filetypes = { 'c', 'cpp', 'objc', 'objcpp' },  -- Filetypes to enable clangd for
+-- 	root_dir = vim.fn.getcwd(),  -- Use the current working directory as the root directory
+-- 	settings = {},  -- Add any clangd-specific settings here
+-- }
+--
+-- -- Create an autocommand to start the LSP client when opening C/C++ files
+-- vim.api.nvim_create_autocmd('FileType', {
+-- 	pattern = { 'c', 'cpp', 'objc', 'objcpp' },
+-- 	callback = function()
+-- 		lsp.start_client(lspconfig)
+-- 	end,
+-- })
+--
+-- -- Set up key mappings for LSP functionality
+-- vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
