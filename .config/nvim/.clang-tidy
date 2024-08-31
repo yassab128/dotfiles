@@ -1,0 +1,8 @@
+Checks: '
+ *,
+ -llvmlibc-restrict-system-libc-headers
+ -readability-avoid-unconditional-preprocessor-if
+ '
+ExtraArgs: [
+ '-Weverything'
+]

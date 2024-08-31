@@ -1,9 +1,8 @@
 vim.opt_local.equalprg = g_init_dir .. "/clang-format.sh"
 
 
----
-vim.opt_local.makeprg = "clang-tidy --quiet --extra-arg=-Weverything --checks=* % -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
-vim.opt_local.errorformat = "%A%f:%l:%c: %t%*[^:]: %m,%-G%.%#"
+-- vim.opt_local.makeprg = "clang-tidy --quiet --extra-arg=-Weverything --checks=* % -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+-- vim.opt_local.errorformat = "%A%f:%l:%c: %t%*[^:]: %m,%-G%.%#"
 
 vim.api.nvim_create_autocmd('BufWritePre', {
 	group = init_group,
@@ -20,7 +19,9 @@ local function clint()
 	local stdout = vim.uv.new_pipe()
 
 	local handle = vim.uv.spawn("clang-tidy", {
-		args = {'--quiet', '--extra-arg=-Weverything', '--checks=*',
+		args = {'--quiet',
+			'--extra-arg=-Weverything ',
+			'--checks=*,-llvmlibc-restrict-system-libc-headers,-readability-avoid-unconditional-preprocessor-if',
 			vim.fn.expand("%"), '--', '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'},
 		stdio = {nil, stdout, nil}
 	})
