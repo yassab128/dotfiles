@@ -35,24 +35,17 @@ function clint()
 		return
 	end
 
-	local quickfix_list = {}
+	local output = {}
 	local index = 0
 	vim.uv.read_start(stdout, function(err, data)
 		if data then
 			for line in data:gmatch("[^\n]+") do
 				-- table.insert(output, line)
 				if string.sub(line, 1, 1) == "/" then
-					-- index = index + 1
-					-- output[index] = line
-					local _filename, _lnum, _col, _text = line:match("([^:]+):(%d+):(%d+):%s*(.*)")
-					table.insert(quickfix_list, {
-						filename = _filename,
-						lnum = tonumber(_lnum),
-						col = tonumber(_col),
-						text = _text
-					})
+					index = index + 1
+					output[index] = line
 				else
-					quickfix_list[index] = quickfix_list[index] .. "\n" .. line
+					output[index] = output[index] .. "\n" .. line
 				end
 			end
 		else
@@ -61,7 +54,12 @@ function clint()
 			-- vim.schedule_wrap() and vim.defer_fn()
 			-- for running non thread safe vim commands
 			vim.schedule(function()
-				vim.fn.setqflist(quickfix_list, 'r')
+				vim.fn.setqflist({}, 'r', {
+					title = 'ClangTidy',
+					lines = output,
+					errorformat = "%A%f:%l:%c: %t%*[^:]: %m,%-G%.%#"
+					-- errorformat = "%A%f:%l:%c: %t%*[^:]: %m,%-Z%p^,%-C%.%#"
+				})
 				vim.cmd("copen | wincmd p")
 			end)
 		end

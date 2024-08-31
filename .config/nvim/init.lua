@@ -38,9 +38,9 @@ vim.o.cursorline = true
 vim.o.winbar = "  %#IsModified#%{&mod?expand('%:p'):''}%*%#IsNotModified#%{&mod?'':expand('%:p')}%*"
 vim.o.listchars = [[multispace:+-,tab:< >,trail:$]]
 
--- vim.g.mapleader = " "
+vim.g.mapleader = " "
 -- Better be local, if you want to unset it later.
-vim.g.maplocalleader = " "
+-- vim.g.maplocalleader = " "
 
 vim.api.nvim_set_hl(0, "CursorLine", {cterm=NONE, ctermbg=DarkGray})
 -- vim.api.nvim_set_hl(0, "CursorColumn", {cterm=NONE, ctermbg=DarkGray})
