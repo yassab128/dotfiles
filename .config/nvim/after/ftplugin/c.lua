@@ -99,9 +99,20 @@ vim.api.nvim_create_autocmd('FileType', {
 
 
 local function ccompile()
-	local first_line = vim.fn.getline(1)
-	vim.system({'echo', 'hello'}, { text = true }, on_exit)
+	local line = vim.fn.getline(1)
+	local filename = vim.fn.expand("%")
+	local binary_name = filename:sub(1, -3) .. "_debug"
+	-- Taken from https://clang.llvm.org/docs/AddressSanitizer.html
+	local cc_command = {"clang", "-O0", "-g",
+		"-fsanitize=address,undefined,leak",
+		"-fno-omit-frame-pointer", "-fno-optimize-sibling-calls",
+		"-o" .. binary_name}
+	for match in line:gmatch("(-%S+)") do
+		table.insert(cc_command, match)
+	end
+	vim.print(vim.inspect(cc_command))
+	-- vim.system({'echo', 'hello'}, { text = true }, on_exit)
 end
 
-vim.keymap.set('n', '<leader>k', ccompile,
+vim.keymap.set('n', '<leader>cc', ccompile,
 	{buffer = true, noremap = true, silent = true})
