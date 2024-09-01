@@ -12,6 +12,7 @@ vim.api.nvim_set_hl(0, "IsNotModified", {fg = "White"})
 
 if not g_in_termux then
 	vim.o.clipboard = "unnamedplus"
+	vim.o.winbar = "  %#IsModified#%{&mod?expand('%:p'):''}%*%#IsNotModified#%{&mod?'':expand('%:p')}%*"
 end
 
 -- Remember that vim.o > vim.opt
@@ -35,7 +36,6 @@ vim.o.backup = false
 vim.o.writebackup = false
 -- vim.o.winbar = '%#WinBar#--%f'
 vim.o.cursorline = true
-vim.o.winbar = "  %#IsModified#%{&mod?expand('%:p'):''}%*%#IsNotModified#%{&mod?'':expand('%:p')}%*"
 vim.o.listchars = [[multispace:+-,tab:< >,trail:$]]
 
 vim.g.mapleader = " "

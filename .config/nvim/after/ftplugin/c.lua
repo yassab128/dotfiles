@@ -57,6 +57,19 @@ local function clint()
 			end
 		else
 			stdout:close()
+			-- Error: Invalid order function for sorting
+			table.sort(quickfix_list, function(a, b)
+				-- false means not sort
+				if a.type == b.type then
+					return false
+				elseif a.type == "e" then
+					return true
+				elseif a.type == "w" then
+					return true
+				else
+					return false
+				end
+			end)
 			vim.schedule(function()
 				vim.fn.setqflist(quickfix_list, 'r')
 				vim.cmd("copen | wincmd p")
@@ -92,6 +105,7 @@ end
 vim.api.nvim_create_autocmd('FileType', {
 	pattern = 'qf',
 	callback = function()
+		vim.keymap.set('n', 'q', ":q<CR>", { buffer = true, noremap = true, silent = true })
 		vim.keymap.set('n', '<CR>', get_error_info,
 			{ buffer = true, noremap = true, silent = true })
 	end
@@ -100,19 +114,26 @@ vim.api.nvim_create_autocmd('FileType', {
 
 local function ccompile()
 	local line = vim.fn.getline(1)
-	local filename = vim.fn.expand("%")
+	local filename = vim.api.nvim_buf_get_name(0)
 	local binary_name = filename:sub(1, -3) .. "_debug"
 	-- Taken from https://clang.llvm.org/docs/AddressSanitizer.html
-	local cc_command = {"clang", "-O0", "-g",
-		"-fsanitize=address,undefined,leak",
-		"-fno-omit-frame-pointer", "-fno-optimize-sibling-calls",
-		"-o" .. binary_name}
+	local cc_command = "clang -O0 -g -fsanitize=address,undefined,leak " ..
+		"-fno-omit-frame-pointer -fno-optimize-sibling-calls " ..
+		"-o" .. binary_name .. ' ' .. filename
 	for match in line:gmatch("(-%S+)") do
-		table.insert(cc_command, match)
+		cc_command = cc_command .. " " .. match
 	end
-	vim.print(vim.inspect(cc_command))
+	cc_command = cc_command .. " && " .. binary_name
+	vim.cmd('tab terminal ' .. cc_command)
 	-- vim.system({'echo', 'hello'}, { text = true }, on_exit)
 end
 
-vim.keymap.set('n', '<leader>cc', ccompile,
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*",
+	callback = function()
+		vim.keymap.set('n', 'q', ":q<CR>", { buffer = true, noremap = true, silent = true })
+	end
+})
+
+vim.keymap.set('n', '<leader>k', ccompile,
 	{buffer = true, noremap = true, silent = true})
