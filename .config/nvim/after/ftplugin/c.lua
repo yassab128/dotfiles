@@ -48,7 +48,11 @@ local function clint()
 						col = _col,
 						type = _type,
 						text = _text,
-						user_data = {rule = _user_data, pointer_lines = ""}
+						user_data = {
+							rule = _user_data,
+							pointer_lines = "",
+							severity = (_type == "e" and 1) or (_type == "w" and 2) or 3
+						}
 					}
 				else
 					quickfix_list[index].user_data.pointer_lines = quickfix_list[index].user_data.pointer_lines ..
@@ -57,18 +61,9 @@ local function clint()
 			end
 		else
 			stdout:close()
-			-- Error: Invalid order function for sorting
+			-- Sort: error > warning > note
 			table.sort(quickfix_list, function(a, b)
-				-- false means not sort
-				if a.type == b.type then
-					return false
-				elseif a.type == "e" then
-					return true
-				elseif a.type == "w" then
-					return true
-				else
-					return false
-				end
+				return a.user_data.severity < b.user_data.severity
 			end)
 			vim.schedule(function()
 				vim.fn.setqflist(quickfix_list, 'r')
@@ -129,9 +124,9 @@ local function ccompile()
 end
 
 vim.api.nvim_create_autocmd("TermOpen", {
-	pattern = "*",
+	pattern = '*',
 	callback = function()
-		vim.keymap.set('n', 'q', ":q<CR>", { buffer = true, noremap = true, silent = true })
+		vim.keymap.set('n', 'q', "i<C-C>", { buffer = true, noremap = true, silent = true })
 	end
 })
 
