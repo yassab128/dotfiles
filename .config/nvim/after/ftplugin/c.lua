@@ -18,9 +18,9 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 local function clint()
 	local stdout = vim.uv.new_pipe()
 
+	-- '--extra-arg=-ansi',
 	local handle = vim.uv.spawn("clang-tidy", {
 		args = {'--quiet',
-			'--extra-arg=-ansi',
 			'--extra-arg=-Weverything',
 			'--checks=*,-llvmlibc-restrict-system-libc-headers,-readability-avoid-unconditional-preprocessor-if',
 			vim.fn.expand("%"), '--', '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'},
