@@ -127,7 +127,8 @@ local function ccompile()
 end
 
 vim.api.nvim_create_autocmd("TermOpen", {
-	pattern = '*',
+	-- pattern = '*',
+	buffer = 0,
 	callback = function()
 		vim.keymap.set('n', 'q', "i<C-C>", { buffer = true, noremap = true, silent = true })
 	end

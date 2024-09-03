@@ -98,12 +98,14 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<BS>', '', {
 })
 
 vim.api.nvim_create_autocmd("TermOpen", {
-	pattern = "*",
+	-- pattern = "*",
+	buffer = 0,
 	command = "startinsert"
 })
 
 vim.api.nvim_create_autocmd("TermClose", {
-	pattern = "term://*",
+	-- pattern = "term://*",
+	buffer = 0,
 	callback = function()
 		vim.cmd("silent! close")
 	end
