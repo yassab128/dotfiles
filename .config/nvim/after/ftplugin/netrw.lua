@@ -1,8 +1,11 @@
-vim.g.maplocalleader = ";"
+-- vim.g.maplocalleader = ";"
 if g_in_termux then
 	vim.o.mouse = ''
 end
 vim.g.netrw_keepdir = 0
+
+-- show numbers in the left side
+vim.wo.number = true
 
 local function isInList(str, list)
 	for _, v in ipairs(list) do
@@ -45,7 +48,11 @@ local function media_play_async()
 
 	media_halt()
 
-	g_netrw_cmd = vim.system({'mpv', '--loop', '--no-video', '--', filepath}, {}, on_exit)
+	if g_in_termux then
+		g_netrw_cmd = vim.system({'aaplay', '-l', filepath}, {}, on_exit)
+	else
+		g_netrw_cmd = vim.system({'mpv', '--loop', '--no-video', '--', filepath}, {}, on_exit)
+	end
 end
 
 local function media_play_sync()
@@ -84,7 +91,7 @@ vim.api.nvim_buf_set_keymap(0, 'n', ',', '', {
 	silent = true,
 	callback = media_play_async
 })
-vim.api.nvim_buf_set_keymap(0, 'n', ' ', '', {
+vim.api.nvim_buf_set_keymap(0, 'n', '<BS>', '', {
 	noremap = true,
 	silent = true,
 	callback = media_halt

@@ -5,8 +5,11 @@ vim.opt_local.equalprg = g_init_dir .. "/clang-format.sh"
 -- vim.opt_local.errorformat = "%A%f:%l:%c: %t%*[^:]: %m,%-G%.%#"
 
 vim.api.nvim_create_autocmd('BufWritePre', {
-	group = init_group,
-	pattern = '*',
+	-- group = init_group,
+	-- buffer and pattern cannot coexist
+	-- buffer is needed or else there will be conflicts with
+	-- other opened files of other types
+	buffer = 0,
 	callback = function()
 		local view = vim.fn.winsaveview()
 		vim.cmd('silent! undojoin | silent! normal! gg=G')
@@ -83,7 +86,7 @@ vim.api.nvim_set_hl(0, "QuickFixLine", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = "*",  -- Apply to all files or specify a filetype
+	buffer = 0,
 	callback = clint
 })
 
