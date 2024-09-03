@@ -81,12 +81,12 @@ local function media_play_sync()
 	vim.cmd("terminal mpv -loop '" .. filepath .. "'")
 end
 
-vim.api.nvim_buf_set_keymap(0, 'n', '.', '', {
+vim.api.nvim_buf_set_keymap(0, 'n', ',', '', {
 	noremap = true,
 	silent = true,
 	callback = media_play_sync
 })
-vim.api.nvim_buf_set_keymap(0, 'n', ',', '', {
+vim.api.nvim_buf_set_keymap(0, 'n', '.', '', {
 	noremap = true,
 	silent = true,
 	callback = media_play_async
